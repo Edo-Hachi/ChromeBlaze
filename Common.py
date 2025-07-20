@@ -1,0 +1,31 @@
+from enum import Enum
+
+# Game States
+class GameState(Enum):
+    LOGO = "logo"
+    TITLE = "title"
+    GAME = "game"
+
+# Game Constants
+SCREEN_WIDTH = 256
+SCREEN_HEIGHT = 256
+FPS = 60
+SPRITE_SIZE = 8
+
+# Colors
+COLOR_BLACK = 0
+COLOR_NAVY = 1
+COLOR_PURPLE = 2
+COLOR_GREEN = 3
+COLOR_BROWN = 4
+COLOR_DARK_BLUE = 5
+COLOR_LIGHT_BLUE = 6
+COLOR_WHITE = 7
+COLOR_RED = 8
+COLOR_ORANGE = 9
+COLOR_YELLOW = 10
+COLOR_LIME = 11
+COLOR_CYAN = 12
+COLOR_GRAY = 13
+COLOR_PINK = 14
+COLOR_PEACH = 15
