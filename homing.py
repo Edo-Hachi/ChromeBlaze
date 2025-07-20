@@ -6,6 +6,7 @@ Homing Laser Test Project - Pyxel Implementation
 
 import pyxel
 import math
+import random
 from SpriteManager import SpriteManager
 from Common import DEBUG
 
@@ -221,9 +222,21 @@ class HomingLaserTest:
         # エネミー設定
         self.enemy_x = self.WIDTH // 2 - self.SPRITE_SIZE // 2
         self.enemy_y = 50
+        self.enemy_speed = 80  # ピクセル/秒
         
-        # ホーミングレーザー設定
-        self.laser = None  # レーザーインスタンス
+        # ランダム移動制御
+        self.enemy_move_timer = 0.0  # 移動タイマー
+        self.enemy_direction_duration = 3.0  # 3秒間同じ方向
+        self.enemy_velocity_x = 0.0  # X方向速度
+        self.enemy_velocity_y = 0.0  # Y方向速度
+        
+        # 初期方向設定
+        self._generate_random_direction()
+        
+        # ホーミングレーザー設定（連射対応）
+        self.lasers = []  # レーザーリスト
+        self.max_lasers = 10  # 最大レーザー数
+        
         
         # テスト用メッセージ
         self.message = "PLAYER vs ENEMY01 Test"
@@ -247,21 +260,59 @@ class HomingLaserTest:
         if pyxel.btn(pyxel.KEY_DOWN):
             self.player_y = min(self.HEIGHT - self.SPRITE_SIZE, self.player_y + 2)
         
-        # 1キーでLaserType01発射
-        if pyxel.btnp(pyxel.KEY_1):
-            if self.laser is None or not self.laser.active:
+        # スペースキーでホーミングレーザー発射（連射対応）
+        if pyxel.btnp(pyxel.KEY_SPACE):
+            # 非アクティブなレーザーを削除
+            self.lasers = [laser for laser in self.lasers if laser.active]
+            
+            # 最大レーザー数に達していなければ発射
+            if len(self.lasers) < self.max_lasers:
                 start_x = self.player_x + self.SPRITE_SIZE // 2
                 start_y = self.player_y
                 target_x = self.enemy_x + self.SPRITE_SIZE // 2
                 target_y = self.enemy_y + self.SPRITE_SIZE // 2
-                self.laser = LaserType01(start_x, start_y, target_x, target_y)
+                
+                new_laser = LaserType01(start_x, start_y, target_x, target_y)
+                self.lasers.append(new_laser)
         
-        # レーザーの更新
-        if self.laser and self.laser.active:
-            delta_time = 1.0 / 60.0  # 60FPS想定
-            target_x = self.enemy_x + self.SPRITE_SIZE // 2
-            target_y = self.enemy_y + self.SPRITE_SIZE // 2
-            self.laser.update(delta_time, target_x, target_y)
+        # エネミーのランダム移動
+        delta_time = 1.0 / 60.0  # 60FPS想定
+        self.enemy_move_timer += delta_time
+        
+        # 3秒ごとに新しいランダム方向を生成
+        if self.enemy_move_timer >= self.enemy_direction_duration:
+            self.enemy_move_timer = 0.0
+            self._generate_random_direction()
+        
+        # エネミーの位置更新
+        self.enemy_x += self.enemy_velocity_x * delta_time
+        self.enemy_y += self.enemy_velocity_y * delta_time
+        
+        # 画面端での境界チェック（反射）
+        if self.enemy_x <= 0:
+            self.enemy_x = 0
+            self.enemy_velocity_x = abs(self.enemy_velocity_x)  # 右向きに反転
+        elif self.enemy_x >= self.WIDTH - self.SPRITE_SIZE:
+            self.enemy_x = self.WIDTH - self.SPRITE_SIZE
+            self.enemy_velocity_x = -abs(self.enemy_velocity_x)  # 左向きに反転
+            
+        if self.enemy_y <= 0:
+            self.enemy_y = 0
+            self.enemy_velocity_y = abs(self.enemy_velocity_y)  # 下向きに反転
+        elif self.enemy_y >= self.HEIGHT // 2:  # 画面上半分に制限
+            self.enemy_y = self.HEIGHT // 2
+            self.enemy_velocity_y = -abs(self.enemy_velocity_y)  # 上向きに反転
+        
+        # 全レーザーの更新
+        target_x = self.enemy_x + self.SPRITE_SIZE // 2
+        target_y = self.enemy_y + self.SPRITE_SIZE // 2
+        
+        for laser in self.lasers:
+            if laser.active:
+                laser.update(delta_time, target_x, target_y)
+        
+        # 非アクティブなレーザーを定期的に削除
+        self.lasers = [laser for laser in self.lasers if laser.active]
     
     def draw(self):
         """描画処理"""
@@ -277,12 +328,14 @@ class HomingLaserTest:
         # ENEMY01スプライト（フレーム0）を表示
         enemy_sprite = self.sprite_manager.get_sprite_by_name_and_field("ENEMY01", "FRAME_NUM", "0")
         if enemy_sprite:
-            pyxel.blt(self.enemy_x, self.enemy_y, 0, enemy_sprite.x, enemy_sprite.y, 
+            pyxel.blt(int(self.enemy_x), int(self.enemy_y), 0, enemy_sprite.x, enemy_sprite.y, 
                      self.SPRITE_SIZE, self.SPRITE_SIZE, pyxel.COLOR_BLACK)
         
-        # ホーミングレーザーの描画
-        if self.laser and self.laser.active:
-            self.laser.draw()
+        # 全ホーミングレーザーの描画
+        for laser in self.lasers:
+            if laser.active:
+                laser.draw()
+        
         
         # テストメッセージを上部に表示
         text_x = (self.WIDTH - len(self.message) * 4) // 2
@@ -293,8 +346,11 @@ class HomingLaserTest:
         info_x = (self.WIDTH - len(position_info) * 4) // 2
         pyxel.text(info_x, 25, position_info, pyxel.COLOR_CYAN)
         
-        # エネミー位置を表示
-        enemy_info = f"Enemy: ({self.enemy_x}, {self.enemy_y})"
+        # エネミー位置と移動情報を表示
+        vel_x_str = f"VX:{self.enemy_velocity_x:+.0f}"
+        vel_y_str = f"VY:{self.enemy_velocity_y:+.0f}"
+        timer_str = f"T:{self.enemy_move_timer:.1f}s"
+        enemy_info = f"Enemy: ({int(self.enemy_x)}, {int(self.enemy_y)}) {vel_x_str} {vel_y_str} {timer_str}"
         enemy_info_x = (self.WIDTH - len(enemy_info) * 4) // 2
         pyxel.text(enemy_info_x, 35, enemy_info, pyxel.COLOR_RED)
         
@@ -305,7 +361,7 @@ class HomingLaserTest:
         # 操作説明
         controls = [
             "Arrow Keys: Move player",
-            "1: Fire LaserType01",
+            "Space: Fire homing laser",
             "Q/ESC: Quit"
         ]
         for i, control in enumerate(controls):
@@ -314,15 +370,27 @@ class HomingLaserTest:
             pyxel.text(control_x, control_y, control, pyxel.COLOR_GRAY)
         
         # レーザー状態表示
-        if self.laser:
-            laser_status = "Active" if self.laser.active else "Inactive"
-            laser_color = pyxel.COLOR_GREEN if self.laser.active else pyxel.COLOR_RED
-        else:
-            laser_status = "None"
-            laser_color = pyxel.COLOR_GRAY
+        active_lasers = len([laser for laser in self.lasers if laser.active])
+        total_lasers = len(self.lasers)
         
-        status_text = f"Laser: {laser_status}"
+        if active_lasers > 0:
+            laser_color = pyxel.COLOR_GREEN
+            status_text = f"Lasers: {active_lasers}/{self.max_lasers}"
+        else:
+            laser_color = pyxel.COLOR_GRAY
+            status_text = f"Lasers: {active_lasers}/{self.max_lasers}"
+        
         pyxel.text(10, self.HEIGHT - 15, status_text, laser_color)
+
+    def _generate_random_direction(self):
+        """3秒間持続するランダムな移動方向を生成"""
+        # ランダムな角度（0-360度）
+        angle = random.uniform(0, 2 * math.pi)
+        
+        # 速度ベクトルを計算
+        self.enemy_velocity_x = math.cos(angle) * self.enemy_speed
+        self.enemy_velocity_y = math.sin(angle) * self.enemy_speed
+    
 
 if __name__ == "__main__":
     HomingLaserTest()
