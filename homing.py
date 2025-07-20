@@ -8,7 +8,7 @@ import pyxel
 import math
 import random
 from SpriteManager import SpriteManager
-from Common import DEBUG
+from Common import DEBUG, check_collision
 
 class LaserType01:
     """方法1: 線形補間 + 角度制限（最軽量）"""
@@ -222,7 +222,7 @@ class HomingLaserTest:
         # エネミー設定
         self.enemy_x = self.WIDTH // 2 - self.SPRITE_SIZE // 2
         self.enemy_y = 50
-        self.enemy_speed = 80  # ピクセル/秒
+        self.enemy_speed = 40  # ピクセル/秒（半分に減速）
         
         # ランダム移動制御
         self.enemy_move_timer = 0.0  # 移動タイマー
@@ -236,6 +236,11 @@ class HomingLaserTest:
         # ホーミングレーザー設定（連射対応）
         self.lasers = []  # レーザーリスト
         self.max_lasers = 10  # 最大レーザー数
+        
+        # ロックオンカーソル設定
+        self.cursor_offset_y = -60  # プレイヤーからのY座標オフセット
+        self.cursor_size = 8  # カーソルのサイズ
+        self.is_cursor_on_enemy = False  # カーソルがエネミー上にあるかどうか
         
         
         # テスト用メッセージ
@@ -303,6 +308,15 @@ class HomingLaserTest:
             self.enemy_y = self.HEIGHT // 2
             self.enemy_velocity_y = -abs(self.enemy_velocity_y)  # 上向きに反転
         
+        # ロックオンカーソルとエネミーのコリジョン判定
+        cursor_x = self.player_x
+        cursor_y = self.player_y + self.cursor_offset_y
+        
+        self.is_cursor_on_enemy = check_collision(cursor_x, cursor_y, self.cursor_size, self.cursor_size,
+                                                 self.enemy_x, self.enemy_y, self.SPRITE_SIZE, self.SPRITE_SIZE)
+        if self.is_cursor_on_enemy:
+            print("Lock!")
+        
         # 全レーザーの更新
         target_x = self.enemy_x + self.SPRITE_SIZE // 2
         target_y = self.enemy_y + self.SPRITE_SIZE // 2
@@ -336,6 +350,11 @@ class HomingLaserTest:
             if laser.active:
                 laser.draw()
         
+        # ロックオンカーソルの描画（プレイヤーと同期）
+        cursor_x = self.player_x
+        cursor_y = self.player_y + self.cursor_offset_y
+        cursor_color = pyxel.COLOR_RED if self.is_cursor_on_enemy else pyxel.COLOR_GREEN
+        pyxel.rectb(cursor_x, cursor_y, self.cursor_size, self.cursor_size, cursor_color)
         
         # テストメッセージを上部に表示
         text_x = (self.WIDTH - len(self.message) * 4) // 2
