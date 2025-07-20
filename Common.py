@@ -1,5 +1,7 @@
 from enum import Enum
 
+DEBUG = True
+
 # Game States
 class GameState(Enum):
     LOGO = "logo"

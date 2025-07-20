@@ -1,0 +1,266 @@
+{
+  "meta": {
+    "sprite_size": 8,
+    "resource_file": "./my_resource.pyxres",
+    "created_by": "SpriteDefiner",
+    "version": "3.0"
+  },
+  "sprites": {
+    "8_0": {
+      "x": 8,
+      "y": 0,
+      "NAME": "PLAYER",
+      "ACT_NAME": "TOP"
+    },
+    "16_0": {
+      "x": 16,
+      "y": 0,
+      "NAME": "PLAYER",
+      "ACT_NAME": "LEFT"
+    },
+    "24_0": {
+      "x": 24,
+      "y": 0,
+      "NAME": "PLAYER",
+      "ACT_NAME": "RIGHT"
+    },
+    "40_0": {
+      "x": 40,
+      "y": 0,
+      "NAME": "PBULLET",
+      "ACT_NAME": "NO_ACT",
+      "FRAME_NUM": "0",
+      "ANIM_SPD": "20"
+    },
+    "48_0": {
+      "x": 48,
+      "y": 0,
+      "NAME": "PBULLET",
+      "ACT_NAME": "NO_ACT",
+      "FRAME_NUM": "1",
+      "ANIM_SPD": "25"
+    },
+    "56_0": {
+      "x": 56,
+      "y": 0,
+      "NAME": "EXHST",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "0",
+      "ANIM_SPD": "10"
+    },
+    "64_0": {
+      "x": 64,
+      "y": 0,
+      "NAME": "EXHST",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "1",
+      "ANIM_SPD": "10"
+    },
+    "72_0": {
+      "x": 72,
+      "y": 0,
+      "NAME": "EXHST",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "2",
+      "ANIM_SPD": "10"
+    },
+    "80_0": {
+      "x": 80,
+      "y": 0,
+      "NAME": "EXHST",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "3",
+      "ANIM_SPD": "10"
+    },
+    "88_0": {
+      "x": 88,
+      "y": 0,
+      "NAME": "MZLFLSH",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "0",
+      "ANIM_SPD": "1"
+    },
+    "96_0": {
+      "x": 96,
+      "y": 0,
+      "NAME": "MZLFLSH",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "1",
+      "ANIM_SPD": "1"
+    },
+    "104_0": {
+      "x": 104,
+      "y": 0,
+      "NAME": "MZLFLSH",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "2",
+      "ANIM_SPD": "1"
+    },
+    "120_0": {
+      "x": 120,
+      "y": 0,
+      "NAME": "ENMYBLT",
+      "ACT_NAME": "UNDEF"
+    },
+    "8_8": {
+      "x": 8,
+      "y": 8,
+      "NAME": "ENEMY01",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "0",
+      "ANIM_SPD": "10"
+    },
+    "16_8": {
+      "x": 16,
+      "y": 8,
+      "NAME": "ENEMY01",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "1",
+      "ANIM_SPD": "10"
+    },
+    "24_8": {
+      "x": 24,
+      "y": 8,
+      "NAME": "ENEMY01",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "2",
+      "ANIM_SPD": "10"
+    },
+    "32_8": {
+      "x": 32,
+      "y": 8,
+      "NAME": "ENEMY01",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "3",
+      "ANIM_SPD": "10"
+    },
+    "40_8": {
+      "x": 40,
+      "y": 8,
+      "NAME": "ENEMY02",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "0",
+      "ANIM_SPD": "12"
+    },
+    "48_8": {
+      "x": 48,
+      "y": 8,
+      "NAME": "ENEMY02",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "1",
+      "ANIM_SPD": "12"
+    },
+    "56_8": {
+      "x": 56,
+      "y": 8,
+      "NAME": "ENEMY02",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "2",
+      "ANIM_SPD": "12"
+    },
+    "64_8": {
+      "x": 64,
+      "y": 8,
+      "NAME": "ENEMY02",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "3",
+      "ANIM_SPD": "12"
+    },
+    "72_8": {
+      "x": 72,
+      "y": 8,
+      "NAME": "ENEMY03",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "0",
+      "ANIM_SPD": "8"
+    },
+    "80_8": {
+      "x": 80,
+      "y": 8,
+      "NAME": "ENEMY03",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "1",
+      "ANIM_SPD": "8"
+    },
+    "88_8": {
+      "x": 88,
+      "y": 8,
+      "NAME": "ENEMY03",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "2",
+      "ANIM_SPD": "8"
+    },
+    "96_8": {
+      "x": 96,
+      "y": 8,
+      "NAME": "ENEMY03",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "3",
+      "ANIM_SPD": "8"
+    },
+    "104_8": {
+      "x": 104,
+      "y": 8,
+      "NAME": "ENEMY04",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "0",
+      "ANIM_SPD": "15"
+    },
+    "112_8": {
+      "x": 112,
+      "y": 8,
+      "NAME": "ENEMY04",
+      "ACT_NAME": "NO_ACT",
+      "FRAME_NUM": "1",
+      "ANIM_SPD": "15"
+    },
+    "120_8": {
+      "x": 120,
+      "y": 8,
+      "NAME": "ENEMY04",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "2",
+      "ANIM_SPD": "15"
+    },
+    "128_8": {
+      "x": 128,
+      "y": 8,
+      "NAME": "ENEMY04",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "3",
+      "ANIM_SPD": "15"
+    },
+    "136_8": {
+      "x": 136,
+      "y": 8,
+      "NAME": "ENEMY05",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "0",
+      "ANIM_SPD": "6"
+    },
+    "144_8": {
+      "x": 144,
+      "y": 8,
+      "NAME": "ENEMY05",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "1",
+      "ANIM_SPD": "6"
+    },
+    "152_8": {
+      "x": 152,
+      "y": 8,
+      "NAME": "ENEMY05",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "2",
+      "ANIM_SPD": "6"
+    },
+    "160_8": {
+      "x": 160,
+      "y": 8,
+      "NAME": "ENEMY05",
+      "ACT_NAME": "UNDEF",
+      "FRAME_NUM": "3",
+      "ANIM_SPD": "6"
+    }
+  }
+}
