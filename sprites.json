@@ -46,7 +46,7 @@
       "NAME": "EXHST",
       "ACT_NAME": "UNDEF",
       "FRAME_NUM": "0",
-      "ANIM_SPD": "10"
+      "ANIM_SPD": "5"
     },
     "64_0": {
       "x": 64,
@@ -54,7 +54,7 @@
       "NAME": "EXHST",
       "ACT_NAME": "UNDEF",
       "FRAME_NUM": "1",
-      "ANIM_SPD": "10"
+      "ANIM_SPD": "5"
     },
     "72_0": {
       "x": 72,
@@ -62,7 +62,7 @@
       "NAME": "EXHST",
       "ACT_NAME": "UNDEF",
       "FRAME_NUM": "2",
-      "ANIM_SPD": "10"
+      "ANIM_SPD": "5"
     },
     "80_0": {
       "x": 80,
@@ -70,7 +70,7 @@
       "NAME": "EXHST",
       "ACT_NAME": "UNDEF",
       "FRAME_NUM": "3",
-      "ANIM_SPD": "10"
+      "ANIM_SPD": "5"
     },
     "88_0": {
       "x": 88,

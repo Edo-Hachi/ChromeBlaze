@@ -1,0 +1,6 @@
+venv/
+*.pyc
+__pycache__/
+PyxelShmup/
+.claude/settings.local.json
+docs/

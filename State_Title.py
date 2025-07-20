@@ -16,7 +16,7 @@ class TitleState:
         return GameState.TITLE
     
     def draw(self):
-        pyxel.cls(1)
+        pyxel.cls(pyxel.COLOR_NAVY)
         
         # Chrome Blaze title
         title_text = "Chrome Blaze"

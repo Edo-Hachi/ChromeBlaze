@@ -913,3 +913,133 @@
 ## Laser Hit Event - 20:08:33
 - End Reason: HIT
 - Total Frames: 29
+
+## Lock Event - 21:49:23.418
+- Enemy ID: 1
+- Enemy Position: (211.97, 122.82)
+- Lock List: [1]
+
+## Lock Event - 21:49:25.152
+- Enemy ID: 4
+- Enemy Position: (133.64, 96.01)
+- Lock List: [1, 4]
+
+## Lock Event - 21:49:26.336
+- Enemy ID: 3
+- Enemy Position: (67.20, 72.47)
+- Lock List: [1, 4, 3]
+
+## Lock Event - 21:49:27.947
+- Enemy ID: 2
+- Enemy Position: (3.22, 11.25)
+- Lock List: [1, 4, 3, 2]
+
+## Lock Event - 21:49:31.069
+- Enemy ID: 0
+- Enemy Position: (56.79, 40.51)
+- Lock List: [1, 4, 3, 2, 0]
+
+## Fire Event - 21:49:32.004
+- Lock List: [1, 4, 3, 2, 0]
+- Fired Count: 5
+- Target Details:
+  - Laser 1: Enemy ID 1 at (-183.67, -30.06)
+  - Laser 2: Enemy ID 4 at (275.97, 159.25)
+  - Laser 3: Enemy ID 3 at (464.03, 150.68)
+  - Laser 4: Enemy ID 2 at (-433.53, -259.43)
+  - Laser 5: Enemy ID 0 at (495.56, -363.64)
+
+## Laser Hit Event - 21:49:32
+- End Reason: HIT
+- Total Frames: 15
+
+## Laser Hit Event - 21:49:32
+- End Reason: HIT
+- Total Frames: 21
+
+## Laser Hit Event - 21:49:32
+- End Reason: HIT
+- Total Frames: 22
+
+## Laser Hit Event - 21:49:32
+- End Reason: HIT
+- Total Frames: 22
+
+## Laser Hit Event - 21:49:32
+- End Reason: HIT
+- Total Frames: 37
+
+## Lock Event - 21:49:42.953
+- Enemy ID: 3
+- Enemy Position: (101.89, 94.70)
+- Lock List: [3]
+
+## Lock Event - 21:49:44.199
+- Enemy ID: 3
+- Enemy Position: (117.48, 121.79)
+- Lock List: [3, 3]
+
+## Lock Event - 21:49:44.499
+- Enemy ID: 3
+- Enemy Position: (121.22, 128.00)
+- Lock List: [3, 3, 3]
+
+## Lock Event - 21:49:44.698
+- Enemy ID: 3
+- Enemy Position: (123.72, 123.67)
+- Lock List: [3, 3, 3, 3]
+
+## Lock Event - 21:49:45.084
+- Enemy ID: 3
+- Enemy Position: (131.77, 122.07)
+- Lock List: [3, 3, 3, 3, 3]
+
+## Lock Event - 21:49:45.485
+- Enemy ID: 3
+- Enemy Position: (141.68, 123.45)
+- Lock List: [3, 3, 3, 3, 3, 3]
+
+## Lock Event - 21:49:45.682
+- Enemy ID: 3
+- Enemy Position: (146.63, 124.15)
+- Lock List: [3, 3, 3, 3, 3, 3, 3]
+
+## Fire Event - 21:49:46.450
+- Lock List: [3, 3, 3, 3, 3, 3, 3]
+- Fired Count: 7
+- Target Details:
+  - Laser 1: Enemy ID 3 at (620.16, -279.73)
+  - Laser 2: Enemy ID 3 at (649.14, 476.54)
+  - Laser 3: Enemy ID 3 at (424.29, 352.25)
+  - Laser 4: Enemy ID 3 at (173.06, 582.10)
+  - Laser 5: Enemy ID 3 at (442.27, 481.61)
+  - Laser 6: Enemy ID 3 at (235.00, -176.58)
+  - Laser 7: Enemy ID 3 at (110.14, 229.79)
+
+## Laser Hit Event - 21:49:46
+- End Reason: HIT
+- Total Frames: 23
+
+## Laser Hit Event - 21:49:46
+- End Reason: HIT
+- Total Frames: 23
+
+## Laser Hit Event - 21:49:46
+- End Reason: HIT
+- Total Frames: 24
+
+## Laser Hit Event - 21:49:46
+- End Reason: HIT
+- Total Frames: 24
+
+## Laser Hit Event - 21:49:46
+- End Reason: HIT
+- Total Frames: 24
+
+## Laser Hit Event - 21:49:46
+- End Reason: HIT
+- Total Frames: 26
+
+## Laser Hit Event - 21:49:46
+- End Reason: HIT
+- Total Frames: 27
