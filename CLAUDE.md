@@ -87,7 +87,7 @@ transition_distance = 150.0     # 旋回速度切り替え距離
 2. **Visual Distinction**: 同一ターゲットへの複数レーザーが同じ軌道を描く問題を、大幅な散布範囲（±500px）で解決
 
 ### Debug System
-- **debug.md**: 自動生成ログファイル
+- **debug.log**: 自動生成ログファイル
   - ロックイベント（敵ID、位置、ロックリスト）
   - 発射イベント（ロックリスト、発射数、ターゲット詳細）
   - ヒットイベント（終了理由、フレーム数）
@@ -95,7 +95,7 @@ transition_distance = 150.0     # 旋回速度切り替え距離
 ### Files Involved
 - **homing.py**: メイン実装ファイル
 - **Common.py**: DEBUGフラグとcheck_collision関数
-- **debug.md**: 自動生成デバッグログ
+- **debug.log**: 自動生成デバッグログ
 - **sprites.json**: スプライト定義（PLAYER、ENEMY01）
 
 ### Performance Notes
@@ -218,6 +218,148 @@ class LaserSystem:
 - **再利用**: コンポーネントの他部分での活用
 
 この分析結果を基に、メインゲーム開発時はクリーンなアーキテクチャを最初から構築することを推奨。
+
+## High-Performance Sprite Management System
+
+### Overview
+ChromeBlazeプロジェクトで確立された高性能スプライト管理システム。PyxelShmupプロジェクトの知見を活用し、JSON駆動のスプライト管理と初期化時キャッシュによる最適化を実現。
+
+### Core Architecture
+
+#### JSON-Driven Sprite System
+```json
+{
+  "sprites": {
+    "40_0": {
+      "x": 40, "y": 0,
+      "NAME": "PBULLET",
+      "FRAME_NUM": "0",
+      "ANIM_SPD": "10"
+    }
+  }
+}
+```
+
+#### Sprite Caching Pattern
+**Key Principle**: 初期化時一括読み込み、実行時高速アクセス
+
+```python
+# ✅ High-Performance Pattern
+class Player:
+    def __init__(self, x, y):
+        # 初期化時に全スプライトをキャッシュ
+        self.sprites = {
+            "TOP": sprite_manager.get_sprite_by_name_and_field("PLAYER", "ACT_NAME", "TOP"),
+            "LEFT": sprite_manager.get_sprite_by_name_and_field("PLAYER", "ACT_NAME", "LEFT"),
+            "RIGHT": sprite_manager.get_sprite_by_name_and_field("PLAYER", "ACT_NAME", "RIGHT")
+        }
+        self.exhaust_sprites = [
+            sprite_manager.get_sprite_by_name_and_field("EXHST", "FRAME_NUM", "0"),
+            sprite_manager.get_sprite_by_name_and_field("EXHST", "FRAME_NUM", "1"),
+            sprite_manager.get_sprite_by_name_and_field("EXHST", "FRAME_NUM", "2"),
+            sprite_manager.get_sprite_by_name_and_field("EXHST", "FRAME_NUM", "3")
+        ]
+
+    def draw(self):
+        # 実行時は配列/辞書アクセスのみ
+        player_sprite = self.sprites[self.sprite_direction]      # O(1)
+        exhaust_sprite = self.exhaust_sprites[self.exhaust_index] # O(1)
+```
+
+### Performance Optimization Results
+
+#### Before Optimization (Non-optimal)
+```python
+# ❌ 毎フレームJSON検索パターン
+def draw(self):
+    player_sprite = sprite_manager.get_sprite_by_name_and_field(...)  # 60FPS × JSON検索
+    exhaust_sprite = sprite_manager.get_sprite_by_name_and_field(...) # 60FPS × JSON検索
+```
+
+#### After Optimization (High-performance)
+```python
+# ✅ キャッシュアクセスパターン  
+def draw(self):
+    player_sprite = self.sprites[self.sprite_direction]     # 60FPS × 辞書アクセス
+    exhaust_sprite = self.exhaust_sprites[self.exhaust_index] # 60FPS × 配列アクセス
+```
+
+### Performance Metrics
+
+#### Entity-Level Optimization
+- **Player**: 7スプライト（Player×3 + Exhaust×4）を初期化時キャッシュ
+- **Bullet**: 2スプライト（FRAME_NUM 0,1）を初期化時キャッシュ
+- **JSON検索**: 初期化時のみ実行、実行時はメモリアクセス
+
+#### System-Level Impact
+- **画面解像度**: 128×128（最適化効果が顕著）
+- **ターゲットFPS**: 60FPS安定動作
+- **弾丸負荷**: 10発同時 × 60FPS = 600回/秒のスプライト描画を最適化
+
+### Implementation Guidelines
+
+#### 1. Sprite Caching Strategy
+```python
+# 固定パターンスプライト → 辞書キャッシュ
+self.sprites = {"TOP": sprite, "LEFT": sprite, "RIGHT": sprite}
+
+# アニメーションスプライト → 配列キャッシュ  
+self.anim_sprites = [frame0, frame1, frame2, frame3]
+
+# 実行時アクセス
+sprite = self.sprites[direction]        # 方向指定
+sprite = self.anim_sprites[frame_index] # フレーム指定
+```
+
+#### 2. Error Handling with Fallback
+```python
+def draw(self):
+    try:
+        # 高速スプライト描画
+        sprite = self.sprites[self.direction]
+        pyxel.blt(self.x, self.y, 0, sprite.x, sprite.y, 8, 8, 0)
+    except Exception as e:
+        # フォールバック: 矩形描画（開発時安全性）
+        pyxel.rect(self.x, self.y, 8, 8, pyxel.COLOR_WHITE)
+```
+
+#### 3. Animation Management
+```python
+# JSON駆動アニメーション速度
+self.animation_speed = sprite_manager.get_sprite_metadata("ENTITY", "ANIM_SPD", "10")
+
+# フレーム計算
+def _get_animation_frame(self, game_timer):
+    cycle_position = game_timer % (self.animation_speed * 2)
+    return 0 if cycle_position < self.animation_speed else 1
+```
+
+### Technical Benefits
+
+#### Performance
+- **60FPS安定**: 128×128解像度での滑らかな動作
+- **メモリ効率**: 必要最小限のスプライトキャッシュ
+- **CPU負荷軽減**: JSON検索からメモリアクセスへの最適化
+
+#### Maintainability  
+- **JSON外部化**: スプライト設定の柔軟な変更
+- **キャッシュ統一**: 全エンティティで一貫したパターン
+- **エラー安全**: フォールバック機構による堅牢性
+
+#### Scalability
+- **新エンティティ**: 同パターンで容易に追加可能
+- **アニメーション拡張**: フレーム数増加に柔軟対応
+- **画面解像度**: より高解像度での性能余裕
+
+### Best Practices for Future Development
+
+1. **初期化時キャッシュ**: 全スプライトを__init__で一括取得
+2. **実行時最適化**: 辞書/配列アクセスのみ使用
+3. **JSON駆動**: アニメーション速度等の外部設定化
+4. **エラーハンドリング**: try-except + fallback描画
+5. **統一パターン**: 全エンティティでキャッシュ方式統一
+
+この最適化手法は、今後実装する敵機、エフェクト、UI要素等、全てのスプライト処理で標準として適用する。
 
 ## TODO
 - [ ] プロジェクトの詳細な説明を追加

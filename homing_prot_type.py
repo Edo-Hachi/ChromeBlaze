@@ -296,7 +296,7 @@ class LaserType01:
         import datetime
         
         try:
-            with open("debug.md", "a", encoding="utf-8") as f:
+            with open("debug.log", "a", encoding="utf-8") as f:
                 f.write(f"\n## Laser Hit Event - {datetime.datetime.now().strftime('%H:%M:%S')}\n")
                 f.write(f"- End Reason: {end_reason}\n")
                 f.write(f"- Total Frames: {len(self.debug_log)}\n")
@@ -599,7 +599,7 @@ class HomingLaserTest:
         pyxel.text(10, self.HEIGHT - 5, lock_text, lock_color)
     
     def _write_lock_debug(self, enemy_id, enemy_x, enemy_y):
-        """ロック時のデバッグ情報をdebug.mdに追記"""
+        """ロック時のデバッグ情報をdebug.logに追記"""
         print(f"DEBUG: _write_lock_debug called, DEBUG={DEBUG}")
         if not DEBUG:
             print(f"DEBUG: Skipping because DEBUG is False")
@@ -608,8 +608,8 @@ class HomingLaserTest:
         import datetime
         
         try:
-            print(f"DEBUG: Opening debug.md for append")
-            with open("debug.md", "a", encoding="utf-8") as f:
+            print(f"DEBUG: Opening debug.log for append")
+            with open("debug.log", "a", encoding="utf-8") as f:
                 timestamp = datetime.datetime.now().strftime('%H:%M:%S.%f')[:-3]
                 f.write(f"\n## Lock Event - {timestamp}\n")
                 f.write(f"- Enemy ID: {enemy_id}\n")
@@ -621,7 +621,7 @@ class HomingLaserTest:
             print(f"Lock debug write error: {e}")
     
     def _write_fire_debug(self, lock_list, fired_count, fired_lasers):
-        """発射時のデバッグ情報をdebug.mdに追記"""
+        """発射時のデバッグ情報をdebug.logに追記"""
         print(f"DEBUG: _write_fire_debug called, DEBUG={DEBUG}")
         if not DEBUG:
             print(f"DEBUG: Skipping fire debug because DEBUG is False")
@@ -630,8 +630,8 @@ class HomingLaserTest:
         import datetime
         
         try:
-            print(f"DEBUG: Opening debug.md for fire debug append")
-            with open("debug.md", "a", encoding="utf-8") as f:
+            print(f"DEBUG: Opening debug.log for fire debug append")
+            with open("debug.log", "a", encoding="utf-8") as f:
                 timestamp = datetime.datetime.now().strftime('%H:%M:%S.%f')[:-3]
                 f.write(f"\n## Fire Event - {timestamp}\n")
                 f.write(f"- Lock List: {lock_list}\n")
