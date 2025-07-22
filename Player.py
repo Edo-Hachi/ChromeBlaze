@@ -364,6 +364,24 @@ class Player:
                     target_y = target_enemy.y + target_enemy.sprite_size // 2
                     laser.update(delta_time, target_x, target_y)
         
+        # 非アクティブになったレーザーのログ出力
+        for laser in self.homing_lasers:
+            if not laser.active and len(laser.homing_debug_log) > 0:
+                # まだログに記録していないレーザーの場合
+                last_data = laser.homing_debug_log[-1]
+                if last_data.get('logged', False) == False:
+                    # 理由を推定してログ出力
+                    if laser.x < -10 or laser.x > SCREEN_WIDTH + 10 or laser.y < -10 or laser.y > SCREEN_WIDTH + 10:
+                        if not hasattr(laser, '_logged_bounds'):
+                            laser._write_homing_log("OUT_OF_BOUNDS_CLEANUP", 
+                                f"Cleaned up at pos: ({laser.x:.2f}, {laser.y:.2f})")
+                            laser._logged_bounds = True
+                    else:
+                        if not hasattr(laser, '_logged_timeout'):
+                            laser._write_homing_log("TIMEOUT", 
+                                f"Laser became inactive - Min distance: {laser.min_distance_achieved:.2f}")
+                            laser._logged_timeout = True
+        
         # 非アクティブなレーザーを定期的に削除
         self.homing_lasers = [laser for laser in self.homing_lasers if laser.active]
     

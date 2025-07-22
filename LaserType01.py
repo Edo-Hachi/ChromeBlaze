@@ -14,11 +14,13 @@ class LaserType01:
     
     def __init__(self, start_x, start_y, target_x, target_y, target_enemy_id=None):
         # レーザー設定
-        self.speed = 500.0  # ピクセル/秒（50%スピードアップ）
+        self.speed = 300.0  # ピクセル/秒（500→300に減速、グルグル防止実験）
         self.turn_speed_slow = 8.0  # 初期：ゆっくり旋回（ラジアン/秒）
+        # self.turn_speed_fast = 15.0  # 後半：急旋回（ラジアン/秒）- グルグル防止のため緩和
         self.turn_speed_fast = 20.0  # 後半：急旋回（ラジアン/秒）
         self.transition_distance = 150.0  # 切り替え距離（ピクセル）
         self.max_trail_length = 30  # 軌跡の最大長
+        self.hit_threshold = 10.0  # ヒット判定距離（100%命中保証用）
         
         # 位置と方向
         self.x = float(start_x)
@@ -52,13 +54,19 @@ class LaserType01:
         # アクティブ状態
         self.active = True
         
+        # ホーミングデバッグ情報
+        self.homing_debug_log = []
+        self.frame_count = 0
+        self.min_distance_achieved = float('inf')  # 最小接近距離
+        self.circling_detection = []  # 周回検出用
+        self.last_distance = float('inf')
+        self.distance_not_decreasing_count = 0  # 距離が縮まらないフレーム数
+        
         # デバッグ情報（DEBUGフラグで制御）
         if DEBUG:
             self.debug_log = []
-            self.frame_count = 0
         else:
             self.debug_log = None
-            self.frame_count = 0
     
     def update(self, delta_time, target_x, target_y):
         """レーザーの更新"""
@@ -111,6 +119,11 @@ class LaserType01:
         self.x += self.direction_x * self.speed * delta_time
         self.y += self.direction_y * self.speed * delta_time
         
+        # ホーミングデバッグ情報を記録
+        self._record_homing_debug(distance, to_target_x if distance > 0 else 0, 
+                                 to_target_y if distance > 0 else 0, 
+                                 current_turn_speed if distance > 0 else 0)
+        
         # デバッグ情報を記録（DEBUGフラグで制御）
         if DEBUG and self.debug_log is not None:
             current_angle = math.atan2(self.direction_y, self.direction_x)
@@ -134,9 +147,10 @@ class LaserType01:
         if len(self.trail) > self.max_trail_length:
             self.trail.pop(0)
         
-        # ターゲットに近づいたらヒット
-        if distance < 12:
+        # ターゲットに近づいたらヒット（100%命中保証）
+        if distance < self.hit_threshold:
             self.active = False
+            self._write_homing_log("DISTANCE_HIT", f"Update distance hit - Distance: {distance:.2f} < threshold: {self.hit_threshold}")
             if DEBUG:
                 self._write_debug_log("HIT")
             return True  # ヒットを示すフラグ
@@ -146,6 +160,7 @@ class LaserType01:
             self.y < -10 or self.y > SCREEN_WIDTH + 10):
             if self.active:  # まだアクティブな場合のみログ出力
                 self.active = False
+                self._write_homing_log("OUT_OF_BOUNDS", f"Final pos: ({self.x:.2f}, {self.y:.2f})")
                 if DEBUG:
                     self._write_debug_log("OUT_OF_BOUNDS")
         
@@ -172,25 +187,23 @@ class LaserType01:
         pyxel.rect(head_x, head_y, 4, 4, pyxel.COLOR_YELLOW)
     
     def check_collision(self, enemy):
-        """エネミーとのコリジョンチェック"""
+        """エネミーとの距離判定（100%命中保証）"""
         if not self.active or not enemy.active:
             return False
         
-        # レーザーヘッドとエネミーの当たり判定
-        laser_left = self.x - 2
-        laser_right = self.x + 2
-        laser_top = self.y - 2
-        laser_bottom = self.y + 2
+        # エネミー中心との距離計算
+        enemy_center_x = enemy.x + enemy.sprite_size / 2
+        enemy_center_y = enemy.y + enemy.sprite_size / 2
+        center_distance = math.sqrt((self.x - enemy_center_x)**2 + (self.y - enemy_center_y)**2)
         
-        enemy_left = enemy.x
-        enemy_right = enemy.x + enemy.sprite_size
-        enemy_top = enemy.y
-        enemy_bottom = enemy.y + enemy.sprite_size
+        # 距離判定のみ（ホーミングレーザーは100%命中システム）
+        hit_distance_threshold = 10.0  # 余裕を持った判定距離
         
-        # 矩形同士の衝突判定
-        if (laser_right >= enemy_left and laser_left <= enemy_right and
-            laser_bottom >= enemy_top and laser_top <= enemy_bottom):
+        if center_distance <= hit_distance_threshold:
             self.active = False
+            self._write_homing_log("DISTANCE_HIT", 
+                f"Distance hit - Distance: {center_distance:.2f}, Threshold: {hit_distance_threshold:.2f}, " +
+                f"Laser: ({self.x:.2f},{self.y:.2f}), Enemy: ({enemy_center_x:.2f},{enemy_center_y:.2f})")
             return True
         
         return False
@@ -210,3 +223,117 @@ class LaserType01:
                 
         except Exception as e:
             print(f"Debug log write error: {e}")
+    
+    def _record_homing_debug(self, distance, target_dir_x, target_dir_y, turn_speed):
+        """ホーミング動作のデバッグ情報を記録"""
+        # 最小接近距離を更新
+        if distance < self.min_distance_achieved:
+            self.min_distance_achieved = distance
+        
+        # 距離の変化を記録して周回検出
+        if len(self.circling_detection) > 0:
+            distance_change = distance - self.last_distance
+            self.circling_detection.append(distance_change)
+            
+            # 距離が縮まらない状況をカウント
+            if distance_change >= -0.5:  # -0.5ピクセル以下の変化は進歩なし
+                self.distance_not_decreasing_count += 1
+            else:
+                self.distance_not_decreasing_count = 0
+        else:
+            self.circling_detection.append(0)
+        
+        # 直近10フレームの情報だけ保持
+        if len(self.circling_detection) > 10:
+            self.circling_detection.pop(0)
+        
+        # デバッグログに記録
+        self.homing_debug_log.append({
+            'frame': self.frame_count,
+            'laser_pos': (round(self.x, 2), round(self.y, 2)),
+            'target_pos': (round(self.target_x, 2), round(self.target_y, 2)),
+            'distance': round(distance, 2),
+            'target_direction': (round(target_dir_x, 3), round(target_dir_y, 3)),
+            'laser_direction': (round(self.direction_x, 3), round(self.direction_y, 3)),
+            'turn_speed': round(turn_speed, 3),
+            'min_distance': round(self.min_distance_achieved, 2),
+            'distance_change': round(distance - self.last_distance, 2) if self.last_distance != float('inf') else 0,
+            'no_progress_count': self.distance_not_decreasing_count
+        })
+        
+        self.last_distance = distance
+    
+    def _write_homing_log(self, end_reason, details=""):
+        """Homing.logにデバッグ情報を出力"""
+        import datetime
+        
+        try:
+            with open("Homing.log", "a", encoding="utf-8") as f:
+                timestamp = datetime.datetime.now().strftime('%H:%M:%S.%f')[:-3]
+                
+                f.write(f"\n=== LASER ANALYSIS [{timestamp}] ===\n")
+                f.write(f"Target Enemy ID: {self.target_enemy_id}\n")
+                f.write(f"End Reason: {end_reason}\n")
+                f.write(f"Details: {details}\n")
+                f.write(f"Total Frames: {len(self.homing_debug_log)}\n")
+                f.write(f"Minimum Distance Achieved: {self.min_distance_achieved:.2f}px\n")
+                f.write(f"Hit Threshold: {self.hit_threshold}px\n")
+                f.write(f"Collision Threshold: {self.collision_threshold}px\n")
+                
+                # 周回検出分析
+                if len(self.circling_detection) >= 5:
+                    avg_distance_change = sum(self.circling_detection[-5:]) / 5
+                    f.write(f"Average Distance Change (last 5 frames): {avg_distance_change:.3f}px\n")
+                    
+                    if avg_distance_change > -0.1:
+                        f.write("*** POTENTIAL CIRCLING DETECTED ***\n")
+                
+                f.write(f"Frames with No Progress: {self.distance_not_decreasing_count}\n")
+                
+                # 開始・終了位置
+                if len(self.homing_debug_log) > 0:
+                    start_data = self.homing_debug_log[0]
+                    end_data = self.homing_debug_log[-1]
+                    
+                    f.write(f"Start Position: {start_data['laser_pos']}\n")
+                    f.write(f"End Position: {end_data['laser_pos']}\n")
+                    f.write(f"Start Target: {start_data['target_pos']}\n")
+                    f.write(f"End Target: {end_data['target_pos']}\n")
+                    f.write(f"Start Distance: {start_data['distance']:.2f}px\n")
+                    f.write(f"End Distance: {end_data['distance']:.2f}px\n")
+                
+                # 問題判定
+                if end_reason != "HIT" and end_reason != "COLLISION_HIT":
+                    f.write("\n*** ANALYSIS ***\n")
+                    
+                    if self.min_distance_achieved < self.hit_threshold * 1.5:
+                        f.write(f"- Got close ({self.min_distance_achieved:.2f}px) but failed to hit\n")
+                        f.write(f"- Possible threshold issue or collision detection problem\n")
+                    
+                    if self.distance_not_decreasing_count > 30:
+                        f.write(f"- Spent {self.distance_not_decreasing_count} frames not getting closer\n")
+                        f.write(f"- Likely circling or overshooting target\n")
+                    
+                    if end_reason == "OUT_OF_BOUNDS":
+                        f.write(f"- Laser went out of bounds - possible overshoot or lost target\n")
+                
+                # 詳細なフレームデータ（最初と最後の5フレームのみ）
+                f.write(f"\n--- DETAILED FRAME DATA ---\n")
+                f.write(f"Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress\n")
+                f.write(f"------|----------------|----------------|-------|------------|----------\n")
+                
+                # 最初の5フレーム
+                for i, data in enumerate(self.homing_debug_log[:5]):
+                    f.write(f"{data['frame']:5d} | {str(data['laser_pos']):14s} | {str(data['target_pos']):14s} | {data['distance']:5.1f} | {data['turn_speed']:6.3f} | {data['distance_change']:+7.2f}\n")
+                
+                if len(self.homing_debug_log) > 10:
+                    f.write("  ... (middle frames omitted) ...\n")
+                
+                # 最後の5フレーム
+                for i, data in enumerate(self.homing_debug_log[-5:]):
+                    f.write(f"{data['frame']:5d} | {str(data['laser_pos']):14s} | {str(data['target_pos']):14s} | {data['distance']:5.1f} | {data['turn_speed']:6.3f} | {data['distance_change']:+7.2f}\n")
+                
+                f.write("\n")
+                
+        except Exception as e:
+            print(f"Homing log write error: {e}")
