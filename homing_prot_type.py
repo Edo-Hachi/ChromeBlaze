@@ -284,9 +284,9 @@ class LaserType01:
                 pyxel.line(int(start_x), int(start_y), int(end_x), int(end_y), pyxel.COLOR_CYAN)
         
         # レーザーヘッド（8x8の矩形）
-        head_x = int(self.x) - 4
-        head_y = int(self.y) - 4
-        pyxel.rect(head_x, head_y, 8, 8, pyxel.COLOR_YELLOW)
+        head_x = int(self.x) - 2
+        head_y = int(self.y) - 2
+        pyxel.rect(head_x, head_y, 4, 4, pyxel.COLOR_YELLOW)
     
     def _write_debug_log(self, end_reason):
         """デバッグログをファイルに書き出し（DEBUGフラグで制御）"""
