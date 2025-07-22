@@ -7,7 +7,7 @@ LaserType01 - Homing Laser System for ChromeBlaze
 import pyxel
 import math
 import random
-from Common import DEBUG, SCREEN_WIDTH
+from Common import SCREEN_WIDTH
 from LaserConfig import LaserConfig, default_laser_config
 from LaserTelemetry import LaserTelemetry
 
@@ -176,20 +176,19 @@ class LaserType01:
         
         self.telemetry.record_frame(self.frame_count, laser_data)
         
-        # デバッグイベントを記録
-        if DEBUG:
-            current_angle = math.atan2(self.direction_y, self.direction_x)
-            turn_mode = "slow" if distance >= self.transition_distance else "fast"
-            
-            self.telemetry.record_debug_event(self.frame_count, "frame_update", {
-                'x': round(self.x, 2),
-                'y': round(self.y, 2),
-                'angle_rad': round(current_angle, 4),
-                'angle_deg': round(math.degrees(current_angle), 2),
-                'distance_to_target': round(distance, 2),
-                'turn_mode': turn_mode,
-                'turn_speed': round(current_turn_speed, 4)
-            })
+        # デバッグイベントを記録（Telemetryシステム内でDEBUG判定）
+        current_angle = math.atan2(self.direction_y, self.direction_x)
+        turn_mode = "slow" if distance >= self.transition_distance else "fast"
+        
+        self.telemetry.record_debug_event(self.frame_count, "frame_update", {
+            'x': round(self.x, 2),
+            'y': round(self.y, 2),
+            'angle_rad': round(current_angle, 4),
+            'angle_deg': round(math.degrees(current_angle), 2),
+            'distance_to_target': round(distance, 2),
+            'turn_mode': turn_mode,
+            'turn_speed': round(current_turn_speed, 4)
+        })
         
         self.frame_count += 1
         
@@ -205,8 +204,7 @@ class LaserType01:
             self.active = False
             details = f"Update distance hit - Distance: {distance:.2f} < threshold: {self.hit_threshold}"
             self.telemetry.export_homing_analysis("Homing.log", self.target_enemy_id, "DISTANCE_HIT", details)
-            if DEBUG:
-                self.telemetry.export_debug_summary("debug.log", "HIT")
+            self.telemetry.export_debug_summary("debug.log", "HIT")
             return True  # ヒットを示すフラグ
         
         # 画面外チェック
@@ -217,8 +215,7 @@ class LaserType01:
                 self.active = False
                 details = f"Final pos: ({self.x:.2f}, {self.y:.2f})"
                 self.telemetry.export_homing_analysis("Homing.log", self.target_enemy_id, "OUT_OF_BOUNDS", details)
-                if DEBUG:
-                    self.telemetry.export_debug_summary("debug.log", "OUT_OF_BOUNDS")
+                self.telemetry.export_debug_summary("debug.log", "OUT_OF_BOUNDS")
         
         return False
     
