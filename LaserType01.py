@@ -8,22 +8,23 @@ import pyxel
 import math
 import random
 from Common import DEBUG, SCREEN_WIDTH
+from LaserConfig import LaserConfig
 
 class LaserType01:
     """方法1: 線形補間 + 角度制限（最軽量）"""
     
     def __init__(self, start_x, start_y, target_x, target_y, target_enemy_id=None):
-        # レーザー設定
-        self.initial_speed = 500.0  # 初期速度（ピクセル/秒）
-        self.min_speed = 300.0     # 最低速度（ピクセル/秒）  
+        # レーザー設定（LaserConfigから取得）
+        self.initial_speed = LaserConfig.INITIAL_SPEED
+        self.min_speed = LaserConfig.MIN_SPEED
         self.speed = self.initial_speed  # 現在の速度
-        self.speed_decay = 5.0     # フレームごとの減速量（ピクセル/秒）
-        self.turn_speed_slow = 8.0  # 初期：ゆっくり旋回（ラジアン/秒）
-        # self.turn_speed_fast = 15.0  # 後半：急旋回（ラジアン/秒）- グルグル防止のため緩和
-        self.turn_speed_fast = 20.0  # 後半：急旋回（ラジアン/秒）
-        self.transition_distance = 150.0  # 切り替え距離（ピクセル）
-        self.max_trail_length = 30  # 軌跡の最大長
-        self.hit_threshold = 10.0  # ヒット判定距離（100%命中保証用）
+        self.speed_decay = LaserConfig.SPEED_DECAY
+        self.turn_speed_slow = LaserConfig.TURN_SPEED_SLOW
+        self.turn_speed_fast = LaserConfig.TURN_SPEED_FAST
+        self.transition_distance = LaserConfig.TRANSITION_DISTANCE
+        self.max_trail_length = LaserConfig.MAX_TRAIL_LENGTH
+        self.hit_threshold = LaserConfig.HIT_THRESHOLD
+        self.collision_threshold = LaserConfig.COLLISION_THRESHOLD
         
         # 位置と方向
         self.x = float(start_x)
@@ -188,7 +189,7 @@ class LaserType01:
             # 透明度効果（古い軌跡ほど薄く）
             #alpha_ratio = i / len(self.trail)
             #if alpha_ratio > 0.3:  # 薄すぎる部分はスキップ
-            pyxel.line(int(start_x), int(start_y), int(end_x), int(end_y), pyxel.COLOR_CYAN)
+            pyxel.line(int(start_x), int(start_y), int(end_x), int(end_y), LaserConfig.TRAIL_COLOR)
         
         # レーザーヘッド（8x8の矩形）
         #head_x = int(self.x) - 1
@@ -206,8 +207,7 @@ class LaserType01:
         center_distance = math.sqrt((self.x - enemy_center_x)**2 + (self.y - enemy_center_y)**2)
         
         # 距離判定のみ（ホーミングレーザーは100%命中システム）
-        #hit_distance_threshold = 10.0  # 余裕を持った判定距離
-        hit_distance_threshold = 15.0  # 余裕を持った判定距離
+        hit_distance_threshold = LaserConfig.COLLISION_THRESHOLD
         
         if center_distance <= hit_distance_threshold:
             self.active = False
@@ -246,15 +246,15 @@ class LaserType01:
             self.circling_detection.append(distance_change)
             
             # 距離が縮まらない状況をカウント
-            if distance_change >= -0.5:  # -0.5ピクセル以下の変化は進歩なし
+            if distance_change >= LaserConfig.NO_PROGRESS_THRESHOLD:
                 self.distance_not_decreasing_count += 1
             else:
                 self.distance_not_decreasing_count = 0
         else:
             self.circling_detection.append(0)
         
-        # 直近10フレームの情報だけ保持
-        if len(self.circling_detection) > 10:
+        # 直近の設定フレーム数の情報だけ保持
+        if len(self.circling_detection) > LaserConfig.CIRCLING_DETECTION_FRAMES:
             self.circling_detection.pop(0)
         
         # デバッグログに記録
@@ -296,7 +296,7 @@ class LaserType01:
                     avg_distance_change = sum(self.circling_detection[-5:]) / 5
                     f.write(f"Average Distance Change (last 5 frames): {avg_distance_change:.3f}px\n")
                     
-                    if avg_distance_change > -0.1:
+                    if avg_distance_change > LaserConfig.CIRCLING_THRESHOLD:
                         f.write("*** POTENTIAL CIRCLING DETECTED ***\n")
                 
                 f.write(f"Frames with No Progress: {self.distance_not_decreasing_count}\n")

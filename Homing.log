@@ -5283,3 +5283,1599 @@ Details: Laser became inactive - Min distance: 9.49
 Total Frames: 10
 Minimum Distance Achieved: 9.49px
 Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:53:30.649] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 11.36, Threshold: 15.00, Laser: (51.51,46.34), Enemy: (62.84,45.63)
+Total Frames: 9
+Minimum Distance Achieved: 18.27px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -5.337px
+Frames with No Progress: 0
+Start Position: (55.75, 96.42)
+End Position: (51.51, 46.34)
+Start Target: (59.56, 45.03)
+End Target: (62.84, 45.63)
+Start Distance: 53.69px
+End Distance: 18.27px
+
+*** ANALYSIS ***
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (55.75, 96.42) | (59.56, 45.03) |  53.7 | 15.705 |   +0.00
+    1 | (48.69, 92.32) | (59.97, 45.11) |  51.5 | 15.881 |   -2.20
+    2 | (43.03, 86.55) | (60.38, 45.18) |  48.6 | 16.114 |   -2.92
+    3 | (39.17, 79.54) | (60.79, 45.26) |  45.0 | 16.404 |   -3.61
+    4 | (37.42, 71.82) | (61.2, 45.33)  |  40.7 | 16.745 |   -4.27
+    4 | (37.42, 71.82) | (61.2, 45.33)  |  40.7 | 16.745 |   -4.27
+    5 | (37.91, 64.0)  | (61.61, 45.41) |  35.8 | 17.135 |   -4.87
+    6 | (40.6, 56.73)  | (62.02, 45.48) |  30.4 | 17.567 |   -5.41
+    7 | (45.28, 50.66) | (62.43, 45.56) |  24.5 | 18.038 |   -5.88
+    8 | (51.51, 46.34) | (62.84, 45.63) |  18.3 | 18.538 |   -6.25
+
+
+=== LASER ANALYSIS [21:53:30.650] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 18.27
+Total Frames: 9
+Minimum Distance Achieved: 18.27px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -5.337px
+Frames with No Progress: 0
+Start Position: (55.75, 96.42)
+End Position: (51.51, 46.34)
+Start Target: (59.56, 45.03)
+End Target: (62.84, 45.63)
+Start Distance: 53.69px
+End Distance: 18.27px
+
+*** ANALYSIS ***
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (55.75, 96.42) | (59.56, 45.03) |  53.7 | 15.705 |   +0.00
+    1 | (48.69, 92.32) | (59.97, 45.11) |  51.5 | 15.881 |   -2.20
+    2 | (43.03, 86.55) | (60.38, 45.18) |  48.6 | 16.114 |   -2.92
+    3 | (39.17, 79.54) | (60.79, 45.26) |  45.0 | 16.404 |   -3.61
+    4 | (37.42, 71.82) | (61.2, 45.33)  |  40.7 | 16.745 |   -4.27
+    4 | (37.42, 71.82) | (61.2, 45.33)  |  40.7 | 16.745 |   -4.27
+    5 | (37.91, 64.0)  | (61.61, 45.41) |  35.8 | 17.135 |   -4.87
+    6 | (40.6, 56.73)  | (62.02, 45.48) |  30.4 | 17.567 |   -5.41
+    7 | (45.28, 50.66) | (62.43, 45.56) |  24.5 | 18.038 |   -5.88
+    8 | (51.51, 46.34) | (62.84, 45.63) |  18.3 | 18.538 |   -6.25
+
+
+=== LASER ANALYSIS [21:53:30.693] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 6.65 < threshold: 10.0
+Total Frames: 12
+Minimum Distance Achieved: 6.65px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -5.308px
+Frames with No Progress: 0
+Start Position: (74.84, 91.53)
+End Position: (57.3, 41.58)
+Start Target: (59.56, 45.03)
+End Target: (62.84, 45.63)
+Start Distance: 49.23px
+End Distance: 6.65px
+
+*** ANALYSIS ***
+- Got close (6.65px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (74.84, 91.53) | (59.56, 45.03) |  49.2 | 16.062 |   +0.00
+    1 | (81.87, 87.36) | (59.97, 45.11) |  48.8 | 16.100 |   -0.48
+    2 | (87.46, 81.52) | (60.38, 45.18) |  47.3 | 16.213 |   -1.41
+    3 | (91.23, 74.47) | (60.79, 45.26) |  45.0 | 16.399 |   -2.32
+    4 | (92.91, 66.73) | (61.2, 45.33)  |  41.8 | 16.652 |   -3.17
+  ... (middle frames omitted) ...
+    7 | (84.99, 45.58) | (62.43, 45.56) |  27.9 | 17.768 |   -5.29
+    8 | (78.78, 41.22) | (62.84, 45.63) |  22.1 | 18.228 |   -5.75
+    9 | (71.62, 38.99) | (62.84, 45.63) |  16.5 | 18.677 |   -5.60
+   10 | (64.21, 39.12) | (62.84, 45.63) |  11.0 | 19.119 |   -5.53
+   11 | (57.3, 41.58)  | (62.84, 45.63) |   6.7 | 19.468 |   -4.35
+
+
+=== LASER ANALYSIS [21:53:30.693] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 6.32 < threshold: 10.0
+Total Frames: 12
+Minimum Distance Achieved: 6.32px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -7.122px
+Frames with No Progress: 0
+Start Position: (53.53, 107.81)
+End Position: (63.7, 45.09)
+Start Target: (59.56, 45.03)
+End Target: (62.84, 45.63)
+Start Distance: 64.83px
+End Distance: 6.32px
+
+*** ANALYSIS ***
+- Got close (6.32px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (53.53, 107.81) | (59.56, 45.03) |  64.8 | 14.814 |   +0.00
+    1 | (46.35, 103.92) | (59.97, 45.11) |  63.0 | 14.957 |   -1.79
+    2 | (40.43, 98.42) | (60.38, 45.18) |  60.4 | 15.168 |   -2.64
+    3 | (36.15, 91.66) | (60.79, 45.26) |  56.9 | 15.446 |   -3.47
+    4 | (33.8, 84.1)   | (61.2, 45.33)  |  52.7 | 15.787 |   -4.26
+  ... (middle frames omitted) ...
+    7 | (39.33, 62.15) | (62.43, 45.56) |  35.6 | 17.153 |   -6.34
+    8 | (44.91, 57.01) | (62.84, 45.63) |  28.7 | 17.702 |   -6.86
+    9 | (51.24, 52.99) | (62.84, 45.63) |  21.2 | 18.301 |   -7.49
+   10 | (57.51, 49.02) | (62.84, 45.63) |  13.7 | 18.901 |   -7.50
+   11 | (63.7, 45.09)  | (62.84, 45.63) |   6.3 | 19.494 |   -7.42
+
+
+=== LASER ANALYSIS [21:53:30.694] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 6.65
+Total Frames: 12
+Minimum Distance Achieved: 6.65px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -5.308px
+Frames with No Progress: 0
+Start Position: (74.84, 91.53)
+End Position: (57.3, 41.58)
+Start Target: (59.56, 45.03)
+End Target: (62.84, 45.63)
+Start Distance: 49.23px
+End Distance: 6.65px
+
+*** ANALYSIS ***
+- Got close (6.65px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (74.84, 91.53) | (59.56, 45.03) |  49.2 | 16.062 |   +0.00
+    1 | (81.87, 87.36) | (59.97, 45.11) |  48.8 | 16.100 |   -0.48
+    2 | (87.46, 81.52) | (60.38, 45.18) |  47.3 | 16.213 |   -1.41
+    3 | (91.23, 74.47) | (60.79, 45.26) |  45.0 | 16.399 |   -2.32
+    4 | (92.91, 66.73) | (61.2, 45.33)  |  41.8 | 16.652 |   -3.17
+  ... (middle frames omitted) ...
+    7 | (84.99, 45.58) | (62.43, 45.56) |  27.9 | 17.768 |   -5.29
+    8 | (78.78, 41.22) | (62.84, 45.63) |  22.1 | 18.228 |   -5.75
+    9 | (71.62, 38.99) | (62.84, 45.63) |  16.5 | 18.677 |   -5.60
+   10 | (64.21, 39.12) | (62.84, 45.63) |  11.0 | 19.119 |   -5.53
+   11 | (57.3, 41.58)  | (62.84, 45.63) |   6.7 | 19.468 |   -4.35
+
+
+=== LASER ANALYSIS [21:53:30.694] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 6.32
+Total Frames: 12
+Minimum Distance Achieved: 6.32px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -7.122px
+Frames with No Progress: 0
+Start Position: (53.53, 107.81)
+End Position: (63.7, 45.09)
+Start Target: (59.56, 45.03)
+End Target: (62.84, 45.63)
+Start Distance: 64.83px
+End Distance: 6.32px
+
+*** ANALYSIS ***
+- Got close (6.32px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (53.53, 107.81) | (59.56, 45.03) |  64.8 | 14.814 |   +0.00
+    1 | (46.35, 103.92) | (59.97, 45.11) |  63.0 | 14.957 |   -1.79
+    2 | (40.43, 98.42) | (60.38, 45.18) |  60.4 | 15.168 |   -2.64
+    3 | (36.15, 91.66) | (60.79, 45.26) |  56.9 | 15.446 |   -3.47
+    4 | (33.8, 84.1)   | (61.2, 45.33)  |  52.7 | 15.787 |   -4.26
+  ... (middle frames omitted) ...
+    7 | (39.33, 62.15) | (62.43, 45.56) |  35.6 | 17.153 |   -6.34
+    8 | (44.91, 57.01) | (62.84, 45.63) |  28.7 | 17.702 |   -6.86
+    9 | (51.24, 52.99) | (62.84, 45.63) |  21.2 | 18.301 |   -7.49
+   10 | (57.51, 49.02) | (62.84, 45.63) |  13.7 | 18.901 |   -7.50
+   11 | (63.7, 45.09)  | (62.84, 45.63) |   6.3 | 19.494 |   -7.42
+
+
+=== LASER ANALYSIS [21:53:30.710] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 5.14 < threshold: 10.0
+Total Frames: 13
+Minimum Distance Achieved: 5.14px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -5.446px
+Frames with No Progress: 0
+Start Position: (45.57, 91.48)
+End Position: (68.68, 44.74)
+Start Target: (59.56, 45.03)
+End Target: (62.84, 45.63)
+Start Distance: 49.01px
+End Distance: 5.14px
+
+*** ANALYSIS ***
+- Got close (5.14px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (45.57, 91.48) | (59.56, 45.03) |  49.0 | 16.079 |   +0.00
+    1 | (38.55, 87.3)  | (59.97, 45.11) |  48.6 | 16.115 |   -0.45
+    2 | (32.96, 81.47) | (60.38, 45.18) |  47.5 | 16.204 |   -1.11
+    3 | (29.18, 74.42) | (60.79, 45.26) |  45.7 | 16.346 |   -1.77
+    4 | (27.48, 66.68) | (61.2, 45.33)  |  43.3 | 16.539 |   -2.41
+  ... (middle frames omitted) ...
+    8 | (41.29, 40.92) | (62.84, 45.63) |  27.6 | 17.788 |   -4.72
+    9 | (48.38, 38.47) | (62.84, 45.63) |  22.1 | 18.235 |   -5.59
+   10 | (55.8, 38.32)  | (62.84, 45.63) |  16.1 | 18.709 |   -5.93
+   11 | (62.81, 40.49) | (62.84, 45.63) |  10.2 | 19.188 |   -5.98
+   12 | (68.68, 44.74) | (62.84, 45.63) |   5.1 | 19.589 |   -5.01
+
+
+=== LASER ANALYSIS [21:53:30.711] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 5.14
+Total Frames: 13
+Minimum Distance Achieved: 5.14px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -5.446px
+Frames with No Progress: 0
+Start Position: (45.57, 91.48)
+End Position: (68.68, 44.74)
+Start Target: (59.56, 45.03)
+End Target: (62.84, 45.63)
+Start Distance: 49.01px
+End Distance: 5.14px
+
+*** ANALYSIS ***
+- Got close (5.14px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (45.57, 91.48) | (59.56, 45.03) |  49.0 | 16.079 |   +0.00
+    1 | (38.55, 87.3)  | (59.97, 45.11) |  48.6 | 16.115 |   -0.45
+    2 | (32.96, 81.47) | (60.38, 45.18) |  47.5 | 16.204 |   -1.11
+    3 | (29.18, 74.42) | (60.79, 45.26) |  45.7 | 16.346 |   -1.77
+    4 | (27.48, 66.68) | (61.2, 45.33)  |  43.3 | 16.539 |   -2.41
+  ... (middle frames omitted) ...
+    8 | (41.29, 40.92) | (62.84, 45.63) |  27.6 | 17.788 |   -4.72
+    9 | (48.38, 38.47) | (62.84, 45.63) |  22.1 | 18.235 |   -5.59
+   10 | (55.8, 38.32)  | (62.84, 45.63) |  16.1 | 18.709 |   -5.93
+   11 | (62.81, 40.49) | (62.84, 45.63) |  10.2 | 19.188 |   -5.98
+   12 | (68.68, 44.74) | (62.84, 45.63) |   5.1 | 19.589 |   -5.01
+
+
+=== LASER ANALYSIS [21:53:32.647] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 9.81, Threshold: 15.00, Laser: (45.77,20.30), Enemy: (49.41,11.20)
+Total Frames: 10
+Minimum Distance Achieved: 17.31px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -6.979px
+Frames with No Progress: 0
+Start Position: (55.86, 80.24)
+End Position: (45.77, 20.3)
+Start Target: (48.14, 14.72)
+End Target: (49.41, 11.2)
+Start Distance: 69.30px
+End Distance: 17.31px
+
+*** ANALYSIS ***
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (55.86, 80.24) | (48.14, 14.72) |  69.3 | 14.456 |   +0.00
+    1 | (48.63, 76.43) | (48.28, 14.33) |  66.3 | 14.692 |   -2.95
+    2 | (42.64, 71.0)  | (48.42, 13.94) |  62.5 | 15.001 |   -3.86
+    3 | (38.27, 64.31) | (48.56, 13.55) |  57.8 | 15.379 |   -4.73
+    4 | (35.81, 56.78) | (48.7, 13.16)  |  52.2 | 15.824 |   -5.56
+    5 | (35.48, 48.95) | (48.84, 12.76) |  45.9 | 16.328 |   -6.30
+    6 | (37.31, 41.42) | (48.99, 12.37) |  39.0 | 16.881 |   -6.91
+    7 | (40.17, 34.31) | (49.13, 11.98) |  31.7 | 17.462 |   -7.27
+    8 | (42.99, 27.27) | (49.27, 11.59) |  24.5 | 18.042 |   -7.25
+    9 | (45.77, 20.3)  | (49.41, 11.2)  |  17.3 | 18.615 |   -7.17
+
+
+=== LASER ANALYSIS [21:53:32.648] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 17.31
+Total Frames: 10
+Minimum Distance Achieved: 17.31px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -6.979px
+Frames with No Progress: 0
+Start Position: (55.86, 80.24)
+End Position: (45.77, 20.3)
+Start Target: (48.14, 14.72)
+End Target: (49.41, 11.2)
+Start Distance: 69.30px
+End Distance: 17.31px
+
+*** ANALYSIS ***
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (55.86, 80.24) | (48.14, 14.72) |  69.3 | 14.456 |   +0.00
+    1 | (48.63, 76.43) | (48.28, 14.33) |  66.3 | 14.692 |   -2.95
+    2 | (42.64, 71.0)  | (48.42, 13.94) |  62.5 | 15.001 |   -3.86
+    3 | (38.27, 64.31) | (48.56, 13.55) |  57.8 | 15.379 |   -4.73
+    4 | (35.81, 56.78) | (48.7, 13.16)  |  52.2 | 15.824 |   -5.56
+    5 | (35.48, 48.95) | (48.84, 12.76) |  45.9 | 16.328 |   -6.30
+    6 | (37.31, 41.42) | (48.99, 12.37) |  39.0 | 16.881 |   -6.91
+    7 | (40.17, 34.31) | (49.13, 11.98) |  31.7 | 17.462 |   -7.27
+    8 | (42.99, 27.27) | (49.27, 11.59) |  24.5 | 18.042 |   -7.25
+    9 | (45.77, 20.3)  | (49.41, 11.2)  |  17.3 | 18.615 |   -7.17
+
+
+=== LASER ANALYSIS [21:53:32.732] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 5.33 < threshold: 10.0
+Total Frames: 15
+Minimum Distance Achieved: 5.33px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -7.302px
+Frames with No Progress: 0
+Start Position: (73.57, 81.34)
+End Position: (47.66, 10.89)
+Start Target: (48.14, 14.72)
+End Target: (49.27, 11.59)
+Start Distance: 70.75px
+End Distance: 5.33px
+
+*** ANALYSIS ***
+- Got close (5.33px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (73.57, 81.34) | (48.14, 14.72) |  70.8 | 14.340 |   +0.00
+    1 | (80.83, 77.59) | (48.28, 14.33) |  71.6 | 14.270 |   +0.88
+    2 | (86.93, 72.29) | (48.42, 13.94) |  71.4 | 14.286 |   -0.20
+    3 | (91.55, 65.76) | (48.56, 13.55) |  70.2 | 14.387 |   -1.26
+    4 | (94.44, 58.39) | (48.7, 13.16)  |  67.8 | 14.572 |   -2.31
+  ... (middle frames omitted) ...
+   10 | (74.09, 22.4)  | (49.27, 11.59) |  34.5 | 17.241 |   -7.34
+   11 | (67.37, 19.47) | (49.27, 11.59) |  27.1 | 17.834 |   -7.42
+   12 | (60.72, 16.58) | (49.27, 11.59) |  19.7 | 18.421 |   -7.33
+   13 | (54.15, 13.72) | (49.27, 11.59) |  12.5 | 19.001 |   -7.25
+   14 | (47.66, 10.89) | (49.27, 11.59) |   5.3 | 19.574 |   -7.17
+
+
+=== LASER ANALYSIS [21:53:32.733] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 5.33
+Total Frames: 15
+Minimum Distance Achieved: 5.33px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -7.302px
+Frames with No Progress: 0
+Start Position: (73.57, 81.34)
+End Position: (47.66, 10.89)
+Start Target: (48.14, 14.72)
+End Target: (49.27, 11.59)
+Start Distance: 70.75px
+End Distance: 5.33px
+
+*** ANALYSIS ***
+- Got close (5.33px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (73.57, 81.34) | (48.14, 14.72) |  70.8 | 14.340 |   +0.00
+    1 | (80.83, 77.59) | (48.28, 14.33) |  71.6 | 14.270 |   +0.88
+    2 | (86.93, 72.29) | (48.42, 13.94) |  71.4 | 14.286 |   -0.20
+    3 | (91.55, 65.76) | (48.56, 13.55) |  70.2 | 14.387 |   -1.26
+    4 | (94.44, 58.39) | (48.7, 13.16)  |  67.8 | 14.572 |   -2.31
+  ... (middle frames omitted) ...
+   10 | (74.09, 22.4)  | (49.27, 11.59) |  34.5 | 17.241 |   -7.34
+   11 | (67.37, 19.47) | (49.27, 11.59) |  27.1 | 17.834 |   -7.42
+   12 | (60.72, 16.58) | (49.27, 11.59) |  19.7 | 18.421 |   -7.33
+   13 | (54.15, 13.72) | (49.27, 11.59) |  12.5 | 19.001 |   -7.25
+   14 | (47.66, 10.89) | (49.27, 11.59) |   5.3 | 19.574 |   -7.17
+
+
+=== LASER ANALYSIS [21:53:32.749] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 3.27 < threshold: 10.0
+Total Frames: 16
+Minimum Distance Achieved: 3.27px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -7.250px
+Frames with No Progress: 0
+Start Position: (75.78, 84.72)
+End Position: (45.9, 10.0)
+Start Target: (48.14, 14.72)
+End Target: (49.27, 11.59)
+Start Distance: 74.53px
+End Distance: 3.27px
+
+*** ANALYSIS ***
+- Got close (3.27px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (75.78, 84.72) | (48.14, 14.72) |  74.5 | 14.037 |   +0.00
+    1 | (83.07, 81.04) | (48.28, 14.33) |  75.6 | 13.955 |   +1.03
+    2 | (89.26, 75.84) | (48.42, 13.94) |  75.5 | 13.958 |   -0.04
+    3 | (94.02, 69.41) | (48.56, 13.55) |  74.4 | 14.047 |   -1.11
+    4 | (97.11, 62.12) | (48.7, 13.16)  |  72.2 | 14.221 |   -2.17
+  ... (middle frames omitted) ...
+   11 | (71.69, 22.12) | (49.27, 11.59) |  32.1 | 17.432 |   -7.42
+   12 | (65.13, 19.04) | (49.27, 11.59) |  24.8 | 18.018 |   -7.33
+   13 | (58.64, 15.99) | (49.27, 11.59) |  17.5 | 18.598 |   -7.25
+   14 | (52.23, 12.98) | (49.27, 11.59) |  10.4 | 19.172 |   -7.17
+   15 | (45.9, 10.0)   | (49.27, 11.59) |   3.3 | 19.738 |   -7.08
+
+
+=== LASER ANALYSIS [21:53:32.749] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 3.27
+Total Frames: 16
+Minimum Distance Achieved: 3.27px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -7.250px
+Frames with No Progress: 0
+Start Position: (75.78, 84.72)
+End Position: (45.9, 10.0)
+Start Target: (48.14, 14.72)
+End Target: (49.27, 11.59)
+Start Distance: 74.53px
+End Distance: 3.27px
+
+*** ANALYSIS ***
+- Got close (3.27px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (75.78, 84.72) | (48.14, 14.72) |  74.5 | 14.037 |   +0.00
+    1 | (83.07, 81.04) | (48.28, 14.33) |  75.6 | 13.955 |   +1.03
+    2 | (89.26, 75.84) | (48.42, 13.94) |  75.5 | 13.958 |   -0.04
+    3 | (94.02, 69.41) | (48.56, 13.55) |  74.4 | 14.047 |   -1.11
+    4 | (97.11, 62.12) | (48.7, 13.16)  |  72.2 | 14.221 |   -2.17
+  ... (middle frames omitted) ...
+   11 | (71.69, 22.12) | (49.27, 11.59) |  32.1 | 17.432 |   -7.42
+   12 | (65.13, 19.04) | (49.27, 11.59) |  24.8 | 18.018 |   -7.33
+   13 | (58.64, 15.99) | (49.27, 11.59) |  17.5 | 18.598 |   -7.25
+   14 | (52.23, 12.98) | (49.27, 11.59) |  10.4 | 19.172 |   -7.17
+   15 | (45.9, 10.0)   | (49.27, 11.59) |   3.3 | 19.738 |   -7.08
+
+
+=== LASER ANALYSIS [21:53:32.766] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 7.30 < threshold: 10.0
+Total Frames: 17
+Minimum Distance Achieved: 7.30px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -7.167px
+Frames with No Progress: 0
+Start Position: (81.41, 90.6)
+End Position: (49.61, 11.75)
+Start Target: (48.14, 14.72)
+End Target: (49.27, 11.59)
+Start Distance: 81.71px
+End Distance: 7.30px
+
+*** ANALYSIS ***
+- Got close (7.30px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (81.41, 90.6)  | (48.14, 14.72) |  81.7 | 13.464 |   +0.00
+    1 | (88.77, 87.07) | (48.28, 14.33) |  83.2 | 13.348 |   +1.45
+    2 | (95.12, 82.06) | (48.42, 13.94) |  83.5 | 13.318 |   +0.37
+    3 | (100.14, 75.83) | (48.56, 13.55) |  82.8 | 13.373 |   -0.69
+    4 | (103.61, 68.72) | (48.7, 13.16)  |  81.1 | 13.513 |   -1.75
+  ... (middle frames omitted) ...
+   12 | (75.12, 23.7)  | (49.27, 11.59) |  35.8 | 17.136 |   -7.33
+   13 | (68.63, 20.66) | (49.27, 11.59) |  28.6 | 17.716 |   -7.25
+   14 | (62.22, 17.66) | (49.27, 11.59) |  21.4 | 18.290 |   -7.17
+   15 | (55.88, 14.68) | (49.27, 11.59) |  14.3 | 18.856 |   -7.08
+   16 | (49.61, 11.75) | (49.27, 11.59) |   7.3 | 19.416 |   -7.00
+
+
+=== LASER ANALYSIS [21:53:32.767] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 7.30
+Total Frames: 17
+Minimum Distance Achieved: 7.30px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -7.167px
+Frames with No Progress: 0
+Start Position: (81.41, 90.6)
+End Position: (49.61, 11.75)
+Start Target: (48.14, 14.72)
+End Target: (49.27, 11.59)
+Start Distance: 81.71px
+End Distance: 7.30px
+
+*** ANALYSIS ***
+- Got close (7.30px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (81.41, 90.6)  | (48.14, 14.72) |  81.7 | 13.464 |   +0.00
+    1 | (88.77, 87.07) | (48.28, 14.33) |  83.2 | 13.348 |   +1.45
+    2 | (95.12, 82.06) | (48.42, 13.94) |  83.5 | 13.318 |   +0.37
+    3 | (100.14, 75.83) | (48.56, 13.55) |  82.8 | 13.373 |   -0.69
+    4 | (103.61, 68.72) | (48.7, 13.16)  |  81.1 | 13.513 |   -1.75
+  ... (middle frames omitted) ...
+   12 | (75.12, 23.7)  | (49.27, 11.59) |  35.8 | 17.136 |   -7.33
+   13 | (68.63, 20.66) | (49.27, 11.59) |  28.6 | 17.716 |   -7.25
+   14 | (62.22, 17.66) | (49.27, 11.59) |  21.4 | 18.290 |   -7.17
+   15 | (55.88, 14.68) | (49.27, 11.59) |  14.3 | 18.856 |   -7.08
+   16 | (49.61, 11.75) | (49.27, 11.59) |   7.3 | 19.416 |   -7.00
+
+
+=== LASER ANALYSIS [21:53:34.764] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 12.89, Threshold: 15.00, Laser: (113.15,35.23), Enemy: (115.53,22.56)
+Total Frames: 10
+Minimum Distance Achieved: 20.39px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -7.703px
+Frames with No Progress: 0
+Start Position: (86.01, 95.6)
+End Position: (113.15, 35.23)
+Start Target: (111.82, 22.01)
+End Target: (115.53, 22.56)
+Start Distance: 82.66px
+End Distance: 20.39px
+
+*** ANALYSIS ***
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (86.01, 95.6)  | (111.82, 22.01) |  82.7 | 13.388 |   +0.00
+    1 | (93.36, 92.03) | (112.23, 22.07) |  78.0 | 13.756 |   -4.60
+    2 | (99.6, 86.89)  | (112.64, 22.14) |  72.5 | 14.200 |   -5.55
+    3 | (104.35, 80.45) | (113.05, 22.2) |  66.1 | 14.714 |   -6.43
+    4 | (107.3, 73.11) | (113.47, 22.26) |  58.9 | 15.288 |   -7.17
+    5 | (108.31, 65.34) | (113.88, 22.32) |  51.2 | 15.903 |   -7.69
+    6 | (109.38, 57.66) | (114.29, 22.38) |  43.4 | 16.530 |   -7.84
+    7 | (110.52, 50.08) | (114.7, 22.44) |  35.6 | 17.150 |   -7.75
+    8 | (111.77, 42.6) | (115.11, 22.5) |  28.0 | 17.763 |   -7.66
+    9 | (113.15, 35.23) | (115.53, 22.56) |  20.4 | 18.369 |   -7.57
+
+
+=== LASER ANALYSIS [21:53:34.764] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 20.39
+Total Frames: 10
+Minimum Distance Achieved: 20.39px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -7.703px
+Frames with No Progress: 0
+Start Position: (86.01, 95.6)
+End Position: (113.15, 35.23)
+Start Target: (111.82, 22.01)
+End Target: (115.53, 22.56)
+Start Distance: 82.66px
+End Distance: 20.39px
+
+*** ANALYSIS ***
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (86.01, 95.6)  | (111.82, 22.01) |  82.7 | 13.388 |   +0.00
+    1 | (93.36, 92.03) | (112.23, 22.07) |  78.0 | 13.756 |   -4.60
+    2 | (99.6, 86.89)  | (112.64, 22.14) |  72.5 | 14.200 |   -5.55
+    3 | (104.35, 80.45) | (113.05, 22.2) |  66.1 | 14.714 |   -6.43
+    4 | (107.3, 73.11) | (113.47, 22.26) |  58.9 | 15.288 |   -7.17
+    5 | (108.31, 65.34) | (113.88, 22.32) |  51.2 | 15.903 |   -7.69
+    6 | (109.38, 57.66) | (114.29, 22.38) |  43.4 | 16.530 |   -7.84
+    7 | (110.52, 50.08) | (114.7, 22.44) |  35.6 | 17.150 |   -7.75
+    8 | (111.77, 42.6) | (115.11, 22.5) |  28.0 | 17.763 |   -7.66
+    9 | (113.15, 35.23) | (115.53, 22.56) |  20.4 | 18.369 |   -7.57
+
+
+=== LASER ANALYSIS [21:53:34.781] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 14.50, Threshold: 15.00, Laser: (80.35,54.79), Enemy: (66.59,50.23)
+Total Frames: 11
+Minimum Distance Achieved: 21.91px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -6.373px
+Frames with No Progress: 0
+Start Position: (83.53, 111.93)
+End Position: (80.35, 54.79)
+Start Target: (68.94, 46.79)
+End Target: (66.59, 50.23)
+Start Distance: 67.45px
+End Distance: 21.91px
+
+*** ANALYSIS ***
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (83.53, 111.93) | (68.94, 46.79) |  67.5 | 14.604 |   +0.00
+    1 | (90.75, 108.1) | (68.71, 47.13) |  66.5 | 14.683 |   -0.98
+    2 | (96.74, 102.67) | (68.47, 47.48) |  64.6 | 14.833 |   -1.89
+    3 | (101.16, 96.0) | (68.24, 47.82) |  61.8 | 15.055 |   -2.77
+    4 | (103.71, 88.51) | (68.0, 48.16)  |  58.2 | 15.344 |   -3.61
+  ... (middle frames omitted) ...
+    6 | (102.69, 73.1) | (67.53, 48.85) |  48.6 | 16.113 |   -5.19
+    7 | (99.16, 66.29) | (67.3, 49.2)   |  42.7 | 16.583 |   -5.88
+    8 | (93.92, 60.81) | (67.06, 49.54) |  36.2 | 17.103 |   -6.50
+    9 | (87.39, 57.12) | (66.83, 49.88) |  29.2 | 17.663 |   -6.99
+   10 | (80.35, 54.79) | (66.59, 50.23) |  21.9 | 18.247 |   -7.30
+
+
+=== LASER ANALYSIS [21:53:34.782] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 21.91
+Total Frames: 11
+Minimum Distance Achieved: 21.91px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -6.373px
+Frames with No Progress: 0
+Start Position: (83.53, 111.93)
+End Position: (80.35, 54.79)
+Start Target: (68.94, 46.79)
+End Target: (66.59, 50.23)
+Start Distance: 67.45px
+End Distance: 21.91px
+
+*** ANALYSIS ***
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (83.53, 111.93) | (68.94, 46.79) |  67.5 | 14.604 |   +0.00
+    1 | (90.75, 108.1) | (68.71, 47.13) |  66.5 | 14.683 |   -0.98
+    2 | (96.74, 102.67) | (68.47, 47.48) |  64.6 | 14.833 |   -1.89
+    3 | (101.16, 96.0) | (68.24, 47.82) |  61.8 | 15.055 |   -2.77
+    4 | (103.71, 88.51) | (68.0, 48.16)  |  58.2 | 15.344 |   -3.61
+  ... (middle frames omitted) ...
+    6 | (102.69, 73.1) | (67.53, 48.85) |  48.6 | 16.113 |   -5.19
+    7 | (99.16, 66.29) | (67.3, 49.2)   |  42.7 | 16.583 |   -5.88
+    8 | (93.92, 60.81) | (67.06, 49.54) |  36.2 | 17.103 |   -6.50
+    9 | (87.39, 57.12) | (66.83, 49.88) |  29.2 | 17.663 |   -6.99
+   10 | (80.35, 54.79) | (66.59, 50.23) |  21.9 | 18.247 |   -7.30
+
+
+=== LASER ANALYSIS [21:53:34.800] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 8.97 < threshold: 10.0
+Total Frames: 12
+Minimum Distance Achieved: 8.97px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -7.569px
+Frames with No Progress: 0
+Start Position: (82.52, 98.24)
+End Position: (115.16, 24.15)
+Start Target: (111.82, 22.01)
+End Target: (115.53, 22.56)
+Start Distance: 86.50px
+End Distance: 8.97px
+
+*** ANALYSIS ***
+- Got close (8.97px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (82.52, 98.24) | (111.82, 22.01) |  86.5 | 13.080 |   +0.00
+    1 | (89.9, 94.75)  | (112.23, 22.07) |  81.8 | 13.459 |   -4.74
+    2 | (96.22, 89.7)  | (112.64, 22.14) |  76.1 | 13.913 |   -5.67
+    3 | (101.09, 83.36) | (113.05, 22.2) |  69.6 | 14.434 |   -6.52
+    4 | (104.22, 76.09) | (113.47, 22.26) |  62.3 | 15.012 |   -7.23
+  ... (middle frames omitted) ...
+    7 | (108.55, 53.25) | (114.7, 22.44) |  39.1 | 16.874 |   -7.73
+    8 | (110.13, 45.83) | (115.11, 22.5) |  31.4 | 17.485 |   -7.64
+    9 | (111.82, 38.52) | (115.53, 22.56) |  23.9 | 18.089 |   -7.55
+   10 | (113.5, 31.3)  | (115.53, 22.56) |  16.4 | 18.689 |   -7.50
+   11 | (115.16, 24.15) | (115.53, 22.56) |   9.0 | 19.283 |   -7.42
+
+
+=== LASER ANALYSIS [21:53:34.801] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 8.97
+Total Frames: 12
+Minimum Distance Achieved: 8.97px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -7.569px
+Frames with No Progress: 0
+Start Position: (82.52, 98.24)
+End Position: (115.16, 24.15)
+Start Target: (111.82, 22.01)
+End Target: (115.53, 22.56)
+Start Distance: 86.50px
+End Distance: 8.97px
+
+*** ANALYSIS ***
+- Got close (8.97px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (82.52, 98.24) | (111.82, 22.01) |  86.5 | 13.080 |   +0.00
+    1 | (89.9, 94.75)  | (112.23, 22.07) |  81.8 | 13.459 |   -4.74
+    2 | (96.22, 89.7)  | (112.64, 22.14) |  76.1 | 13.913 |   -5.67
+    3 | (101.09, 83.36) | (113.05, 22.2) |  69.6 | 14.434 |   -6.52
+    4 | (104.22, 76.09) | (113.47, 22.26) |  62.3 | 15.012 |   -7.23
+  ... (middle frames omitted) ...
+    7 | (108.55, 53.25) | (114.7, 22.44) |  39.1 | 16.874 |   -7.73
+    8 | (110.13, 45.83) | (115.11, 22.5) |  31.4 | 17.485 |   -7.64
+    9 | (111.82, 38.52) | (115.53, 22.56) |  23.9 | 18.089 |   -7.55
+   10 | (113.5, 31.3)  | (115.53, 22.56) |  16.4 | 18.689 |   -7.50
+   11 | (115.16, 24.15) | (115.53, 22.56) |   9.0 | 19.283 |   -7.42
+
+
+=== LASER ANALYSIS [21:53:34.828] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 4.07 < threshold: 10.0
+Total Frames: 14
+Minimum Distance Achieved: 4.07px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -7.402px
+Frames with No Progress: 0
+Start Position: (72.54, 104.91)
+End Position: (116.53, 19.63)
+Start Target: (111.82, 22.01)
+End Target: (115.53, 22.56)
+Start Distance: 96.93px
+End Distance: 4.07px
+
+*** ANALYSIS ***
+- Got close (4.07px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (72.54, 104.91) | (111.82, 22.01) |  96.9 | 12.246 |   +0.00
+    1 | (80.01, 101.62) | (112.23, 22.07) |  91.9 | 12.651 |   -5.07
+    2 | (86.52, 96.83) | (112.64, 22.14) |  85.9 | 13.126 |   -5.93
+    3 | (91.73, 90.76) | (113.05, 22.2) |  79.2 | 13.663 |   -6.71
+    4 | (95.33, 83.71) | (113.47, 22.26) |  71.9 | 14.250 |   -7.34
+  ... (middle frames omitted) ...
+    9 | (107.04, 47.21) | (115.53, 22.56) |  33.6 | 17.314 |   -7.51
+   10 | (109.46, 40.2) | (115.53, 22.56) |  26.1 | 17.914 |   -7.50
+   11 | (111.84, 33.27) | (115.53, 22.56) |  18.6 | 18.508 |   -7.42
+   12 | (114.2, 26.41) | (115.53, 22.56) |  11.3 | 19.094 |   -7.33
+   13 | (116.53, 19.63) | (115.53, 22.56) |   4.1 | 19.674 |   -7.25
+
+
+=== LASER ANALYSIS [21:53:34.828] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 4.07
+Total Frames: 14
+Minimum Distance Achieved: 4.07px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -7.402px
+Frames with No Progress: 0
+Start Position: (72.54, 104.91)
+End Position: (116.53, 19.63)
+Start Target: (111.82, 22.01)
+End Target: (115.53, 22.56)
+Start Distance: 96.93px
+End Distance: 4.07px
+
+*** ANALYSIS ***
+- Got close (4.07px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (72.54, 104.91) | (111.82, 22.01) |  96.9 | 12.246 |   +0.00
+    1 | (80.01, 101.62) | (112.23, 22.07) |  91.9 | 12.651 |   -5.07
+    2 | (86.52, 96.83) | (112.64, 22.14) |  85.9 | 13.126 |   -5.93
+    3 | (91.73, 90.76) | (113.05, 22.2) |  79.2 | 13.663 |   -6.71
+    4 | (95.33, 83.71) | (113.47, 22.26) |  71.9 | 14.250 |   -7.34
+  ... (middle frames omitted) ...
+    9 | (107.04, 47.21) | (115.53, 22.56) |  33.6 | 17.314 |   -7.51
+   10 | (109.46, 40.2) | (115.53, 22.56) |  26.1 | 17.914 |   -7.50
+   11 | (111.84, 33.27) | (115.53, 22.56) |  18.6 | 18.508 |   -7.42
+   12 | (114.2, 26.41) | (115.53, 22.56) |  11.3 | 19.094 |   -7.33
+   13 | (116.53, 19.63) | (115.53, 22.56) |   4.1 | 19.674 |   -7.25
+
+
+=== LASER ANALYSIS [21:53:40.582] ===
+Target Enemy ID: 0
+End Reason: OUT_OF_BOUNDS
+Details: Final pos: (104.78, -10.82)
+Total Frames: 14
+Minimum Distance Achieved: 83.77px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -1.175px
+Frames with No Progress: 0
+Start Position: (101.64, 67.16)
+End Position: (104.78, -10.82)
+Start Target: (15.15, 39.57)
+End Target: (12.64, 44.36)
+Start Distance: 83.77px
+End Distance: 111.24px
+
+*** ANALYSIS ***
+- Laser went out of bounds - possible overshoot or lost target
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (101.64, 67.16) | (15.15, 39.57) |  83.8 | 13.299 |   +0.00
+    1 | (109.05, 63.73) | (14.96, 39.94) |  90.8 | 12.732 |   +7.09
+    2 | (115.54, 58.92) | (14.77, 40.3)  |  97.2 | 12.228 |   +6.29
+    3 | (120.92, 52.99) | (14.57, 40.67) | 102.6 | 11.792 |   +5.46
+    4 | (125.03, 46.23) | (14.38, 41.04) | 107.2 | 11.424 |   +4.60
+  ... (middle frames omitted) ...
+    9 | (125.25, 9.1)  | (13.41, 42.89) | 117.5 | 10.598 |   +0.41
+   10 | (121.5, 2.71)  | (13.22, 43.25) | 117.1 | 10.630 |   -0.40
+   11 | (116.72, -2.86) | (13.02, 43.62) | 115.9 | 10.725 |   -1.19
+   12 | (111.09, -7.42) | (12.83, 43.99) | 114.0 | 10.882 |   -1.97
+   13 | (104.78, -10.82) | (12.64, 44.36) | 111.2 | 11.101 |   -2.73
+
+
+=== LASER ANALYSIS [21:53:40.583] ===
+Target Enemy ID: 0
+End Reason: OUT_OF_BOUNDS_CLEANUP
+Details: Cleaned up at pos: (104.78, -10.82)
+Total Frames: 14
+Minimum Distance Achieved: 83.77px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -1.175px
+Frames with No Progress: 0
+Start Position: (101.64, 67.16)
+End Position: (104.78, -10.82)
+Start Target: (15.15, 39.57)
+End Target: (12.64, 44.36)
+Start Distance: 83.77px
+End Distance: 111.24px
+
+*** ANALYSIS ***
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (101.64, 67.16) | (15.15, 39.57) |  83.8 | 13.299 |   +0.00
+    1 | (109.05, 63.73) | (14.96, 39.94) |  90.8 | 12.732 |   +7.09
+    2 | (115.54, 58.92) | (14.77, 40.3)  |  97.2 | 12.228 |   +6.29
+    3 | (120.92, 52.99) | (14.57, 40.67) | 102.6 | 11.792 |   +5.46
+    4 | (125.03, 46.23) | (14.38, 41.04) | 107.2 | 11.424 |   +4.60
+  ... (middle frames omitted) ...
+    9 | (125.25, 9.1)  | (13.41, 42.89) | 117.5 | 10.598 |   +0.41
+   10 | (121.5, 2.71)  | (13.22, 43.25) | 117.1 | 10.630 |   -0.40
+   11 | (116.72, -2.86) | (13.02, 43.62) | 115.9 | 10.725 |   -1.19
+   12 | (111.09, -7.42) | (12.83, 43.99) | 114.0 | 10.882 |   -1.97
+   13 | (104.78, -10.82) | (12.64, 44.36) | 111.2 | 11.101 |   -2.73
+
+
+=== LASER ANALYSIS [21:53:40.609] ===
+Target Enemy ID: 0
+End Reason: OUT_OF_BOUNDS
+Details: Final pos: (94.79, -10.03)
+Total Frames: 16
+Minimum Distance Achieved: 86.96px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -2.806px
+Frames with No Progress: 0
+Start Position: (103.23, 71.84)
+End Position: (94.79, -10.03)
+Start Target: (15.15, 39.57)
+End Target: (12.25, 45.1)
+Start Distance: 86.96px
+End Distance: 104.54px
+
+*** ANALYSIS ***
+- Laser went out of bounds - possible overshoot or lost target
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (103.23, 71.84) | (15.15, 39.57) |  87.0 | 13.043 |   +0.00
+    1 | (110.67, 68.47) | (14.96, 39.94) |  93.9 | 12.491 |   +6.89
+    2 | (117.22, 63.73) | (14.77, 40.3)  | 100.0 | 12.004 |   +6.09
+    3 | (122.69, 57.89) | (14.57, 40.67) | 105.2 | 11.584 |   +5.25
+    4 | (126.92, 51.2) | (14.38, 41.04) | 109.6 | 11.231 |   +4.40
+  ... (middle frames omitted) ...
+   11 | (120.02, 1.82) | (13.02, 43.62) | 117.3 | 10.619 |   -1.31
+   12 | (114.55, -2.94) | (12.83, 43.99) | 115.2 | 10.785 |   -2.07
+   13 | (108.38, -6.58) | (12.64, 44.36) | 112.4 | 11.011 |   -2.83
+   14 | (101.71, -8.98) | (12.44, 44.73) | 108.8 | 11.296 |   -3.56
+   15 | (94.79, -10.03) | (12.25, 45.1)  | 104.5 | 11.637 |   -4.26
+
+
+=== LASER ANALYSIS [21:53:40.610] ===
+Target Enemy ID: 0
+End Reason: OUT_OF_BOUNDS_CLEANUP
+Details: Cleaned up at pos: (94.79, -10.03)
+Total Frames: 16
+Minimum Distance Achieved: 86.96px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -2.806px
+Frames with No Progress: 0
+Start Position: (103.23, 71.84)
+End Position: (94.79, -10.03)
+Start Target: (15.15, 39.57)
+End Target: (12.25, 45.1)
+Start Distance: 86.96px
+End Distance: 104.54px
+
+*** ANALYSIS ***
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (103.23, 71.84) | (15.15, 39.57) |  87.0 | 13.043 |   +0.00
+    1 | (110.67, 68.47) | (14.96, 39.94) |  93.9 | 12.491 |   +6.89
+    2 | (117.22, 63.73) | (14.77, 40.3)  | 100.0 | 12.004 |   +6.09
+    3 | (122.69, 57.89) | (14.57, 40.67) | 105.2 | 11.584 |   +5.25
+    4 | (126.92, 51.2) | (14.38, 41.04) | 109.6 | 11.231 |   +4.40
+  ... (middle frames omitted) ...
+   11 | (120.02, 1.82) | (13.02, 43.62) | 117.3 | 10.619 |   -1.31
+   12 | (114.55, -2.94) | (12.83, 43.99) | 115.2 | 10.785 |   -2.07
+   13 | (108.38, -6.58) | (12.64, 44.36) | 112.4 | 11.011 |   -2.83
+   14 | (101.71, -8.98) | (12.44, 44.73) | 108.8 | 11.296 |   -3.56
+   15 | (94.79, -10.03) | (12.25, 45.1)  | 104.5 | 11.637 |   -4.26
+
+
+=== LASER ANALYSIS [21:53:40.796] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 12.83, Threshold: 15.00, Laser: (20.66,41.85), Enemy: (10.12,49.16)
+Total Frames: 27
+Minimum Distance Achieved: 18.91px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -5.968px
+Frames with No Progress: 0
+Start Position: (95.48, 81.54)
+End Position: (20.66, 41.85)
+Start Target: (15.15, 39.57)
+End Target: (10.12, 49.16)
+Start Distance: 84.51px
+End Distance: 18.91px
+
+*** ANALYSIS ***
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (95.48, 81.54) | (15.15, 39.57) |  84.5 | 13.240 |   +0.00
+    1 | (102.9, 78.11) | (14.96, 39.94) |  90.6 | 12.749 |   +6.13
+    2 | (109.39, 73.3) | (14.77, 40.3)  |  95.9 | 12.328 |   +5.26
+    3 | (114.74, 67.35) | (14.57, 40.67) | 100.3 | 11.978 |   +4.37
+    4 | (118.79, 60.55) | (14.38, 41.04) | 103.8 | 11.700 |   +3.48
+  ... (middle frames omitted) ...
+   22 | (41.27, 27.99) | (10.89, 47.68) |  42.6 | 16.591 |   -6.14
+   23 | (35.97, 31.47) | (10.7, 48.05)  |  36.6 | 17.075 |   -6.05
+   24 | (30.77, 34.93) | (10.5, 48.42)  |  30.6 | 17.552 |   -5.97
+   25 | (25.66, 38.39) | (10.31, 48.79) |  24.7 | 18.023 |   -5.88
+   26 | (20.66, 41.85) | (10.12, 49.16) |  18.9 | 18.487 |   -5.80
+
+
+=== LASER ANALYSIS [21:53:40.797] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 18.91
+Total Frames: 27
+Minimum Distance Achieved: 18.91px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -5.968px
+Frames with No Progress: 0
+Start Position: (95.48, 81.54)
+End Position: (20.66, 41.85)
+Start Target: (15.15, 39.57)
+End Target: (10.12, 49.16)
+Start Distance: 84.51px
+End Distance: 18.91px
+
+*** ANALYSIS ***
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (95.48, 81.54) | (15.15, 39.57) |  84.5 | 13.240 |   +0.00
+    1 | (102.9, 78.11) | (14.96, 39.94) |  90.6 | 12.749 |   +6.13
+    2 | (109.39, 73.3) | (14.77, 40.3)  |  95.9 | 12.328 |   +5.26
+    3 | (114.74, 67.35) | (14.57, 40.67) | 100.3 | 11.978 |   +4.37
+    4 | (118.79, 60.55) | (14.38, 41.04) | 103.8 | 11.700 |   +3.48
+  ... (middle frames omitted) ...
+   22 | (41.27, 27.99) | (10.89, 47.68) |  42.6 | 16.591 |   -6.14
+   23 | (35.97, 31.47) | (10.7, 48.05)  |  36.6 | 17.075 |   -6.05
+   24 | (30.77, 34.93) | (10.5, 48.42)  |  30.6 | 17.552 |   -5.97
+   25 | (25.66, 38.39) | (10.31, 48.79) |  24.7 | 18.023 |   -5.88
+   26 | (20.66, 41.85) | (10.12, 49.16) |  18.9 | 18.487 |   -5.80
+
+
+=== LASER ANALYSIS [21:53:40.830] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 9.46 < threshold: 10.0
+Total Frames: 29
+Minimum Distance Achieved: 9.46px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -5.933px
+Frames with No Progress: 0
+Start Position: (94.48, 70.9)
+End Position: (12.75, 46.8)
+Start Target: (15.15, 39.57)
+End Target: (10.12, 49.16)
+Start Distance: 78.64px
+End Distance: 9.46px
+
+*** ANALYSIS ***
+- Got close (9.46px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (94.48, 70.9)  | (15.15, 39.57) |  78.6 | 13.709 |   +0.00
+    1 | (101.84, 67.36) | (14.96, 39.94) |  85.3 | 13.173 |   +6.69
+    2 | (108.23, 62.41) | (14.77, 40.3)  |  91.2 | 12.706 |   +5.85
+    3 | (113.41, 56.32) | (14.57, 40.67) |  96.1 | 12.309 |   +4.96
+    4 | (117.25, 49.39) | (14.38, 41.04) | 100.2 | 11.983 |   +4.07
+  ... (middle frames omitted) ...
+   24 | (30.8, 30.72)  | (10.5, 48.42)  |  33.2 | 17.346 |   -5.95
+   25 | (26.17, 34.8)  | (10.31, 48.79) |  27.3 | 17.815 |   -5.86
+   26 | (21.64, 38.85) | (10.12, 49.16) |  21.5 | 18.277 |   -5.78
+   27 | (17.16, 42.85) | (10.12, 49.16) |  15.5 | 18.764 |   -6.08
+   28 | (12.75, 46.8)  | (10.12, 49.16) |   9.5 | 19.244 |   -6.00
+
+
+=== LASER ANALYSIS [21:53:40.830] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 7.07 < threshold: 10.0
+Total Frames: 29
+Minimum Distance Achieved: 7.07px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -6.023px
+Frames with No Progress: 0
+Start Position: (96.18, 84.47)
+End Position: (11.29, 48.17)
+Start Target: (15.15, 39.57)
+End Target: (10.31, 48.79)
+Start Distance: 86.63px
+End Distance: 7.07px
+
+*** ANALYSIS ***
+- Got close (7.07px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (96.18, 84.47) | (15.15, 39.57) |  86.6 | 13.070 |   +0.00
+    1 | (103.61, 81.09) | (14.96, 39.94) |  92.6 | 12.590 |   +6.00
+    2 | (110.14, 76.32) | (14.77, 40.3)  |  97.8 | 12.179 |   +5.13
+    3 | (115.55, 70.43) | (14.57, 40.67) | 102.0 | 11.840 |   +4.24
+    4 | (119.69, 63.68) | (14.38, 41.04) | 105.3 | 11.572 |   +3.35
+  ... (middle frames omitted) ...
+   24 | (31.76, 35.34) | (10.5, 48.42)  |  31.2 | 17.503 |   -5.98
+   25 | (26.54, 38.61) | (10.31, 48.79) |  25.3 | 17.974 |   -5.89
+   26 | (21.38, 41.84) | (10.31, 48.79) |  19.1 | 18.468 |   -6.17
+   27 | (16.3, 45.03)  | (10.31, 48.79) |  13.1 | 18.954 |   -6.08
+   28 | (11.29, 48.17) | (10.31, 48.79) |   7.1 | 19.434 |   -6.00
+
+
+=== LASER ANALYSIS [21:53:40.831] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 9.46
+Total Frames: 29
+Minimum Distance Achieved: 9.46px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -5.933px
+Frames with No Progress: 0
+Start Position: (94.48, 70.9)
+End Position: (12.75, 46.8)
+Start Target: (15.15, 39.57)
+End Target: (10.12, 49.16)
+Start Distance: 78.64px
+End Distance: 9.46px
+
+*** ANALYSIS ***
+- Got close (9.46px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (94.48, 70.9)  | (15.15, 39.57) |  78.6 | 13.709 |   +0.00
+    1 | (101.84, 67.36) | (14.96, 39.94) |  85.3 | 13.173 |   +6.69
+    2 | (108.23, 62.41) | (14.77, 40.3)  |  91.2 | 12.706 |   +5.85
+    3 | (113.41, 56.32) | (14.57, 40.67) |  96.1 | 12.309 |   +4.96
+    4 | (117.25, 49.39) | (14.38, 41.04) | 100.2 | 11.983 |   +4.07
+  ... (middle frames omitted) ...
+   24 | (30.8, 30.72)  | (10.5, 48.42)  |  33.2 | 17.346 |   -5.95
+   25 | (26.17, 34.8)  | (10.31, 48.79) |  27.3 | 17.815 |   -5.86
+   26 | (21.64, 38.85) | (10.12, 49.16) |  21.5 | 18.277 |   -5.78
+   27 | (17.16, 42.85) | (10.12, 49.16) |  15.5 | 18.764 |   -6.08
+   28 | (12.75, 46.8)  | (10.12, 49.16) |   9.5 | 19.244 |   -6.00
+
+
+=== LASER ANALYSIS [21:53:40.831] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 7.07
+Total Frames: 29
+Minimum Distance Achieved: 7.07px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -6.023px
+Frames with No Progress: 0
+Start Position: (96.18, 84.47)
+End Position: (11.29, 48.17)
+Start Target: (15.15, 39.57)
+End Target: (10.31, 48.79)
+Start Distance: 86.63px
+End Distance: 7.07px
+
+*** ANALYSIS ***
+- Got close (7.07px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (96.18, 84.47) | (15.15, 39.57) |  86.6 | 13.070 |   +0.00
+    1 | (103.61, 81.09) | (14.96, 39.94) |  92.6 | 12.590 |   +6.00
+    2 | (110.14, 76.32) | (14.77, 40.3)  |  97.8 | 12.179 |   +5.13
+    3 | (115.55, 70.43) | (14.57, 40.67) | 102.0 | 11.840 |   +4.24
+    4 | (119.69, 63.68) | (14.38, 41.04) | 105.3 | 11.572 |   +3.35
+  ... (middle frames omitted) ...
+   24 | (31.76, 35.34) | (10.5, 48.42)  |  31.2 | 17.503 |   -5.98
+   25 | (26.54, 38.61) | (10.31, 48.79) |  25.3 | 17.974 |   -5.89
+   26 | (21.38, 41.84) | (10.31, 48.79) |  19.1 | 18.468 |   -6.17
+   27 | (16.3, 45.03)  | (10.31, 48.79) |  13.1 | 18.954 |   -6.08
+   28 | (11.29, 48.17) | (10.31, 48.79) |   7.1 | 19.434 |   -6.00
+
+
+=== LASER ANALYSIS [21:53:40.849] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 7.73 < threshold: 10.0
+Total Frames: 30
+Minimum Distance Achieved: 7.73px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -5.928px
+Frames with No Progress: 0
+Start Position: (96.6, 71.17)
+End Position: (11.54, 47.91)
+Start Target: (15.15, 39.57)
+End Target: (10.12, 49.16)
+Start Distance: 80.66px
+End Distance: 7.73px
+
+*** ANALYSIS ***
+- Got close (7.73px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (96.6, 71.17)  | (15.15, 39.57) |  80.7 | 13.547 |   +0.00
+    1 | (103.98, 67.67) | (14.96, 39.94) |  87.4 | 13.008 |   +6.74
+    2 | (110.4, 62.77) | (14.77, 40.3)  |  93.3 | 12.535 |   +5.91
+    3 | (115.66, 56.74) | (14.57, 40.67) |  98.3 | 12.132 |   +5.03
+    4 | (119.6, 49.87) | (14.38, 41.04) | 102.5 | 11.801 |   +4.15
+  ... (middle frames omitted) ...
+   25 | (29.49, 32.22) | (10.31, 48.79) |  31.5 | 17.479 |   -5.86
+   26 | (24.91, 36.23) | (10.12, 49.16) |  25.7 | 17.942 |   -5.78
+   27 | (20.39, 40.18) | (10.12, 49.16) |  19.6 | 18.428 |   -6.08
+   28 | (15.93, 44.07) | (10.12, 49.16) |  13.7 | 18.908 |   -6.00
+   29 | (11.54, 47.91) | (10.12, 49.16) |   7.7 | 19.382 |   -5.92
+
+
+=== LASER ANALYSIS [21:53:40.850] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 8.53 < threshold: 10.0
+Total Frames: 30
+Minimum Distance Achieved: 8.53px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -6.013px
+Frames with No Progress: 0
+Start Position: (99.92, 86.75)
+End Position: (12.63, 47.42)
+Start Target: (15.15, 39.57)
+End Target: (10.31, 48.79)
+Start Distance: 90.98px
+End Distance: 8.53px
+
+*** ANALYSIS ***
+- Got close (8.53px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (99.92, 86.75) | (15.15, 39.57) |  91.0 | 12.722 |   +0.00
+    1 | (107.39, 83.45) | (14.96, 39.94) |  97.0 | 12.239 |   +6.03
+    2 | (114.01, 78.8) | (14.77, 40.3)  | 102.2 | 11.825 |   +5.18
+    3 | (119.55, 73.03) | (14.57, 40.67) | 106.5 | 11.481 |   +4.31
+    4 | (123.89, 66.41) | (14.38, 41.04) | 109.9 | 11.205 |   +3.44
+  ... (middle frames omitted) ...
+   25 | (33.15, 35.3)  | (10.31, 48.79) |  32.7 | 17.385 |   -5.90
+   26 | (27.91, 38.4)  | (10.31, 48.79) |  26.5 | 17.878 |   -6.17
+   27 | (22.75, 41.45) | (10.31, 48.79) |  20.4 | 18.365 |   -6.08
+   28 | (17.65, 44.45) | (10.31, 48.79) |  14.4 | 18.845 |   -6.00
+   29 | (12.63, 47.42) | (10.31, 48.79) |   8.5 | 19.318 |   -5.92
+
+
+=== LASER ANALYSIS [21:53:40.850] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 8.20 < threshold: 10.0
+Total Frames: 30
+Minimum Distance Achieved: 8.20px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -6.008px
+Frames with No Progress: 0
+Start Position: (98.37, 77.05)
+End Position: (12.2, 47.37)
+Start Target: (15.15, 39.57)
+End Target: (10.31, 48.79)
+Start Distance: 84.81px
+End Distance: 8.20px
+
+*** ANALYSIS ***
+- Got close (8.20px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (98.37, 77.05) | (15.15, 39.57) |  84.8 | 13.215 |   +0.00
+    1 | (105.79, 73.63) | (14.96, 39.94) |  91.3 | 12.697 |   +6.48
+    2 | (112.29, 68.83) | (14.77, 40.3)  |  96.9 | 12.246 |   +5.64
+    3 | (117.67, 62.91) | (14.57, 40.67) | 101.7 | 11.865 |   +4.76
+    4 | (121.77, 56.13) | (14.38, 41.04) | 105.6 | 11.554 |   +3.88
+  ... (middle frames omitted) ...
+   25 | (31.28, 33.09) | (10.31, 48.79) |  32.4 | 17.411 |   -5.87
+   26 | (26.41, 36.73) | (10.31, 48.79) |  26.2 | 17.904 |   -6.17
+   27 | (21.61, 40.33) | (10.31, 48.79) |  20.1 | 18.391 |   -6.08
+   28 | (16.87, 43.88) | (10.31, 48.79) |  14.1 | 18.871 |   -6.00
+   29 | (12.2, 47.37)  | (10.31, 48.79) |   8.2 | 19.344 |   -5.92
+
+
+=== LASER ANALYSIS [21:53:40.851] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 7.73
+Total Frames: 30
+Minimum Distance Achieved: 7.73px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -5.928px
+Frames with No Progress: 0
+Start Position: (96.6, 71.17)
+End Position: (11.54, 47.91)
+Start Target: (15.15, 39.57)
+End Target: (10.12, 49.16)
+Start Distance: 80.66px
+End Distance: 7.73px
+
+*** ANALYSIS ***
+- Got close (7.73px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (96.6, 71.17)  | (15.15, 39.57) |  80.7 | 13.547 |   +0.00
+    1 | (103.98, 67.67) | (14.96, 39.94) |  87.4 | 13.008 |   +6.74
+    2 | (110.4, 62.77) | (14.77, 40.3)  |  93.3 | 12.535 |   +5.91
+    3 | (115.66, 56.74) | (14.57, 40.67) |  98.3 | 12.132 |   +5.03
+    4 | (119.6, 49.87) | (14.38, 41.04) | 102.5 | 11.801 |   +4.15
+  ... (middle frames omitted) ...
+   25 | (29.49, 32.22) | (10.31, 48.79) |  31.5 | 17.479 |   -5.86
+   26 | (24.91, 36.23) | (10.12, 49.16) |  25.7 | 17.942 |   -5.78
+   27 | (20.39, 40.18) | (10.12, 49.16) |  19.6 | 18.428 |   -6.08
+   28 | (15.93, 44.07) | (10.12, 49.16) |  13.7 | 18.908 |   -6.00
+   29 | (11.54, 47.91) | (10.12, 49.16) |   7.7 | 19.382 |   -5.92
+
+
+=== LASER ANALYSIS [21:53:40.851] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 8.53
+Total Frames: 30
+Minimum Distance Achieved: 8.53px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -6.013px
+Frames with No Progress: 0
+Start Position: (99.92, 86.75)
+End Position: (12.63, 47.42)
+Start Target: (15.15, 39.57)
+End Target: (10.31, 48.79)
+Start Distance: 90.98px
+End Distance: 8.53px
+
+*** ANALYSIS ***
+- Got close (8.53px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (99.92, 86.75) | (15.15, 39.57) |  91.0 | 12.722 |   +0.00
+    1 | (107.39, 83.45) | (14.96, 39.94) |  97.0 | 12.239 |   +6.03
+    2 | (114.01, 78.8) | (14.77, 40.3)  | 102.2 | 11.825 |   +5.18
+    3 | (119.55, 73.03) | (14.57, 40.67) | 106.5 | 11.481 |   +4.31
+    4 | (123.89, 66.41) | (14.38, 41.04) | 109.9 | 11.205 |   +3.44
+  ... (middle frames omitted) ...
+   25 | (33.15, 35.3)  | (10.31, 48.79) |  32.7 | 17.385 |   -5.90
+   26 | (27.91, 38.4)  | (10.31, 48.79) |  26.5 | 17.878 |   -6.17
+   27 | (22.75, 41.45) | (10.31, 48.79) |  20.4 | 18.365 |   -6.08
+   28 | (17.65, 44.45) | (10.31, 48.79) |  14.4 | 18.845 |   -6.00
+   29 | (12.63, 47.42) | (10.31, 48.79) |   8.5 | 19.318 |   -5.92
+
+
+=== LASER ANALYSIS [21:53:40.851] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 8.20
+Total Frames: 30
+Minimum Distance Achieved: 8.20px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -6.008px
+Frames with No Progress: 0
+Start Position: (98.37, 77.05)
+End Position: (12.2, 47.37)
+Start Target: (15.15, 39.57)
+End Target: (10.31, 48.79)
+Start Distance: 84.81px
+End Distance: 8.20px
+
+*** ANALYSIS ***
+- Got close (8.20px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (98.37, 77.05) | (15.15, 39.57) |  84.8 | 13.215 |   +0.00
+    1 | (105.79, 73.63) | (14.96, 39.94) |  91.3 | 12.697 |   +6.48
+    2 | (112.29, 68.83) | (14.77, 40.3)  |  96.9 | 12.246 |   +5.64
+    3 | (117.67, 62.91) | (14.57, 40.67) | 101.7 | 11.865 |   +4.76
+    4 | (121.77, 56.13) | (14.38, 41.04) | 105.6 | 11.554 |   +3.88
+  ... (middle frames omitted) ...
+   25 | (31.28, 33.09) | (10.31, 48.79) |  32.4 | 17.411 |   -5.87
+   26 | (26.41, 36.73) | (10.31, 48.79) |  26.2 | 17.904 |   -6.17
+   27 | (21.61, 40.33) | (10.31, 48.79) |  20.1 | 18.391 |   -6.08
+   28 | (16.87, 43.88) | (10.31, 48.79) |  14.1 | 18.871 |   -6.00
+   29 | (12.2, 47.37)  | (10.31, 48.79) |   8.2 | 19.344 |   -5.92
+
+
+=== LASER ANALYSIS [21:53:40.876] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 8.42 < threshold: 10.0
+Total Frames: 32
+Minimum Distance Achieved: 8.42px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -5.917px
+Frames with No Progress: 0
+Start Position: (103.64, 77.33)
+End Position: (12.32, 47.51)
+Start Target: (15.15, 39.57)
+End Target: (10.12, 49.16)
+Start Distance: 89.61px
+End Distance: 8.42px
+
+*** ANALYSIS ***
+- Got close (8.42px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (103.64, 77.33) | (15.15, 39.57) |  89.6 | 12.831 |   +0.00
+    1 | (111.11, 74.01) | (14.96, 39.94) |  96.2 | 12.300 |   +6.64
+    2 | (117.7, 69.34) | (14.77, 40.3)  | 102.1 | 11.835 |   +5.82
+    3 | (123.24, 63.56) | (14.57, 40.67) | 107.0 | 11.437 |   +4.97
+    4 | (127.57, 56.93) | (14.38, 41.04) | 111.2 | 11.107 |   +4.12
+  ... (middle frames omitted) ...
+   27 | (30.88, 33.65) | (10.12, 49.16) |  31.9 | 17.447 |   -6.08
+   28 | (26.14, 37.19) | (10.12, 49.16) |  25.9 | 17.927 |   -6.00
+   29 | (21.47, 40.68) | (10.12, 49.16) |  20.0 | 18.400 |   -5.92
+   30 | (16.86, 44.12) | (10.12, 49.16) |  14.2 | 18.867 |   -5.83
+   31 | (12.32, 47.51) | (10.12, 49.16) |   8.4 | 19.327 |   -5.75
+
+
+=== LASER ANALYSIS [21:53:40.877] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 4.71 < threshold: 10.0
+Total Frames: 32
+Minimum Distance Achieved: 4.71px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -5.917px
+Frames with No Progress: 0
+Start Position: (100.77, 71.06)
+End Position: (9.58, 49.41)
+Start Target: (15.15, 39.57)
+End Target: (10.31, 48.79)
+Start Distance: 84.41px
+End Distance: 4.71px
+
+*** ANALYSIS ***
+- Got close (4.71px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (100.77, 71.06) | (15.15, 39.57) |  84.4 | 13.248 |   +0.00
+    1 | (108.18, 67.63) | (14.96, 39.94) |  91.3 | 12.698 |   +6.87
+    2 | (114.68, 62.83) | (14.77, 40.3)  |  97.3 | 12.214 |   +6.06
+    3 | (120.07, 56.92) | (14.57, 40.67) | 102.5 | 11.797 |   +5.20
+    4 | (124.19, 50.16) | (14.38, 41.04) | 106.9 | 11.450 |   +4.34
+  ... (middle frames omitted) ...
+   27 | (27.18, 34.35) | (10.31, 48.79) |  28.2 | 17.743 |   -6.08
+   28 | (22.69, 38.2)  | (10.31, 48.79) |  22.2 | 18.223 |   -6.00
+   29 | (18.25, 41.99) | (10.31, 48.79) |  16.3 | 18.697 |   -5.92
+   30 | (13.89, 45.73) | (10.31, 48.79) |  10.5 | 19.163 |   -5.83
+   31 | (9.58, 49.41)  | (10.31, 48.79) |   4.7 | 19.623 |   -5.75
+
+
+=== LASER ANALYSIS [21:53:40.877] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 8.42
+Total Frames: 32
+Minimum Distance Achieved: 8.42px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -5.917px
+Frames with No Progress: 0
+Start Position: (103.64, 77.33)
+End Position: (12.32, 47.51)
+Start Target: (15.15, 39.57)
+End Target: (10.12, 49.16)
+Start Distance: 89.61px
+End Distance: 8.42px
+
+*** ANALYSIS ***
+- Got close (8.42px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (103.64, 77.33) | (15.15, 39.57) |  89.6 | 12.831 |   +0.00
+    1 | (111.11, 74.01) | (14.96, 39.94) |  96.2 | 12.300 |   +6.64
+    2 | (117.7, 69.34) | (14.77, 40.3)  | 102.1 | 11.835 |   +5.82
+    3 | (123.24, 63.56) | (14.57, 40.67) | 107.0 | 11.437 |   +4.97
+    4 | (127.57, 56.93) | (14.38, 41.04) | 111.2 | 11.107 |   +4.12
+  ... (middle frames omitted) ...
+   27 | (30.88, 33.65) | (10.12, 49.16) |  31.9 | 17.447 |   -6.08
+   28 | (26.14, 37.19) | (10.12, 49.16) |  25.9 | 17.927 |   -6.00
+   29 | (21.47, 40.68) | (10.12, 49.16) |  20.0 | 18.400 |   -5.92
+   30 | (16.86, 44.12) | (10.12, 49.16) |  14.2 | 18.867 |   -5.83
+   31 | (12.32, 47.51) | (10.12, 49.16) |   8.4 | 19.327 |   -5.75
+
+
+=== LASER ANALYSIS [21:53:40.878] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 4.71
+Total Frames: 32
+Minimum Distance Achieved: 4.71px
+Hit Threshold: 10.0px
+Collision Threshold: 15.0px
+Average Distance Change (last 5 frames): -5.917px
+Frames with No Progress: 0
+Start Position: (100.77, 71.06)
+End Position: (9.58, 49.41)
+Start Target: (15.15, 39.57)
+End Target: (10.31, 48.79)
+Start Distance: 84.41px
+End Distance: 4.71px
+
+*** ANALYSIS ***
+- Got close (4.71px) but failed to hit
+- Possible threshold issue or collision detection problem
+
+--- DETAILED FRAME DATA ---
+Frame | Laser Pos      | Target Pos     | Dist  | Dir Change | Progress
+------|----------------|----------------|-------|------------|----------
+    0 | (100.77, 71.06) | (15.15, 39.57) |  84.4 | 13.248 |   +0.00
+    1 | (108.18, 67.63) | (14.96, 39.94) |  91.3 | 12.698 |   +6.87
+    2 | (114.68, 62.83) | (14.77, 40.3)  |  97.3 | 12.214 |   +6.06
+    3 | (120.07, 56.92) | (14.57, 40.67) | 102.5 | 11.797 |   +5.20
+    4 | (124.19, 50.16) | (14.38, 41.04) | 106.9 | 11.450 |   +4.34
+  ... (middle frames omitted) ...
+   27 | (27.18, 34.35) | (10.31, 48.79) |  28.2 | 17.743 |   -6.08
+   28 | (22.69, 38.2)  | (10.31, 48.79) |  22.2 | 18.223 |   -6.00
+   29 | (18.25, 41.99) | (10.31, 48.79) |  16.3 | 18.697 |   -5.92
+   30 | (13.89, 45.73) | (10.31, 48.79) |  10.5 | 19.163 |   -5.83
+   31 | (9.58, 49.41)  | (10.31, 48.79) |   4.7 | 19.623 |   -5.75
+
