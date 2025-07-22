@@ -10,6 +10,7 @@ import random
 from Common import SCREEN_WIDTH
 from LaserConfig import LaserConfig, default_laser_config
 from LaserTelemetry import LaserTelemetry
+from Vector2D import Vector2D, angle_difference
 
 class LaserType01:
     """方法1: 線形補間 + 角度制限（最軽量）"""
@@ -41,34 +42,28 @@ class LaserType01:
         self.hit_threshold = config.hit_threshold        # ヒット判定距離（100%命中保証用）
         self.collision_threshold = config.collision_threshold  # コリジョン判定距離
         
-        # 位置と方向
-        self.x = float(start_x)
-        self.y = float(start_y)
-        self.target_x = target_x
-        self.target_y = target_y
+        # 位置と方向（Vector2D使用）
+        self.position = Vector2D(start_x, start_y)
+        self.target_position = Vector2D(target_x, target_y)
         
         # ターゲット情報
         self.target_enemy_id = target_enemy_id
-        self.initial_target_x = target_x
-        self.initial_target_y = target_y
+        self.initial_target_position = Vector2D(target_x, target_y)
         
         # 初期方向をプレイヤー位置に基づいて設定
         screen_center_x = SCREEN_WIDTH // 2
         if start_x > screen_center_x:
             # 右側にいる場合：右向きで発射
-            self.direction_x = 1.0
-            self.direction_y = 0.0
+            self.direction = Vector2D(1.0, 0.0)
         elif start_x < screen_center_x:
             # 左側にいる場合：左向きで発射
-            self.direction_x = -1.0
-            self.direction_y = 0.0
+            self.direction = Vector2D(-1.0, 0.0)
         else:
             # 中央にいる場合：上向きで発射
-            self.direction_x = 0.0
-            self.direction_y = -1.0
+            self.direction = Vector2D(0.0, -1.0)
         
         # 軌跡
-        self.trail = [(self.x, self.y)]
+        self.trail = [self.position.to_tuple()]
         
         # アクティブ状態
         self.active = True
@@ -100,32 +95,23 @@ class LaserType01:
     
     def _update_target_position(self, target_x, target_y):
         """ターゲット位置の更新"""
-        self.target_x = target_x
-        self.target_y = target_y
+        self.target_position = Vector2D(target_x, target_y)
     
     def _calculate_homing_direction(self, delta_time):
-        """ホーミング方向計算"""
-        # ターゲットへの方向を計算
-        to_target_x = self.target_x - self.x
-        to_target_y = self.target_y - self.y
-        distance = math.sqrt(to_target_x * to_target_x + to_target_y * to_target_y)
+        """ホーミング方向計算（Vector2D使用）"""
+        # ターゲットへのベクトルと距離を計算
+        to_target = self.target_position - self.position
+        distance = to_target.magnitude()
         current_turn_speed = 0.0
         
         if distance > 0:
-            # 正規化
-            to_target_x /= distance
-            to_target_y /= distance
+            # ターゲット方向の正規化ベクトル
+            target_direction = to_target.normalize()
             
-            # 現在の方向からターゲット方向への角度差を計算
-            current_angle = math.atan2(self.direction_y, self.direction_x)
-            target_angle = math.atan2(to_target_y, to_target_x)
-            
-            # 角度差を -π から π の範囲に正規化
-            angle_diff = target_angle - current_angle
-            while angle_diff > math.pi:
-                angle_diff -= 2 * math.pi
-            while angle_diff < -math.pi:
-                angle_diff += 2 * math.pi
+            # 現在の方向とターゲット方向の角度差を計算
+            current_angle = self.direction.angle()
+            target_angle = target_direction.angle()
+            angle_diff = angle_difference(current_angle, target_angle)
             
             # 距離に基づいて旋回速度を調整
             current_turn_speed = self.turn_speed_slow
@@ -139,10 +125,9 @@ class LaserType01:
             if abs(angle_diff) > max_turn:
                 angle_diff = math.copysign(max_turn, angle_diff)
             
-            # 新しい方向を計算
+            # 新しい方向を設定
             new_angle = current_angle + angle_diff
-            self.direction_x = math.cos(new_angle)
-            self.direction_y = math.sin(new_angle)
+            self.direction = Vector2D.from_angle(new_angle)
         
         return distance, current_turn_speed
     
@@ -155,21 +140,20 @@ class LaserType01:
     
     def _update_position(self, delta_time):
         """位置更新"""
-        self.x += self.direction_x * self.speed * delta_time
-        self.y += self.direction_y * self.speed * delta_time
+        velocity = self.direction * self.speed * delta_time
+        self.position += velocity
     
     def _update_debug_and_trail(self, distance, current_turn_speed):
         """デバッグ情報と軌跡の更新"""
-        # テレメトリーデータを記録
-        to_target_x = (self.target_x - self.x) / distance if distance > 0 else 0
-        to_target_y = (self.target_y - self.y) / distance if distance > 0 else 0
+        # テレメトリーデータを記録（Vector2D使用）
+        target_direction = (self.target_position - self.position).normalize() if distance > 0 else Vector2D(0, 0)
         
         laser_data = {
-            'laser_pos': (round(self.x, 2), round(self.y, 2)),
-            'target_pos': (round(self.target_x, 2), round(self.target_y, 2)),
+            'laser_pos': (round(self.position.x, 2), round(self.position.y, 2)),
+            'target_pos': (round(self.target_position.x, 2), round(self.target_position.y, 2)),
             'distance': distance,
-            'target_direction': (round(to_target_x, 3), round(to_target_y, 3)),
-            'laser_direction': (round(self.direction_x, 3), round(self.direction_y, 3)),
+            'target_direction': (round(target_direction.x, 3), round(target_direction.y, 3)),
+            'laser_direction': (round(self.direction.x, 3), round(self.direction.y, 3)),
             'turn_speed': current_turn_speed,
             'current_speed': self.speed
         }
@@ -177,14 +161,14 @@ class LaserType01:
         self.telemetry.record_frame(self.frame_count, laser_data)
         
         # デバッグイベントを記録（Telemetryシステム内でDEBUG判定）
-        current_angle = math.atan2(self.direction_y, self.direction_x)
+        current_angle = self.direction.angle()
         turn_mode = "slow" if distance >= self.transition_distance else "fast"
         
         self.telemetry.record_debug_event(self.frame_count, "frame_update", {
-            'x': round(self.x, 2),
-            'y': round(self.y, 2),
+            'x': round(self.position.x, 2),
+            'y': round(self.position.y, 2),
             'angle_rad': round(current_angle, 4),
-            'angle_deg': round(math.degrees(current_angle), 2),
+            'angle_deg': round(self.direction.angle_degrees(), 2),
             'distance_to_target': round(distance, 2),
             'turn_mode': turn_mode,
             'turn_speed': round(current_turn_speed, 4)
@@ -193,7 +177,7 @@ class LaserType01:
         self.frame_count += 1
         
         # 軌跡の更新
-        self.trail.append((self.x, self.y))
+        self.trail.append(self.position.to_tuple())
         if len(self.trail) > self.max_trail_length:
             self.trail.pop(0)
     
@@ -209,11 +193,11 @@ class LaserType01:
         
         # 画面外チェック
         OUT_THRESHOLD = 30  # 画面外判定の閾値
-        if (self.x < -OUT_THRESHOLD or self.x > SCREEN_WIDTH + OUT_THRESHOLD or 
-            self.y < -OUT_THRESHOLD or self.y > SCREEN_WIDTH + OUT_THRESHOLD):
+        if (self.position.x < -OUT_THRESHOLD or self.position.x > SCREEN_WIDTH + OUT_THRESHOLD or 
+            self.position.y < -OUT_THRESHOLD or self.position.y > SCREEN_WIDTH + OUT_THRESHOLD):
             if self.active:  # まだアクティブな場合のみログ出力
                 self.active = False
-                details = f"Final pos: ({self.x:.2f}, {self.y:.2f})"
+                details = f"Final pos: {self.position}"
                 self.telemetry.export_homing_analysis("Homing.log", self.target_enemy_id, "OUT_OF_BOUNDS", details)
                 self.telemetry.export_debug_summary("debug.log", "OUT_OF_BOUNDS")
         
@@ -245,10 +229,9 @@ class LaserType01:
         if not self.active or not enemy.active:
             return False
         
-        # エネミー中心との距離計算
-        enemy_center_x = enemy.x + enemy.sprite_size / 2
-        enemy_center_y = enemy.y + enemy.sprite_size / 2
-        center_distance = math.sqrt((self.x - enemy_center_x)**2 + (self.y - enemy_center_y)**2)
+        # エネミー中心位置をVector2Dで計算
+        enemy_center = Vector2D(enemy.x + enemy.sprite_size / 2, enemy.y + enemy.sprite_size / 2)
+        center_distance = self.position.distance_to(enemy_center)
         
         # 距離判定のみ（ホーミングレーザーは100%命中システム）
         hit_distance_threshold = self.collision_threshold
@@ -256,7 +239,7 @@ class LaserType01:
         if center_distance <= hit_distance_threshold:
             self.active = False
             details = (f"Distance hit - Distance: {center_distance:.2f}, Threshold: {hit_distance_threshold:.2f}, " +
-                      f"Laser: ({self.x:.2f},{self.y:.2f}), Enemy: ({enemy_center_x:.2f},{enemy_center_y:.2f})")
+                      f"Laser: {self.position}, Enemy: {enemy_center}")
             self.telemetry.export_homing_analysis("Homing.log", self.target_enemy_id, "COLLISION_HIT", details)
             return True
         

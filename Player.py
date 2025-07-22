@@ -354,7 +354,7 @@ class Player:
                         print(f"Enemy {laser.target_enemy_id} hit by laser!")
                 else:
                     # ターゲットが非アクティブになった場合は直進
-                    laser.update(delta_time, laser.target_x, laser.target_y)
+                    laser.update(delta_time, laser.target_position.x, laser.target_position.y)
             elif laser.active:
                 # 古いレーザー（ターゲットIDなし）は最初のエネミーを追尾
                 active_enemies = enemy_manager.get_active_enemies()
