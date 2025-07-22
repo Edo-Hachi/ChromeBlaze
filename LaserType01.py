@@ -8,23 +8,30 @@ import pyxel
 import math
 import random
 from Common import DEBUG, SCREEN_WIDTH
-from LaserConfig import LaserConfig
+from LaserConfig import LaserConfig, default_laser_config
 
 class LaserType01:
     """方法1: 線形補間 + 角度制限（最軽量）"""
     
-    def __init__(self, start_x, start_y, target_x, target_y, target_enemy_id=None):
-        # レーザー設定（LaserConfigから取得）
-        self.initial_speed = LaserConfig.INITIAL_SPEED
-        self.min_speed = LaserConfig.MIN_SPEED
+    def __init__(self, start_x, start_y, target_x, target_y, target_enemy_id=None, config: LaserConfig = None):
+        # 設定の取得（カスタム設定がない場合はデフォルトを使用）
+        if config is None:
+            config = default_laser_config
+        
+        # 設定をインスタンス変数として保持
+        self.config = config
+        
+        # レーザー設定（dataclassから取得）
+        self.initial_speed = config.initial_speed
+        self.min_speed = config.min_speed
         self.speed = self.initial_speed  # 現在の速度
-        self.speed_decay = LaserConfig.SPEED_DECAY
-        self.turn_speed_slow = LaserConfig.TURN_SPEED_SLOW
-        self.turn_speed_fast = LaserConfig.TURN_SPEED_FAST
-        self.transition_distance = LaserConfig.TRANSITION_DISTANCE
-        self.max_trail_length = LaserConfig.MAX_TRAIL_LENGTH
-        self.hit_threshold = LaserConfig.HIT_THRESHOLD
-        self.collision_threshold = LaserConfig.COLLISION_THRESHOLD
+        self.speed_decay = config.speed_decay
+        self.turn_speed_slow = config.turn_speed_slow
+        self.turn_speed_fast = config.turn_speed_fast
+        self.transition_distance = config.transition_distance
+        self.max_trail_length = config.max_trail_length
+        self.hit_threshold = config.hit_threshold
+        self.collision_threshold = config.collision_threshold
         
         # 位置と方向
         self.x = float(start_x)
@@ -73,18 +80,38 @@ class LaserType01:
             self.debug_log = None
     
     def update(self, delta_time, target_x, target_y):
-        """レーザーの更新"""
+        """レーザーの更新（分解版）"""
         if not self.active:
-            return
+            return False
         
         # ターゲット位置を更新
+        self._update_target_position(target_x, target_y)
+        
+        # ホーミング計算
+        distance, current_turn_speed = self._calculate_homing_direction(delta_time)
+        
+        # 物理演算
+        self._apply_speed_decay()
+        self._update_position(delta_time)
+        
+        # デバッグ・軌跡更新
+        self._update_debug_and_trail(distance, current_turn_speed)
+        
+        # 判定処理
+        return self._check_hit_and_boundaries(distance)
+    
+    def _update_target_position(self, target_x, target_y):
+        """ターゲット位置の更新"""
         self.target_x = target_x
         self.target_y = target_y
-        
+    
+    def _calculate_homing_direction(self, delta_time):
+        """ホーミング方向計算"""
         # ターゲットへの方向を計算
         to_target_x = self.target_x - self.x
         to_target_y = self.target_y - self.y
         distance = math.sqrt(to_target_x * to_target_x + to_target_y * to_target_y)
+        current_turn_speed = 0.0
         
         if distance > 0:
             # 正規化
@@ -119,22 +146,28 @@ class LaserType01:
             self.direction_x = math.cos(new_angle)
             self.direction_y = math.sin(new_angle)
         
-        # 速度減速処理（フレームごとに減速）
+        return distance, current_turn_speed
+    
+    def _apply_speed_decay(self):
+        """速度減速処理"""
         if self.speed > self.min_speed:
             self.speed -= self.speed_decay
             if self.speed < self.min_speed:
                 self.speed = self.min_speed
-        
-        # 位置を更新
+    
+    def _update_position(self, delta_time):
+        """位置更新"""
         self.x += self.direction_x * self.speed * delta_time
         self.y += self.direction_y * self.speed * delta_time
-        
+    
+    def _update_debug_and_trail(self, distance, current_turn_speed):
+        """デバッグ情報と軌跡の更新"""
         # ホーミングデバッグ情報を記録
-        self._record_homing_debug(distance, to_target_x if distance > 0 else 0, 
-                                 to_target_y if distance > 0 else 0, 
-                                 current_turn_speed if distance > 0 else 0)
+        to_target_x = (self.target_x - self.x) / distance if distance > 0 else 0
+        to_target_y = (self.target_y - self.y) / distance if distance > 0 else 0
+        self._record_homing_debug(distance, to_target_x, to_target_y, current_turn_speed)
         
-        # デバッグ情報を記録（DEBUGフラグで制御）
+        # DEBUGフラグによるデバッグ情報記録
         if DEBUG and self.debug_log is not None:
             current_angle = math.atan2(self.direction_y, self.direction_x)
             turn_mode = "slow" if distance >= self.transition_distance else "fast"
@@ -150,13 +183,13 @@ class LaserType01:
             })
         self.frame_count += 1
         
-        # 軌跡に追加
+        # 軌跡の更新
         self.trail.append((self.x, self.y))
-        
-        # 軌跡の長さ制限
         if len(self.trail) > self.max_trail_length:
             self.trail.pop(0)
-        
+    
+    def _check_hit_and_boundaries(self, distance):
+        """ヒット判定と境界チェック"""
         # ターゲットに近づいたらヒット（100%命中保証）
         if distance < self.hit_threshold:
             self.active = False
@@ -189,7 +222,7 @@ class LaserType01:
             # 透明度効果（古い軌跡ほど薄く）
             #alpha_ratio = i / len(self.trail)
             #if alpha_ratio > 0.3:  # 薄すぎる部分はスキップ
-            pyxel.line(int(start_x), int(start_y), int(end_x), int(end_y), LaserConfig.TRAIL_COLOR)
+            pyxel.line(int(start_x), int(start_y), int(end_x), int(end_y), self.config.trail_color)
         
         # レーザーヘッド（8x8の矩形）
         #head_x = int(self.x) - 1
@@ -207,7 +240,7 @@ class LaserType01:
         center_distance = math.sqrt((self.x - enemy_center_x)**2 + (self.y - enemy_center_y)**2)
         
         # 距離判定のみ（ホーミングレーザーは100%命中システム）
-        hit_distance_threshold = LaserConfig.COLLISION_THRESHOLD
+        hit_distance_threshold = self.collision_threshold
         
         if center_distance <= hit_distance_threshold:
             self.active = False
@@ -246,7 +279,7 @@ class LaserType01:
             self.circling_detection.append(distance_change)
             
             # 距離が縮まらない状況をカウント
-            if distance_change >= LaserConfig.NO_PROGRESS_THRESHOLD:
+            if distance_change >= self.config.no_progress_threshold:
                 self.distance_not_decreasing_count += 1
             else:
                 self.distance_not_decreasing_count = 0
@@ -254,7 +287,7 @@ class LaserType01:
             self.circling_detection.append(0)
         
         # 直近の設定フレーム数の情報だけ保持
-        if len(self.circling_detection) > LaserConfig.CIRCLING_DETECTION_FRAMES:
+        if len(self.circling_detection) > self.config.circling_detection_frames:
             self.circling_detection.pop(0)
         
         # デバッグログに記録
@@ -296,7 +329,7 @@ class LaserType01:
                     avg_distance_change = sum(self.circling_detection[-5:]) / 5
                     f.write(f"Average Distance Change (last 5 frames): {avg_distance_change:.3f}px\n")
                     
-                    if avg_distance_change > LaserConfig.CIRCLING_THRESHOLD:
+                    if avg_distance_change > self.config.circling_threshold:
                         f.write("*** POTENTIAL CIRCLING DETECTED ***\n")
                 
                 f.write(f"Frames with No Progress: {self.distance_not_decreasing_count}\n")
