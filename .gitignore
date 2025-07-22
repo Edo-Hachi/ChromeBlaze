@@ -5,3 +5,4 @@ __pycache__/
 PyxelShmup/
 .claude/settings.local.json
 docs/
+*.log

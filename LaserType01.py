@@ -186,14 +186,14 @@ class LaserType01:
             end_x, end_y = self.trail[i + 1]
             
             # 透明度効果（古い軌跡ほど薄く）
-            alpha_ratio = i / len(self.trail)
-            if alpha_ratio > 0.3:  # 薄すぎる部分はスキップ
-                pyxel.line(int(start_x), int(start_y), int(end_x), int(end_y), pyxel.COLOR_CYAN)
+            #alpha_ratio = i / len(self.trail)
+            #if alpha_ratio > 0.3:  # 薄すぎる部分はスキップ
+            pyxel.line(int(start_x), int(start_y), int(end_x), int(end_y), pyxel.COLOR_CYAN)
         
         # レーザーヘッド（8x8の矩形）
-        head_x = int(self.x) - 2
-        head_y = int(self.y) - 2
-        pyxel.rect(head_x, head_y, 4, 4, pyxel.COLOR_YELLOW)
+        #head_x = int(self.x) - 1
+        #head_y = int(self.y) - 1
+        #pyxel.rect(head_x, head_y, 2, 2, pyxel.COLOR_RED)
     
     def check_collision(self, enemy):
         """エネミーとの距離判定（100%命中保証）"""
@@ -206,7 +206,8 @@ class LaserType01:
         center_distance = math.sqrt((self.x - enemy_center_x)**2 + (self.y - enemy_center_y)**2)
         
         # 距離判定のみ（ホーミングレーザーは100%命中システム）
-        hit_distance_threshold = 10.0  # 余裕を持った判定距離
+        #hit_distance_threshold = 10.0  # 余裕を持った判定距離
+        hit_distance_threshold = 15.0  # 余裕を持った判定距離
         
         if center_distance <= hit_distance_threshold:
             self.active = False

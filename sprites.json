@@ -30,7 +30,7 @@
       "NAME": "PBULLET",
       "ACT_NAME": "NO_ACT",
       "FRAME_NUM": "0",
-      "ANIM_SPD": "10"
+      "ANIM_SPD": "5"
     },
     "48_0": {
       "x": 48,
@@ -38,7 +38,7 @@
       "NAME": "PBULLET",
       "ACT_NAME": "NO_ACT",
       "FRAME_NUM": "1",
-      "ANIM_SPD": "10"
+      "ANIM_SPD": "5"
     },
     "56_0": {
       "x": 56,

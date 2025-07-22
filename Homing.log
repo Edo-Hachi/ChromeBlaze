@@ -2483,3 +2483,2803 @@ Details: Laser became inactive - Min distance: 13.96
 Total Frames: 23
 Minimum Distance Achieved: 13.96px
 Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:16.393] ===
+Target Enemy ID: 2
+End Reason: OUT_OF_BOUNDS
+Details: Final pos: (140.31, 75.32)
+Total Frames: 2
+Minimum Distance Achieved: 49.12px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:16.394] ===
+Target Enemy ID: 2
+End Reason: OUT_OF_BOUNDS
+Details: Final pos: (141.29, 83.09)
+Total Frames: 2
+Minimum Distance Achieved: 56.77px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:16.395] ===
+Target Enemy ID: 2
+End Reason: OUT_OF_BOUNDS
+Details: Final pos: (142.31, 76.12)
+Total Frames: 2
+Minimum Distance Achieved: 50.32px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:16.395] ===
+Target Enemy ID: 2
+End Reason: OUT_OF_BOUNDS_CLEANUP
+Details: Cleaned up at pos: (140.31, 75.32)
+Total Frames: 2
+Minimum Distance Achieved: 49.12px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:16.396] ===
+Target Enemy ID: 2
+End Reason: OUT_OF_BOUNDS_CLEANUP
+Details: Cleaned up at pos: (141.29, 83.09)
+Total Frames: 2
+Minimum Distance Achieved: 56.77px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:16.396] ===
+Target Enemy ID: 2
+End Reason: OUT_OF_BOUNDS_CLEANUP
+Details: Cleaned up at pos: (142.31, 76.12)
+Total Frames: 2
+Minimum Distance Achieved: 50.32px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:16.438] ===
+Target Enemy ID: 2
+End Reason: OUT_OF_BOUNDS
+Details: Final pos: (139.24, 61.30)
+Total Frames: 5
+Minimum Distance Achieved: 40.76px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:16.439] ===
+Target Enemy ID: 2
+End Reason: OUT_OF_BOUNDS_CLEANUP
+Details: Cleaned up at pos: (139.24, 61.30)
+Total Frames: 5
+Minimum Distance Achieved: 40.76px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:21.392] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 9.88, Threshold: 10.00, Laser: (70.85,58.05), Enemy: (78.49,64.31)
+Total Frames: 13
+Minimum Distance Achieved: 10.89px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:21.393] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 10.89
+Total Frames: 13
+Minimum Distance Achieved: 10.89px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:21.475] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 9.40 < threshold: 10.0
+Total Frames: 18
+Minimum Distance Achieved: 9.40px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:21.476] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 9.40
+Total Frames: 18
+Minimum Distance Achieved: 9.40px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:23.319] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 2.95, Threshold: 10.00, Laser: (45.39,50.86), Enemy: (48.19,49.93)
+Total Frames: 11
+Minimum Distance Achieved: 10.36px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:23.320] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 10.36
+Total Frames: 11
+Minimum Distance Achieved: 10.36px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:23.371] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 6.19, Threshold: 10.00, Laser: (64.84,38.16), Enemy: (70.61,35.92)
+Total Frames: 14
+Minimum Distance Achieved: 13.36px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:23.372] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 13.36
+Total Frames: 14
+Minimum Distance Achieved: 13.36px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:23.407] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 8.95 < threshold: 10.0
+Total Frames: 16
+Minimum Distance Achieved: 8.95px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:23.407] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 8.95
+Total Frames: 16
+Minimum Distance Achieved: 8.95px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:23.440] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 7.49, Threshold: 10.00, Laser: (60.44,14.64), Enemy: (66.46,10.19)
+Total Frames: 18
+Minimum Distance Achieved: 14.32px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:23.441] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 14.32
+Total Frames: 18
+Minimum Distance Achieved: 14.32px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:25.603] ===
+Target Enemy ID: 3
+End Reason: OUT_OF_BOUNDS
+Details: Final pos: (-10.65, 77.43)
+Total Frames: 5
+Minimum Distance Achieved: 74.04px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:25.604] ===
+Target Enemy ID: 3
+End Reason: OUT_OF_BOUNDS_CLEANUP
+Details: Cleaned up at pos: (-10.65, 77.43)
+Total Frames: 5
+Minimum Distance Achieved: 74.04px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:25.759] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 8.95, Threshold: 10.00, Laser: (51.36,43.98), Enemy: (60.16,45.65)
+Total Frames: 14
+Minimum Distance Achieved: 16.12px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:25.760] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 16.12
+Total Frames: 14
+Minimum Distance Achieved: 16.12px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:25.786] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 8.34 < threshold: 10.0
+Total Frames: 16
+Minimum Distance Achieved: 8.34px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:25.786] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 8.34
+Total Frames: 16
+Minimum Distance Achieved: 8.34px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:25.803] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 3.22 < threshold: 10.0
+Total Frames: 17
+Minimum Distance Achieved: 3.22px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:25.804] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 3.22
+Total Frames: 17
+Minimum Distance Achieved: 3.22px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:25.821] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 5.36 < threshold: 10.0
+Total Frames: 18
+Minimum Distance Achieved: 5.36px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [20:59:25.821] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 5.36
+Total Frames: 18
+Minimum Distance Achieved: 5.36px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:08:14.226] ===
+Target Enemy ID: 2
+End Reason: OUT_OF_BOUNDS
+Details: Final pos: (140.19, 109.11)
+Total Frames: 2
+Minimum Distance Achieved: 50.29px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:08:14.226] ===
+Target Enemy ID: 2
+End Reason: OUT_OF_BOUNDS_CLEANUP
+Details: Cleaned up at pos: (140.19, 109.11)
+Total Frames: 2
+Minimum Distance Achieved: 50.29px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:08:14.261] ===
+Target Enemy ID: 2
+End Reason: OUT_OF_BOUNDS
+Details: Final pos: (140.80, 102.71)
+Total Frames: 4
+Minimum Distance Achieved: 47.05px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:08:14.261] ===
+Target Enemy ID: 2
+End Reason: OUT_OF_BOUNDS_CLEANUP
+Details: Cleaned up at pos: (140.80, 102.71)
+Total Frames: 4
+Minimum Distance Achieved: 47.05px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:08:14.325] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 6.90, Threshold: 10.00, Laser: (125.88,72.41), Enemy: (121.83,66.82)
+Total Frames: 8
+Minimum Distance Achieved: 14.57px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:08:14.326] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 14.57
+Total Frames: 8
+Minimum Distance Achieved: 14.57px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:08:16.428] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 4.54, Threshold: 10.00, Laser: (103.31,25.16), Enemy: (101.95,20.83)
+Total Frames: 14
+Minimum Distance Achieved: 11.70px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:08:16.428] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 11.70
+Total Frames: 14
+Minimum Distance Achieved: 11.70px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:08:18.577] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 5.35, Threshold: 10.00, Laser: (72.61,19.13), Enemy: (68.01,16.39)
+Total Frames: 16
+Minimum Distance Achieved: 12.35px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:08:18.578] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 12.35
+Total Frames: 16
+Minimum Distance Achieved: 12.35px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:08:20.776] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 5.52, Threshold: 10.00, Laser: (113.47,37.82), Enemy: (113.29,32.30)
+Total Frames: 7
+Minimum Distance Achieved: 13.27px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:08:20.777] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 13.27
+Total Frames: 7
+Minimum Distance Achieved: 13.27px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:08:22.876] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 2.93, Threshold: 10.00, Laser: (90.39,70.64), Enemy: (90.90,67.75)
+Total Frames: 6
+Minimum Distance Achieved: 10.77px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:08:22.877] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 10.77
+Total Frames: 6
+Minimum Distance Achieved: 10.77px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:08:23.062] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 4.42 < threshold: 10.0
+Total Frames: 17
+Minimum Distance Achieved: 4.42px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:08:23.062] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 4.42
+Total Frames: 17
+Minimum Distance Achieved: 4.42px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:08:23.090] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 8.26 < threshold: 10.0
+Total Frames: 19
+Minimum Distance Achieved: 8.26px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:08:23.090] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 8.26
+Total Frames: 19
+Minimum Distance Achieved: 8.26px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:11:52.468] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 5.16, Threshold: 10.00, Laser: (107.87,28.22), Enemy: (107.54,23.07)
+Total Frames: 11
+Minimum Distance Achieved: 12.58px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:11:52.469] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 12.58
+Total Frames: 11
+Minimum Distance Achieved: 12.58px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:11:52.504] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 6.00 < threshold: 10.0
+Total Frames: 13
+Minimum Distance Achieved: 6.00px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:11:52.504] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 6.00
+Total Frames: 13
+Minimum Distance Achieved: 6.00px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:11:52.521] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 7.61, Threshold: 10.00, Laser: (63.62,48.36), Enemy: (58.88,54.30)
+Total Frames: 14
+Minimum Distance Achieved: 14.70px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:11:52.522] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 14.70
+Total Frames: 14
+Minimum Distance Achieved: 14.70px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:11:52.556] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 8.94 < threshold: 10.0
+Total Frames: 16
+Minimum Distance Achieved: 8.94px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:11:52.557] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 8.94
+Total Frames: 16
+Minimum Distance Achieved: 8.94px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:11:54.803] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 8.21, Threshold: 10.00, Laser: (73.93,50.79), Enemy: (67.07,55.29)
+Total Frames: 12
+Minimum Distance Achieved: 15.24px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:11:54.804] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 15.24
+Total Frames: 12
+Minimum Distance Achieved: 15.24px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:11:54.855] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 5.37 < threshold: 10.0
+Total Frames: 15
+Minimum Distance Achieved: 5.37px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:11:54.856] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 5.37
+Total Frames: 15
+Minimum Distance Achieved: 5.37px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:11:54.973] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 5.52, Threshold: 10.00, Laser: (41.55,45.72), Enemy: (36.19,47.02)
+Total Frames: 22
+Minimum Distance Achieved: 12.02px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:11:54.974] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 12.02
+Total Frames: 22
+Minimum Distance Achieved: 12.02px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:11:56.922] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 7.27, Threshold: 10.00, Laser: (93.68,14.03), Enemy: (87.19,10.75)
+Total Frames: 11
+Minimum Distance Achieved: 14.69px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:11:56.922] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 14.69
+Total Frames: 11
+Minimum Distance Achieved: 14.69px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:11:56.939] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 9.23 < threshold: 10.0
+Total Frames: 12
+Minimum Distance Achieved: 9.23px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:11:56.939] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 9.23
+Total Frames: 12
+Minimum Distance Achieved: 9.23px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:11:56.956] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 8.20 < threshold: 10.0
+Total Frames: 13
+Minimum Distance Achieved: 8.20px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:11:56.957] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 8.20
+Total Frames: 13
+Minimum Distance Achieved: 8.20px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:21.837] ===
+Target Enemy ID: 2
+End Reason: OUT_OF_BOUNDS
+Details: Final pos: (141.02, 110.29)
+Total Frames: 3
+Minimum Distance Achieved: 92.32px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:21.838] ===
+Target Enemy ID: 2
+End Reason: OUT_OF_BOUNDS_CLEANUP
+Details: Cleaned up at pos: (141.02, 110.29)
+Total Frames: 3
+Minimum Distance Achieved: 92.32px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:21.856] ===
+Target Enemy ID: 2
+End Reason: OUT_OF_BOUNDS
+Details: Final pos: (142.81, 101.16)
+Total Frames: 4
+Minimum Distance Achieved: 85.35px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:21.857] ===
+Target Enemy ID: 2
+End Reason: OUT_OF_BOUNDS_CLEANUP
+Details: Cleaned up at pos: (142.81, 101.16)
+Total Frames: 4
+Minimum Distance Achieved: 85.35px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:22.024] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 8.78, Threshold: 10.00, Laser: (119.86,35.29), Enemy: (116.99,26.99)
+Total Frames: 14
+Minimum Distance Achieved: 15.95px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:22.024] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 15.95
+Total Frames: 14
+Minimum Distance Achieved: 15.95px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:22.059] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 4.49 < threshold: 10.0
+Total Frames: 16
+Minimum Distance Achieved: 4.49px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:22.059] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 4.49
+Total Frames: 16
+Minimum Distance Achieved: 4.49px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:23.622] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 8.15, Threshold: 10.00, Laser: (39.67,62.10), Enemy: (45.87,56.81)
+Total Frames: 9
+Minimum Distance Achieved: 15.73px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:23.623] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 15.73
+Total Frames: 9
+Minimum Distance Achieved: 15.73px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:23.673] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 3.72 < threshold: 10.0
+Total Frames: 12
+Minimum Distance Achieved: 3.72px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:23.674] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 3.72
+Total Frames: 12
+Minimum Distance Achieved: 3.72px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:25.624] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 9.99 < threshold: 10.0
+Total Frames: 11
+Minimum Distance Achieved: 9.99px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:25.624] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 9.99
+Total Frames: 11
+Minimum Distance Achieved: 9.99px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:25.920] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 7.65, Threshold: 10.00, Laser: (96.62,54.63), Enemy: (90.22,58.82)
+Total Frames: 29
+Minimum Distance Achieved: 10.33px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:25.920] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 10.33
+Total Frames: 29
+Minimum Distance Achieved: 10.33px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:27.689] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 6.34, Threshold: 10.00, Laser: (78.39,55.49), Enemy: (84.65,54.45)
+Total Frames: 14
+Minimum Distance Achieved: 13.51px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:27.689] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 13.51
+Total Frames: 14
+Minimum Distance Achieved: 13.51px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:27.758] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 3.13 < threshold: 10.0
+Total Frames: 18
+Minimum Distance Achieved: 3.13px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:27.758] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 3.13
+Total Frames: 18
+Minimum Distance Achieved: 3.13px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:29.843] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 4.94, Threshold: 10.00, Laser: (44.35,50.37), Enemy: (48.91,52.28)
+Total Frames: 12
+Minimum Distance Achieved: 12.21px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:29.844] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 12.21
+Total Frames: 12
+Minimum Distance Achieved: 12.21px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:29.861] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 6.69 < threshold: 10.0
+Total Frames: 13
+Minimum Distance Achieved: 6.69px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:12:29.861] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 6.69
+Total Frames: 13
+Minimum Distance Achieved: 6.69px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:08.844] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 5.15, Threshold: 10.00, Laser: (61.88,40.38), Enemy: (56.74,40.09)
+Total Frames: 14
+Minimum Distance Achieved: 12.32px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:08.845] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 12.32
+Total Frames: 14
+Minimum Distance Achieved: 12.32px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:08.862] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 5.09, Threshold: 10.00, Laser: (70.66,42.18), Enemy: (67.62,46.26)
+Total Frames: 15
+Minimum Distance Achieved: 12.17px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:08.863] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 12.17
+Total Frames: 15
+Minimum Distance Achieved: 12.17px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:08.879] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 6.98 < threshold: 10.0
+Total Frames: 16
+Minimum Distance Achieved: 6.98px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:08.880] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 6.98
+Total Frames: 16
+Minimum Distance Achieved: 6.98px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:08.914] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 9.32 < threshold: 10.0
+Total Frames: 18
+Minimum Distance Achieved: 9.32px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:08.914] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 9.32
+Total Frames: 18
+Minimum Distance Achieved: 9.32px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:10.646] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 3.65, Threshold: 10.00, Laser: (50.76,37.82), Enemy: (54.25,38.89)
+Total Frames: 13
+Minimum Distance Achieved: 10.90px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:10.647] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 10.90
+Total Frames: 13
+Minimum Distance Achieved: 10.90px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:10.664] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 9.64 < threshold: 10.0
+Total Frames: 14
+Minimum Distance Achieved: 9.64px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:10.664] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 9.64
+Total Frames: 14
+Minimum Distance Achieved: 9.64px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:10.682] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 8.63 < threshold: 10.0
+Total Frames: 15
+Minimum Distance Achieved: 8.63px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:10.683] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 8.63
+Total Frames: 15
+Minimum Distance Achieved: 8.63px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:12.829] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 4.99, Threshold: 10.00, Laser: (59.06,26.49), Enemy: (63.93,27.56)
+Total Frames: 10
+Minimum Distance Achieved: 12.11px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:12.830] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 12.11
+Total Frames: 10
+Minimum Distance Achieved: 12.11px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:12.863] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 4.15 < threshold: 10.0
+Total Frames: 12
+Minimum Distance Achieved: 4.15px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:12.863] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 4.15
+Total Frames: 12
+Minimum Distance Achieved: 4.15px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:12.881] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 8.32 < threshold: 10.0
+Total Frames: 13
+Minimum Distance Achieved: 8.32px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:12.882] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 8.32
+Total Frames: 13
+Minimum Distance Achieved: 8.32px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:48.787] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 4.18, Threshold: 10.00, Laser: (89.38,64.46), Enemy: (86.50,61.43)
+Total Frames: 6
+Minimum Distance Achieved: 11.60px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:48.787] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 11.60
+Total Frames: 6
+Minimum Distance Achieved: 11.60px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:48.804] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 6.59, Threshold: 10.00, Laser: (95.34,59.02), Enemy: (96.45,52.53)
+Total Frames: 7
+Minimum Distance Achieved: 14.34px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:48.805] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 14.34
+Total Frames: 7
+Minimum Distance Achieved: 14.34px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:48.839] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 3.04 < threshold: 10.0
+Total Frames: 9
+Minimum Distance Achieved: 3.04px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:48.839] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 3.04
+Total Frames: 9
+Minimum Distance Achieved: 3.04px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:51.126] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 8.63, Threshold: 10.00, Laser: (76.84,21.45), Enemy: (68.25,20.59)
+Total Frames: 16
+Minimum Distance Achieved: 15.63px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:51.127] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 15.63
+Total Frames: 16
+Minimum Distance Achieved: 15.63px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:51.143] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 4.30 < threshold: 10.0
+Total Frames: 17
+Minimum Distance Achieved: 4.30px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:13:51.144] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 4.30
+Total Frames: 17
+Minimum Distance Achieved: 4.30px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:15.005] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 5.45, Threshold: 10.00, Laser: (84.23,48.63), Enemy: (79.09,46.82)
+Total Frames: 10
+Minimum Distance Achieved: 12.95px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:15.006] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 12.95
+Total Frames: 10
+Minimum Distance Achieved: 12.95px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:15.023] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 6.40 < threshold: 10.0
+Total Frames: 11
+Minimum Distance Achieved: 6.40px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:15.024] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 6.40
+Total Frames: 11
+Minimum Distance Achieved: 6.40px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:15.058] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 6.57, Threshold: 10.00, Laser: (80.41,25.66), Enemy: (74.53,22.71)
+Total Frames: 13
+Minimum Distance Achieved: 13.82px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:15.059] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 13.82
+Total Frames: 13
+Minimum Distance Achieved: 13.82px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:16.805] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 7.23, Threshold: 10.00, Laser: (68.35,33.40), Enemy: (74.41,29.45)
+Total Frames: 13
+Minimum Distance Achieved: 14.48px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:16.806] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 14.48
+Total Frames: 13
+Minimum Distance Achieved: 14.48px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:16.856] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 3.88 < threshold: 10.0
+Total Frames: 16
+Minimum Distance Achieved: 3.88px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:16.857] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 3.89 < threshold: 10.0
+Total Frames: 16
+Minimum Distance Achieved: 3.89px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:16.857] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 3.88
+Total Frames: 16
+Minimum Distance Achieved: 3.88px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:16.858] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 3.89
+Total Frames: 16
+Minimum Distance Achieved: 3.89px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:22.600] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 6.96, Threshold: 10.00, Laser: (88.36,37.42), Enemy: (84.19,31.85)
+Total Frames: 9
+Minimum Distance Achieved: 14.54px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:22.601] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 14.54
+Total Frames: 9
+Minimum Distance Achieved: 14.54px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:22.634] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 4.61 < threshold: 10.0
+Total Frames: 11
+Minimum Distance Achieved: 4.61px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:22.634] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 4.61
+Total Frames: 11
+Minimum Distance Achieved: 4.61px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:22.651] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 3.26 < threshold: 10.0
+Total Frames: 12
+Minimum Distance Achieved: 3.26px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:22.651] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 3.26
+Total Frames: 12
+Minimum Distance Achieved: 3.26px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:24.951] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 9.86, Threshold: 10.00, Laser: (42.49,22.53), Enemy: (52.25,21.13)
+Total Frames: 14
+Minimum Distance Achieved: 17.03px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:24.951] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 17.03
+Total Frames: 14
+Minimum Distance Achieved: 17.03px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:24.968] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 7.50 < threshold: 10.0
+Total Frames: 15
+Minimum Distance Achieved: 7.50px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:24.969] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 7.50
+Total Frames: 15
+Minimum Distance Achieved: 7.50px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:53.965] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 6.88, Threshold: 10.00, Laser: (66.98,54.46), Enemy: (61.32,58.38)
+Total Frames: 13
+Minimum Distance Achieved: 14.08px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:53.966] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 14.08
+Total Frames: 13
+Minimum Distance Achieved: 14.08px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:54.017] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 6.52 < threshold: 10.0
+Total Frames: 16
+Minimum Distance Achieved: 6.52px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:54.018] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 6.52
+Total Frames: 16
+Minimum Distance Achieved: 6.52px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:54.035] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 4.76 < threshold: 10.0
+Total Frames: 17
+Minimum Distance Achieved: 4.76px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:54.036] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 5.60 < threshold: 10.0
+Total Frames: 17
+Minimum Distance Achieved: 5.60px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:54.036] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 4.76
+Total Frames: 17
+Minimum Distance Achieved: 4.76px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:54.037] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 5.60
+Total Frames: 17
+Minimum Distance Achieved: 5.60px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:54.046] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 3.11 < threshold: 10.0
+Total Frames: 18
+Minimum Distance Achieved: 3.11px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:54.046] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 3.11
+Total Frames: 18
+Minimum Distance Achieved: 3.11px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:55.995] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 9.66, Threshold: 10.00, Laser: (75.36,50.21), Enemy: (67.30,55.52)
+Total Frames: 12
+Minimum Distance Achieved: 16.71px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:55.996] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 6.71, Threshold: 10.00, Laser: (78.50,46.47), Enemy: (73.86,51.31)
+Total Frames: 12
+Minimum Distance Achieved: 13.50px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:55.997] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 16.71
+Total Frames: 12
+Minimum Distance Achieved: 16.71px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:55.998] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 13.50
+Total Frames: 12
+Minimum Distance Achieved: 13.50px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:56.032] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 4.71 < threshold: 10.0
+Total Frames: 14
+Minimum Distance Achieved: 4.71px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:56.033] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 4.71
+Total Frames: 14
+Minimum Distance Achieved: 4.71px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:56.049] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 7.31 < threshold: 10.0
+Total Frames: 15
+Minimum Distance Achieved: 7.31px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:56.050] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 7.31
+Total Frames: 15
+Minimum Distance Achieved: 7.31px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:57.617] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 3.99, Threshold: 10.00, Laser: (103.58,56.80), Enemy: (103.52,52.81)
+Total Frames: 7
+Minimum Distance Achieved: 11.74px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:57.618] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 11.74
+Total Frames: 7
+Minimum Distance Achieved: 11.74px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:57.636] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 5.22 < threshold: 10.0
+Total Frames: 8
+Minimum Distance Achieved: 5.22px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:57.637] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 5.22
+Total Frames: 8
+Minimum Distance Achieved: 5.22px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:59.478] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 8.10, Threshold: 10.00, Laser: (21.66,60.58), Enemy: (22.28,52.50)
+Total Frames: 8
+Minimum Distance Achieved: 15.77px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:59.479] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 15.77
+Total Frames: 8
+Minimum Distance Achieved: 15.77px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:59.513] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 6.04 < threshold: 10.0
+Total Frames: 10
+Minimum Distance Achieved: 6.04px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:59.513] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 6.04
+Total Frames: 10
+Minimum Distance Achieved: 6.04px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:59.684] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 4.61 < threshold: 10.0
+Total Frames: 20
+Minimum Distance Achieved: 4.61px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:59.685] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 5.46 < threshold: 10.0
+Total Frames: 20
+Minimum Distance Achieved: 5.46px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:59.685] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 4.61
+Total Frames: 20
+Minimum Distance Achieved: 4.61px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:14:59.685] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 5.46
+Total Frames: 20
+Minimum Distance Achieved: 5.46px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:24.867] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 9.80, Threshold: 10.00, Laser: (75.48,13.83), Enemy: (67.63,7.96)
+Total Frames: 13
+Minimum Distance Achieved: 17.05px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:24.868] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 17.05
+Total Frames: 13
+Minimum Distance Achieved: 17.05px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:24.885] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 7.68 < threshold: 10.0
+Total Frames: 14
+Minimum Distance Achieved: 7.68px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:24.886] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 7.68
+Total Frames: 14
+Minimum Distance Achieved: 7.68px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:24.904] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 7.44 < threshold: 10.0
+Total Frames: 15
+Minimum Distance Achieved: 7.44px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:24.905] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 7.44
+Total Frames: 15
+Minimum Distance Achieved: 7.44px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:24.930] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 9.62 < threshold: 10.0
+Total Frames: 17
+Minimum Distance Achieved: 9.62px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:24.931] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 4.16, Threshold: 10.00, Laser: (44.21,20.33), Enemy: (40.06,20.05)
+Total Frames: 17
+Minimum Distance Achieved: 11.07px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:24.931] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 9.62
+Total Frames: 17
+Minimum Distance Achieved: 9.62px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:24.932] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 11.07
+Total Frames: 17
+Minimum Distance Achieved: 11.07px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:26.447] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 5.01, Threshold: 10.00, Laser: (77.04,50.95), Enemy: (72.89,48.14)
+Total Frames: 10
+Minimum Distance Achieved: 12.51px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:26.447] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 12.51
+Total Frames: 10
+Minimum Distance Achieved: 12.51px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:26.482] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 4.93 < threshold: 10.0
+Total Frames: 12
+Minimum Distance Achieved: 4.93px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:26.482] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 4.93
+Total Frames: 12
+Minimum Distance Achieved: 4.93px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:28.966] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 7.70, Threshold: 10.00, Laser: (111.13,36.60), Enemy: (116.27,30.86)
+Total Frames: 5
+Minimum Distance Achieved: 15.62px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:28.966] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 15.62
+Total Frames: 5
+Minimum Distance Achieved: 15.62px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:29.001] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 7.36 < threshold: 10.0
+Total Frames: 7
+Minimum Distance Achieved: 7.36px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:29.001] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 7.36
+Total Frames: 7
+Minimum Distance Achieved: 7.36px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:29.018] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 6.37 < threshold: 10.0
+Total Frames: 8
+Minimum Distance Achieved: 6.37px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:29.019] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 6.37
+Total Frames: 8
+Minimum Distance Achieved: 6.37px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:31.736] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 7.94, Threshold: 10.00, Laser: (42.53,41.08), Enemy: (34.59,40.82)
+Total Frames: 17
+Minimum Distance Achieved: 14.86px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:31.737] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 14.86
+Total Frames: 17
+Minimum Distance Achieved: 14.86px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:31.768] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 9.58 < threshold: 10.0
+Total Frames: 19
+Minimum Distance Achieved: 9.58px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:15:31.769] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 9.58
+Total Frames: 19
+Minimum Distance Achieved: 9.58px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:09.345] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 3.24, Threshold: 10.00, Laser: (98.57,13.19), Enemy: (96.68,10.56)
+Total Frames: 17
+Minimum Distance Achieved: 10.15px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:09.346] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 3.95, Threshold: 10.00, Laser: (92.36,7.57), Enemy: (89.84,4.52)
+Total Frames: 17
+Minimum Distance Achieved: 10.87px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:09.347] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 10.15
+Total Frames: 17
+Minimum Distance Achieved: 10.15px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:09.348] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 10.87
+Total Frames: 17
+Minimum Distance Achieved: 10.87px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:09.364] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 7.95 < threshold: 10.0
+Total Frames: 18
+Minimum Distance Achieved: 7.95px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:09.365] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 7.95
+Total Frames: 18
+Minimum Distance Achieved: 7.95px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:11.026] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 5.88, Threshold: 10.00, Laser: (92.97,19.71), Enemy: (92.59,13.85)
+Total Frames: 9
+Minimum Distance Achieved: 13.46px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:11.027] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 13.46
+Total Frames: 9
+Minimum Distance Achieved: 13.46px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:11.164] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 8.17 < threshold: 10.0
+Total Frames: 17
+Minimum Distance Achieved: 8.17px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:11.165] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 8.17
+Total Frames: 17
+Minimum Distance Achieved: 8.17px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:12.909] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 8.08, Threshold: 10.00, Laser: (85.26,22.11), Enemy: (82.07,14.69)
+Total Frames: 15
+Minimum Distance Achieved: 15.16px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:12.910] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 15.16
+Total Frames: 15
+Minimum Distance Achieved: 15.16px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:16.146] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 2.74, Threshold: 10.00, Laser: (40.32,9.83), Enemy: (40.70,7.12)
+Total Frames: 7
+Minimum Distance Achieved: 10.49px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:16.146] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 10.49
+Total Frames: 7
+Minimum Distance Achieved: 10.49px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:16.229] ===
+Target Enemy ID: 0
+End Reason: OUT_OF_BOUNDS
+Details: Final pos: (74.74, -10.16)
+Total Frames: 12
+Minimum Distance Achieved: 44.52px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:16.230] ===
+Target Enemy ID: 0
+End Reason: OUT_OF_BOUNDS_CLEANUP
+Details: Cleaned up at pos: (74.74, -10.16)
+Total Frames: 12
+Minimum Distance Achieved: 44.52px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:16.289] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 9.33 < threshold: 10.0
+Total Frames: 16
+Minimum Distance Achieved: 9.33px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:16.289] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 9.33
+Total Frames: 16
+Minimum Distance Achieved: 9.33px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:31.586] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 2.96, Threshold: 10.00, Laser: (102.80,35.29), Enemy: (102.13,32.40)
+Total Frames: 12
+Minimum Distance Achieved: 10.29px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:31.587] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 10.29
+Total Frames: 12
+Minimum Distance Achieved: 10.29px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:31.604] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 8.49, Threshold: 10.00, Laser: (74.19,51.37), Enemy: (65.86,49.74)
+Total Frames: 13
+Minimum Distance Achieved: 15.74px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:31.605] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 8.38, Threshold: 10.00, Laser: (85.53,50.91), Enemy: (79.27,45.34)
+Total Frames: 13
+Minimum Distance Achieved: 15.63px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:31.605] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 15.74
+Total Frames: 13
+Minimum Distance Achieved: 15.74px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:31.606] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 15.63
+Total Frames: 13
+Minimum Distance Achieved: 15.63px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:31.657] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 3.90 < threshold: 10.0
+Total Frames: 16
+Minimum Distance Achieved: 3.90px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:31.658] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 3.90
+Total Frames: 16
+Minimum Distance Achieved: 3.90px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:31.666] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 5.30 < threshold: 10.0
+Total Frames: 17
+Minimum Distance Achieved: 5.30px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:31.667] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 5.30
+Total Frames: 17
+Minimum Distance Achieved: 5.30px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:33.823] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 6.21, Threshold: 10.00, Laser: (76.94,51.37), Enemy: (70.73,51.36)
+Total Frames: 15
+Minimum Distance Achieved: 13.30px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:33.824] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 13.30
+Total Frames: 15
+Minimum Distance Achieved: 13.30px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:33.841] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 7.47 < threshold: 10.0
+Total Frames: 16
+Minimum Distance Achieved: 7.47px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:33.842] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 7.47
+Total Frames: 16
+Minimum Distance Achieved: 7.47px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:33.859] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 4.85 < threshold: 10.0
+Total Frames: 17
+Minimum Distance Achieved: 4.85px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:33.860] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 4.85
+Total Frames: 17
+Minimum Distance Achieved: 4.85px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:35.839] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 7.05, Threshold: 10.00, Laser: (65.06,19.79), Enemy: (70.18,14.93)
+Total Frames: 16
+Minimum Distance Achieved: 14.05px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:16:35.840] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 14.05
+Total Frames: 16
+Minimum Distance Achieved: 14.05px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:17:13.197] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 6.95, Threshold: 10.00, Laser: (69.49,37.59), Enemy: (63.26,40.66)
+Total Frames: 15
+Minimum Distance Achieved: 14.03px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:17:13.198] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 14.03
+Total Frames: 15
+Minimum Distance Achieved: 14.03px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:17:13.240] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 5.87 < threshold: 10.0
+Total Frames: 18
+Minimum Distance Achieved: 5.87px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:17:13.241] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 5.87
+Total Frames: 18
+Minimum Distance Achieved: 5.87px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:17:16.847] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 9.48, Threshold: 10.00, Laser: (117.20,40.83), Enemy: (122.01,32.67)
+Total Frames: 9
+Minimum Distance Achieved: 17.06px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:17:16.848] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 17.06
+Total Frames: 9
+Minimum Distance Achieved: 17.06px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:17:16.923] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 7.81, Threshold: 10.00, Laser: (67.82,50.26), Enemy: (60.88,53.85)
+Total Frames: 14
+Minimum Distance Achieved: 14.98px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:17:16.923] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 14.98
+Total Frames: 14
+Minimum Distance Achieved: 14.98px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:17:16.941] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 5.32 < threshold: 10.0
+Total Frames: 15
+Minimum Distance Achieved: 5.32px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:17:16.941] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 5.32
+Total Frames: 15
+Minimum Distance Achieved: 5.32px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:17:19.661] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 4.95, Threshold: 10.00, Laser: (62.69,25.25), Enemy: (58.19,23.18)
+Total Frames: 17
+Minimum Distance Achieved: 11.87px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:17:19.662] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 11.87
+Total Frames: 17
+Minimum Distance Achieved: 11.87px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:17:19.679] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 4.70 < threshold: 10.0
+Total Frames: 18
+Minimum Distance Achieved: 4.70px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:17:19.679] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 4.70
+Total Frames: 18
+Minimum Distance Achieved: 4.70px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:17:19.696] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 6.60 < threshold: 10.0
+Total Frames: 19
+Minimum Distance Achieved: 6.60px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:17:19.697] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 6.60
+Total Frames: 19
+Minimum Distance Achieved: 6.60px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:17:21.760] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 8.78, Threshold: 10.00, Laser: (57.71,28.19), Enemy: (48.93,28.10)
+Total Frames: 15
+Minimum Distance Achieved: 15.87px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:17:21.761] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 15.87
+Total Frames: 15
+Minimum Distance Achieved: 15.87px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:17:21.810] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 7.83 < threshold: 10.0
+Total Frames: 18
+Minimum Distance Achieved: 7.83px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:17:21.811] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 7.83
+Total Frames: 18
+Minimum Distance Achieved: 7.83px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:03.437] ===
+Target Enemy ID: 1
+End Reason: OUT_OF_BOUNDS
+Details: Final pos: (141.32, 45.19)
+Total Frames: 5
+Minimum Distance Achieved: 78.38px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:03.437] ===
+Target Enemy ID: 1
+End Reason: OUT_OF_BOUNDS_CLEANUP
+Details: Cleaned up at pos: (141.32, 45.19)
+Total Frames: 5
+Minimum Distance Achieved: 78.38px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:03.556] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 13.40, Threshold: 15.00, Laser: (92.35,11.04), Enemy: (79.53,7.14)
+Total Frames: 12
+Minimum Distance Achieved: 20.73px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:03.558] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 20.73
+Total Frames: 12
+Minimum Distance Achieved: 20.73px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:03.635] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 10.45, Threshold: 15.00, Laser: (68.05,6.61), Enemy: (57.82,4.44)
+Total Frames: 17
+Minimum Distance Achieved: 17.37px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:03.635] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 17.37
+Total Frames: 17
+Minimum Distance Achieved: 17.37px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:03.685] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 5.18 < threshold: 10.0
+Total Frames: 20
+Minimum Distance Achieved: 5.18px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:03.685] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 5.18
+Total Frames: 20
+Minimum Distance Achieved: 5.18px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:05.638] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 14.14, Threshold: 15.00, Laser: (64.23,17.76), Enemy: (50.24,19.84)
+Total Frames: 16
+Minimum Distance Achieved: 21.14px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:05.639] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 21.14
+Total Frames: 16
+Minimum Distance Achieved: 21.14px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:05.655] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 9.76 < threshold: 10.0
+Total Frames: 17
+Minimum Distance Achieved: 9.76px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:05.656] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 9.76
+Total Frames: 17
+Minimum Distance Achieved: 9.76px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:05.664] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 4.70 < threshold: 10.0
+Total Frames: 18
+Minimum Distance Achieved: 4.70px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:05.665] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 4.70
+Total Frames: 18
+Minimum Distance Achieved: 4.70px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:07.854] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 10.78, Threshold: 15.00, Laser: (75.20,11.47), Enemy: (85.91,10.17)
+Total Frames: 15
+Minimum Distance Achieved: 17.87px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:07.854] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 17.87
+Total Frames: 15
+Minimum Distance Achieved: 17.87px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:07.921] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 5.85 < threshold: 10.0
+Total Frames: 19
+Minimum Distance Achieved: 5.85px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:07.921] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 5.85
+Total Frames: 19
+Minimum Distance Achieved: 5.85px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:10.352] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 10.02, Threshold: 15.00, Laser: (84.80,58.49), Enemy: (92.85,64.46)
+Total Frames: 19
+Minimum Distance Achieved: 16.77px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:10.353] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 16.77
+Total Frames: 19
+Minimum Distance Achieved: 16.77px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:10.388] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 5.89 < threshold: 10.0
+Total Frames: 21
+Minimum Distance Achieved: 5.89px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:10.389] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 5.89
+Total Frames: 21
+Minimum Distance Achieved: 5.89px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:29.136] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 14.37, Threshold: 15.00, Laser: (86.76,49.78), Enemy: (83.05,63.67)
+Total Frames: 9
+Minimum Distance Achieved: 14.93px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:29.137] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 14.93
+Total Frames: 9
+Minimum Distance Achieved: 14.93px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:29.534] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 9.96 < threshold: 10.0
+Total Frames: 33
+Minimum Distance Achieved: 9.96px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:29.535] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 9.96
+Total Frames: 33
+Minimum Distance Achieved: 9.96px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:31.355] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 12.73, Threshold: 15.00, Laser: (124.91,45.01), Enemy: (121.55,32.73)
+Total Frames: 8
+Minimum Distance Achieved: 20.40px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:31.355] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 20.40
+Total Frames: 8
+Minimum Distance Achieved: 20.40px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:31.423] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 13.58, Threshold: 15.00, Laser: (90.40,45.01), Enemy: (77.85,50.19)
+Total Frames: 12
+Minimum Distance Achieved: 20.76px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:31.424] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 20.76
+Total Frames: 12
+Minimum Distance Achieved: 20.76px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:32.802] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 11.51, Threshold: 15.00, Laser: (96.09,75.52), Enemy: (99.42,64.50)
+Total Frames: 5
+Minimum Distance Achieved: 19.42px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:32.803] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 19.42
+Total Frames: 5
+Minimum Distance Achieved: 19.42px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:32.855] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 9.95, Threshold: 15.00, Laser: (87.68,55.47), Enemy: (77.81,54.17)
+Total Frames: 8
+Minimum Distance Achieved: 16.48px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:32.856] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 16.48
+Total Frames: 8
+Minimum Distance Achieved: 16.48px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:42.603] ===
+Target Enemy ID: 0
+End Reason: OUT_OF_BOUNDS
+Details: Final pos: (142.38, 72.13)
+Total Frames: 2
+Minimum Distance Achieved: 81.93px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:42.604] ===
+Target Enemy ID: 1
+End Reason: OUT_OF_BOUNDS
+Details: Final pos: (141.46, 80.99)
+Total Frames: 2
+Minimum Distance Achieved: 96.92px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:42.604] ===
+Target Enemy ID: 0
+End Reason: OUT_OF_BOUNDS_CLEANUP
+Details: Cleaned up at pos: (142.38, 72.13)
+Total Frames: 2
+Minimum Distance Achieved: 81.93px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:42.605] ===
+Target Enemy ID: 1
+End Reason: OUT_OF_BOUNDS_CLEANUP
+Details: Cleaned up at pos: (141.46, 80.99)
+Total Frames: 2
+Minimum Distance Achieved: 96.92px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:47.458] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 14.76, Threshold: 15.00, Laser: (74.28,29.65), Enemy: (60.25,25.06)
+Total Frames: 18
+Minimum Distance Achieved: 21.59px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:47.458] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 21.59
+Total Frames: 18
+Minimum Distance Achieved: 21.59px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:47.622] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 11.33, Threshold: 15.00, Laser: (18.42,39.49), Enemy: (7.43,42.23)
+Total Frames: 28
+Minimum Distance Achieved: 17.33px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:47.622] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 17.33
+Total Frames: 28
+Minimum Distance Achieved: 17.33px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:50.689] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 13.99, Threshold: 15.00, Laser: (85.22,47.03), Enemy: (99.11,48.66)
+Total Frames: 18
+Minimum Distance Achieved: 20.82px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:50.690] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 20.82
+Total Frames: 18
+Minimum Distance Achieved: 20.82px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:50.723] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 11.01, Threshold: 15.00, Laser: (86.77,32.29), Enemy: (97.06,28.35)
+Total Frames: 20
+Minimum Distance Achieved: 17.68px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:50.724] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 17.68
+Total Frames: 20
+Minimum Distance Achieved: 17.68px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:50.758] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 6.05 < threshold: 10.0
+Total Frames: 22
+Minimum Distance Achieved: 6.05px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:50.759] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 5.11 < threshold: 10.0
+Total Frames: 22
+Minimum Distance Achieved: 5.11px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:50.760] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 6.05
+Total Frames: 22
+Minimum Distance Achieved: 6.05px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:50.760] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 5.11
+Total Frames: 22
+Minimum Distance Achieved: 5.11px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:53.055] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 13.89, Threshold: 15.00, Laser: (52.01,26.57), Enemy: (63.43,18.66)
+Total Frames: 11
+Minimum Distance Achieved: 21.30px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:53.055] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 21.30
+Total Frames: 11
+Minimum Distance Achieved: 21.30px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:53.090] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 8.86 < threshold: 10.0
+Total Frames: 13
+Minimum Distance Achieved: 8.86px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:21:53.090] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 8.86
+Total Frames: 13
+Minimum Distance Achieved: 8.86px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:26:39.648] ===
+Target Enemy ID: 0
+End Reason: OUT_OF_BOUNDS
+Details: Final pos: (138.82, 114.48)
+Total Frames: 4
+Minimum Distance Achieved: 96.21px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:26:39.649] ===
+Target Enemy ID: 0
+End Reason: OUT_OF_BOUNDS_CLEANUP
+Details: Cleaned up at pos: (138.82, 114.48)
+Total Frames: 4
+Minimum Distance Achieved: 96.21px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:26:39.863] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 13.08, Threshold: 15.00, Laser: (69.15,61.24), Enemy: (56.13,62.48)
+Total Frames: 17
+Minimum Distance Achieved: 20.00px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:26:39.864] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 20.00
+Total Frames: 17
+Minimum Distance Achieved: 20.00px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:26:43.413] ===
+Target Enemy ID: 2
+End Reason: OUT_OF_BOUNDS
+Details: Final pos: (138.30, 89.85)
+Total Frames: 5
+Minimum Distance Achieved: 69.08px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:26:43.414] ===
+Target Enemy ID: 2
+End Reason: OUT_OF_BOUNDS_CLEANUP
+Details: Cleaned up at pos: (138.30, 89.85)
+Total Frames: 5
+Minimum Distance Achieved: 69.08px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:26:43.476] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 10.97, Threshold: 15.00, Laser: (104.18,16.12), Enemy: (93.39,14.13)
+Total Frames: 9
+Minimum Distance Achieved: 18.13px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:26:43.477] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 18.13
+Total Frames: 9
+Minimum Distance Achieved: 18.13px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:26:43.530] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 5.49 < threshold: 10.0
+Total Frames: 12
+Minimum Distance Achieved: 5.49px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:26:43.531] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 5.49
+Total Frames: 12
+Minimum Distance Achieved: 5.49px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:26:43.666] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 14.75, Threshold: 15.00, Laser: (58.17,51.76), Enemy: (55.33,66.23)
+Total Frames: 20
+Minimum Distance Achieved: 21.41px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:26:43.667] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 21.41
+Total Frames: 20
+Minimum Distance Achieved: 21.41px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:26:43.692] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 13.84, Threshold: 15.00, Laser: (45.04,48.49), Enemy: (35.80,58.79)
+Total Frames: 22
+Minimum Distance Achieved: 20.34px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:26:43.692] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 20.34
+Total Frames: 22
+Minimum Distance Achieved: 20.34px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:26:43.761] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 6.42 < threshold: 10.0
+Total Frames: 26
+Minimum Distance Achieved: 6.42px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:26:43.762] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 6.42
+Total Frames: 26
+Minimum Distance Achieved: 6.42px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:26:46.629] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 13.68, Threshold: 15.00, Laser: (87.34,22.56), Enemy: (101.02,22.74)
+Total Frames: 19
+Minimum Distance Achieved: 20.43px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:26:46.630] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 20.43
+Total Frames: 19
+Minimum Distance Achieved: 20.43px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:26:46.682] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 9.37 < threshold: 10.0
+Total Frames: 22
+Minimum Distance Achieved: 9.37px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:26:46.683] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 9.37
+Total Frames: 22
+Minimum Distance Achieved: 9.37px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:26.454] ===
+Target Enemy ID: 4
+End Reason: OUT_OF_BOUNDS
+Details: Final pos: (-10.35, 57.79)
+Total Frames: 8
+Minimum Distance Achieved: 109.08px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:26.454] ===
+Target Enemy ID: 4
+End Reason: OUT_OF_BOUNDS_CLEANUP
+Details: Cleaned up at pos: (-10.35, 57.79)
+Total Frames: 8
+Minimum Distance Achieved: 109.08px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:26.748] ===
+Target Enemy ID: 4
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 10.52, Threshold: 15.00, Laser: (94.43,20.04), Enemy: (104.95,20.18)
+Total Frames: 26
+Minimum Distance Achieved: 16.69px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:26.749] ===
+Target Enemy ID: 4
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 16.69
+Total Frames: 26
+Minimum Distance Achieved: 16.69px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:29.234] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 13.49, Threshold: 15.00, Laser: (38.71,60.10), Enemy: (52.03,62.28)
+Total Frames: 9
+Minimum Distance Achieved: 19.65px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:29.235] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 19.65
+Total Frames: 9
+Minimum Distance Achieved: 19.65px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:29.304] ===
+Target Enemy ID: 0
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 8.61 < threshold: 10.0
+Total Frames: 13
+Minimum Distance Achieved: 8.61px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:29.304] ===
+Target Enemy ID: 0
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 8.61
+Total Frames: 13
+Minimum Distance Achieved: 8.61px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:31.082] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 11.87, Threshold: 15.00, Laser: (34.37,23.65), Enemy: (46.16,22.28)
+Total Frames: 6
+Minimum Distance Achieved: 16.12px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:31.083] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 16.12
+Total Frames: 6
+Minimum Distance Achieved: 16.12px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:31.151] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 9.89 < threshold: 10.0
+Total Frames: 10
+Minimum Distance Achieved: 9.89px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:31.152] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 9.89
+Total Frames: 10
+Minimum Distance Achieved: 9.89px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:31.236] ===
+Target Enemy ID: 1
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 3.69 < threshold: 10.0
+Total Frames: 15
+Minimum Distance Achieved: 3.69px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:31.236] ===
+Target Enemy ID: 1
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 3.69
+Total Frames: 15
+Minimum Distance Achieved: 3.69px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:32.870] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 14.84, Threshold: 15.00, Laser: (113.37,55.02), Enemy: (98.66,57.00)
+Total Frames: 6
+Minimum Distance Achieved: 17.32px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:32.871] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 17.32
+Total Frames: 6
+Minimum Distance Achieved: 17.32px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:32.904] ===
+Target Enemy ID: 3
+End Reason: DISTANCE_HIT
+Details: Distance hit - Distance: 14.88, Threshold: 15.00, Laser: (107.98,49.49), Enemy: (97.32,39.11)
+Total Frames: 8
+Minimum Distance Achieved: 22.47px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:32.905] ===
+Target Enemy ID: 3
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 22.47
+Total Frames: 8
+Minimum Distance Achieved: 22.47px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:32.922] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 6.25 < threshold: 10.0
+Total Frames: 9
+Minimum Distance Achieved: 6.25px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:32.922] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 6.25
+Total Frames: 9
+Minimum Distance Achieved: 6.25px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:32.931] ===
+Target Enemy ID: 2
+End Reason: DISTANCE_HIT
+Details: Update distance hit - Distance: 9.49 < threshold: 10.0
+Total Frames: 10
+Minimum Distance Achieved: 9.49px
+Hit Threshold: 10.0px
+
+=== LASER ANALYSIS [21:29:32.932] ===
+Target Enemy ID: 2
+End Reason: TIMEOUT
+Details: Laser became inactive - Min distance: 9.49
+Total Frames: 10
+Minimum Distance Achieved: 9.49px
+Hit Threshold: 10.0px
