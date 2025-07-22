@@ -52,11 +52,24 @@ class HitEffectManager:
     
     def update(self):
         """全エフェクトの更新"""
+        # 更新前のエフェクト数
+        before_count = len(self.effects)
+        
         for effect in self.effects:
             effect.update()
         
         # 非アクティブなエフェクトを削除
-        self.effects = [effect for effect in self.effects if effect.active]
+        active_effects = [effect for effect in self.effects if effect.active]
+        removed_count = len(self.effects) - len(active_effects)
+        
+        if removed_count > 0:
+            print(f"HitEffect: Removed {removed_count} effects, {len(active_effects)} remaining")
+        
+        self.effects = active_effects
+    
+    def get_effect_count(self):
+        """アクティブなエフェクト数を取得"""
+        return len(self.effects)
     
     def draw(self):
         """全エフェクトの描画"""

@@ -25,7 +25,8 @@ class LaserConfig:
     collision_threshold: float = 15.0 # コリジョン判定距離
     
     # === 表示設定 ===
-    max_trail_length: int = 30        # 軌跡の最大長
+#    max_trail_length: int = 30        # 軌跡の最大長
+    max_trail_length: int = 10        # 軌跡の最大長
     trail_color: int = 11            # 軌跡の色（pyxel.COLOR_CYAN）
     
     # === デバッグ設定 ===
