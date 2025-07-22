@@ -9,18 +9,19 @@
 [日本語版]
 
 ■ 現状の課題
-1. ベクトル演算が複数箇所に散在
+<!-- 完了//1. ベクトル演算が複数箇所に散在 -->
 2. Playerクラスでレーザーを直接生成（責務が重い）
 3. レーザーの大量生成・破棄によるパフォーマンス低下
 
 ■ 改善提案
-1. Vector2Dクラスの導入（角度計算・正規化・回転を統一）
+<!-- //1. Vector2Dクラスの導入（角度計算・正規化・回転を統一） -->
 2. Factoryパターンでレーザー生成を集中管理
-3. オブジェクトプーリングでGC負荷を軽減
+3. オブジェクトプーリングでGC負荷を軽減(10発くらいしかレーザー打ってないし、長さも短くしたから効果は不明)
 
 ■ 実装例
-### 1. Vector2D
-class Vector2D:
+<!-- 完了！ -->
+<!-- ### 1. Vector2D -->
+<!-- class Vector2D:
     def __init__(self, x: float, y: float):
         self.x, self.y = x, y
 
@@ -32,7 +33,7 @@ class Vector2D:
 
     def normalize(self):
         mag = self.magnitude()
-        return Vector2D(self.x / mag, self.y / mag) if mag > 0 else Vector2D(0, 0)
+        return Vector2D(self.x / mag, self.y / mag) if mag > 0 else Vector2D(0, 0) -->
 
 ### 2. LaserFactory
 class LaserFactory:
