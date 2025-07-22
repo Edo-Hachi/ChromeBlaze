@@ -14,7 +14,10 @@ class LaserType01:
     
     def __init__(self, start_x, start_y, target_x, target_y, target_enemy_id=None):
         # レーザー設定
-        self.speed = 300.0  # ピクセル/秒（500→300に減速、グルグル防止実験）
+        self.initial_speed = 500.0  # 初期速度（ピクセル/秒）
+        self.min_speed = 300.0     # 最低速度（ピクセル/秒）  
+        self.speed = self.initial_speed  # 現在の速度
+        self.speed_decay = 5.0     # フレームごとの減速量（ピクセル/秒）
         self.turn_speed_slow = 8.0  # 初期：ゆっくり旋回（ラジアン/秒）
         # self.turn_speed_fast = 15.0  # 後半：急旋回（ラジアン/秒）- グルグル防止のため緩和
         self.turn_speed_fast = 20.0  # 後半：急旋回（ラジアン/秒）
@@ -114,6 +117,12 @@ class LaserType01:
             new_angle = current_angle + angle_diff
             self.direction_x = math.cos(new_angle)
             self.direction_y = math.sin(new_angle)
+        
+        # 速度減速処理（フレームごとに減速）
+        if self.speed > self.min_speed:
+            self.speed -= self.speed_decay
+            if self.speed < self.min_speed:
+                self.speed = self.min_speed
         
         # 位置を更新
         self.x += self.direction_x * self.speed * delta_time
@@ -256,6 +265,7 @@ class LaserType01:
             'target_direction': (round(target_dir_x, 3), round(target_dir_y, 3)),
             'laser_direction': (round(self.direction_x, 3), round(self.direction_y, 3)),
             'turn_speed': round(turn_speed, 3),
+            'current_speed': round(self.speed, 1),  # 現在の速度を追加
             'min_distance': round(self.min_distance_achieved, 2),
             'distance_change': round(distance - self.last_distance, 2) if self.last_distance != float('inf') else 0,
             'no_progress_count': self.distance_not_decreasing_count

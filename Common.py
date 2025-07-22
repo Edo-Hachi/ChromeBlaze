@@ -1,6 +1,6 @@
 from enum import Enum
 
-DEBUG = True
+DEBUG = False
 
 # Game States
 class GameState(Enum):
