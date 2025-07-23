@@ -129,6 +129,9 @@ class Player:
             LockOnState.SHOOTING: pyxel.COLOR_GRAY   # 発射中状態: グレー
         }
         
+        # クールダウンシステム（Phase 3追加）
+        self.COOLDOWN_FRAMES = 30  # 30フレーム = 0.5秒（60FPS想定）
+        
     def update(self, enemy_manager=None):
         # ショットクールダウン更新
         if self.shot_cooldown > 0:
@@ -182,9 +185,8 @@ class Player:
         # ロックオン状態管理システム（Phase 1: 基本遷移）
         self._handle_lock_on_state_transitions(enemy_manager)
         
-        # ホーミングレーザー発射処理（Sキー）
-        if pyxel.btnp(pyxel.KEY_S) and enemy_manager:
-            self._fire_homing_lasers(enemy_manager)
+        # Phase 5: Sキー発射機能を削除（A離しシステムに置換）
+        # 旧Sキー発射システムは完全に削除
         
         # 弾丸の更新
         for bullet in self.bullets:
@@ -199,6 +201,10 @@ class Player:
         
         # ヒットエフェクトの更新
         self.hit_effect_manager.update()
+        
+        # Phase 6: 状態整合性チェック（デバッグ時のみ）
+        # 本番では無効化可能
+        # self._check_state_consistency()
         
     def draw(self):
         try:
@@ -299,6 +305,9 @@ class Player:
         return False
     
     def _fire_homing_lasers(self, enemy_manager):
+        """
+        DEPRECATED: Phase 5で削除 - A離しシステム(_fire_homing_lasers_on_release)に置換
+        """
         """ロックオンしたエネミーにホーミングレーザーを発射"""
         if not self.lock_enemy_list:
             print("No locked targets!")
@@ -404,7 +413,7 @@ class Player:
     
     def _handle_lock_on_state_transitions(self, enemy_manager):
         """
-        ロックオン状態遷移管理（Phase 2: 精度向上版）
+        ロックオン状態遷移管理（Phase 3: クールダウン付き版）
         """
         # 現在のAキー押下状態を取得
         a_pressed = pyxel.btn(pyxel.KEY_A)
@@ -419,10 +428,161 @@ class Player:
                 print(f"State transition: IDLE → STANDBY (A pressed)")
         
         elif self.lock_state == LockOnState.STANDBY:
+            # STANDBYでのロックオン処理
+            if enemy_manager:
+                self._try_lock_enemy(enemy_manager)
+            
             if a_just_released:
-                # STANDBY → IDLE 遷移（A離し）
+                # Phase 5: A離し時の発射システム
+                if len(self.lock_enemy_list) > 0:
+                    # ロック中のエネミーがある場合: STANDBY → SHOOTING 遷移
+                    self.lock_state = LockOnState.SHOOTING
+                    self._fire_homing_lasers_on_release(enemy_manager)
+                    print(f"State transition: STANDBY → SHOOTING (A released, {len(self.lock_enemy_list)} targets)")
+                else:
+                    # ロック中のエネミーがない場合: STANDBY → IDLE 遷移
+                    self.lock_state = LockOnState.IDLE
+                    print(f"State transition: STANDBY → IDLE (A released, no targets)")
+        
+        elif self.lock_state == LockOnState.COOLDOWN:
+            # クールダウンタイマー更新
+            self.cooldown_timer -= 1
+            if self.cooldown_timer <= 0:
+                # COOLDOWN → STANDBY 遷移（時間経過）
+                self.lock_state = LockOnState.STANDBY
+                print(f"State transition: COOLDOWN → STANDBY (timer expired)")
+            
+            # クールダウン中でもA離しは有効
+            if a_just_released:
                 self.lock_state = LockOnState.IDLE
-                print(f"State transition: STANDBY → IDLE (A released)")
+                self.cooldown_timer = 0  # タイマーリセット
+                print(f"State transition: COOLDOWN → IDLE (A released)")
+        
+        elif self.lock_state == LockOnState.SHOOTING:
+            # Phase 5: SHOOTING状態の処理
+            # すべてのホーミングレーザーがアクティブでなくなったらIDLE復帰
+            active_lasers = [laser for laser in self.homing_lasers if laser.active]
+            if len(active_lasers) == 0:
+                self.lock_state = LockOnState.IDLE
+                print(f"State transition: SHOOTING → IDLE (all lasers finished)")
+            
+            # Phase 6: エッジケース処理 - SHOOTING中の入力制御
+            # SHOOTING中はA押下/離しは無効（既に発射済みのため）
+            if a_just_pressed:
+                print(f"DEBUG: A press ignored during SHOOTING state")
+            if a_just_released:
+                print(f"DEBUG: A release ignored during SHOOTING state")
         
         # 前フレームのAキー状態を記録
         self.was_a_pressed = a_pressed
+    
+    def _try_lock_enemy(self, enemy_manager):
+        """
+        エネミーのロックオン試行（Phase 3: クールダウン付き）
+        """
+        from Common import check_collision
+        
+        cursor_x, cursor_y = self.get_cursor_position()
+        
+        for enemy in enemy_manager.get_active_enemies():
+            if check_collision(cursor_x, cursor_y, self.cursor_size, self.cursor_size,
+                             enemy.x, enemy.y, 8, 8):
+                if len(self.lock_enemy_list) < self.max_lock_count:
+                    # ロック成功
+                    self.lock_enemy_list.append(enemy.enemy_id)
+                    print(f"Locked Enemy ID: {enemy.enemy_id} (Total: {len(self.lock_enemy_list)})")
+                    
+                    # STANDBY → COOLDOWN 遷移
+                    self.lock_state = LockOnState.COOLDOWN
+                    self.cooldown_timer = self.COOLDOWN_FRAMES
+                    print(f"State transition: STANDBY → COOLDOWN (enemy locked)")
+                else:
+                    print(f"Lock list is full! ({self.max_lock_count} enemies)")
+                break
+    
+    def _fire_homing_lasers_on_release(self, enemy_manager):
+        """
+        Phase 5: A離し時のホーミングレーザー発射（新システム）
+        """
+        if not self.lock_enemy_list:
+            print("No locked targets for A-release firing!")
+            return
+        
+        # 非アクティブなレーザーを削除
+        self.homing_lasers = [laser for laser in self.homing_lasers if laser.active]
+        
+        base_start_x = self.x + self.width // 2
+        base_start_y = self.y
+        
+        # 発射するレーザーのリストを一時保存
+        new_lasers = []
+        fired_count = 0
+        
+        for enemy_id in self.lock_enemy_list:
+            # レーザー数制限チェック
+            if len(self.homing_lasers) + len(new_lasers) >= self.max_lasers:
+                print(f"Max laser limit reached! Fired {fired_count} of {len(self.lock_enemy_list)} locked targets")
+                break
+            
+            # エネミーIDからエネミーオブジェクトを取得
+            target_enemy = enemy_manager.get_enemy_by_id(enemy_id)
+            if target_enemy and target_enemy.active:
+                # ベース座標にランダムなばらつきを追加
+                base_x = target_enemy.x + target_enemy.sprite_size // 2
+                base_y = target_enemy.y + target_enemy.sprite_size // 2
+                
+                # ±500ピクセルの大幅なばらつき（画面外も含む）
+                scatter_range = 500
+                # 各レーザーで異なるランダム値を確実に生成
+                scatter_x = random.uniform(-scatter_range, scatter_range)
+                scatter_y = random.uniform(-scatter_range, scatter_range)
+                target_x = base_x + scatter_x
+                target_y = base_y + scatter_y
+                
+                # 発射位置も少しばらつかせる（±10ピクセル）
+                start_scatter = 10
+                start_x = base_start_x + random.uniform(-start_scatter, start_scatter)
+                start_y = base_start_y + random.uniform(-start_scatter, start_scatter)
+                
+                new_laser = LaserType01(start_x, start_y, target_x, target_y, enemy_id)
+                new_lasers.append(new_laser)
+                fired_count += 1
+                
+                print(f"DEBUG: A-release laser for Enemy ID {enemy_id} at ({target_x:.1f}, {target_y:.1f}) (scatter: {scatter_x:+.1f}, {scatter_y:+.1f})")
+        
+        # 全レーザーを一括でメインリストに追加
+        self.homing_lasers.extend(new_lasers)
+        
+        print(f"A-release multi-lock fired! {fired_count} lasers to targets: {self.lock_enemy_list}")
+        
+        # 発射後にロックリストをクリア
+        self.lock_enemy_list = []
+    
+    def _check_state_consistency(self):
+        """
+        Phase 6: 状態整合性チェック機能
+        デバッグ時の状態不整合を検出
+        """
+        issues = []
+        
+        # ロック数とレーザー数の論理チェック
+        if self.lock_state == LockOnState.SHOOTING and len(self.lock_enemy_list) > 0:
+            issues.append("SHOOTING state with non-empty lock list")
+        
+        # クールダウンタイマーの範囲チェック
+        if self.lock_state == LockOnState.COOLDOWN and self.cooldown_timer <= 0:
+            issues.append("COOLDOWN state with invalid timer")
+        elif self.lock_state != LockOnState.COOLDOWN and self.cooldown_timer > 0:
+            issues.append("Non-COOLDOWN state with active timer")
+        
+        # レーザー状態のチェック
+        active_laser_count = len([laser for laser in self.homing_lasers if laser.active])
+        if self.lock_state == LockOnState.SHOOTING and active_laser_count == 0:
+            issues.append("SHOOTING state with no active lasers")
+        
+        # 問題があればログ出力
+        if issues:
+            print(f"CONSISTENCY WARNING: {', '.join(issues)}")
+            print(f"  State: {self.lock_state.value}, Locks: {len(self.lock_enemy_list)}, Timer: {self.cooldown_timer}, Lasers: {active_laser_count}")
+        
+        return len(issues) == 0

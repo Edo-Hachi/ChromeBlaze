@@ -61,6 +61,26 @@ class GamePlayState:
             lock_text = f"Locked: {lock_count}/{self.player.max_lock_count}"
         pyxel.text(10, 40, lock_text, lock_color)
         
+        # Phase 4: ロック数表示システム (n/10) - 改良版UI
+        if lock_count > 0:
+            # ロックオン中は大きく目立つ表示
+            lock_display_color = pyxel.COLOR_CYAN
+            lock_display_text = f"({lock_count}/10)"
+            # 中央上部に配置
+            display_x = SCREEN_WIDTH // 2 - 20
+            display_y = 20
+            pyxel.text(display_x, display_y, lock_display_text, lock_display_color)
+        
+        # Phase 4: ロックオン状態表示（デバッグ・ユーザーフィードバック用）
+        state_text = f"Lock State: {self.player.lock_state.value.upper()}"
+        state_color = self.player.cursor_colors.get(self.player.lock_state, pyxel.COLOR_WHITE)
+        pyxel.text(10, 60, state_text, state_color)
+        
+        # クールダウンタイマー表示（COOLDOWN状態時のみ）
+        if self.player.lock_state.value == "cooldown":
+            cooldown_text = f"Cooldown: {self.player.cooldown_timer}/30"
+            pyxel.text(10, 70, cooldown_text, pyxel.COLOR_YELLOW)
+        
         # レーザー状態表示
         active_lasers = len([laser for laser in self.player.homing_lasers if laser.active])
         if active_lasers > 0:
@@ -71,10 +91,10 @@ class GamePlayState:
             laser_status = f"Lasers: {active_lasers}/{self.player.max_lasers}"
         pyxel.text(10, 50, laser_status, laser_color)
         
-        # 操作説明
-        pyxel.text(10, 70, "Arrow Keys: Move", pyxel.COLOR_YELLOW)
-        pyxel.text(10, 80, "Z: Shoot", pyxel.COLOR_YELLOW)
-        pyxel.text(10, 90, "X: Power Up", pyxel.COLOR_YELLOW)
-        pyxel.text(10, 100, "A: Lock-on enemy", pyxel.COLOR_YELLOW)
-        pyxel.text(10, 110, "S: Fire homing lasers", pyxel.COLOR_YELLOW)
-        pyxel.text(10, 120, "Q: Return to Title", pyxel.COLOR_YELLOW)
+        # 操作説明（Phase 5: 新インターフェイス対応）
+        pyxel.text(10, 90, "Arrow Keys: Move", pyxel.COLOR_YELLOW)
+        pyxel.text(10, 100, "Z: Shoot", pyxel.COLOR_YELLOW)
+        pyxel.text(10, 110, "X: Power Up", pyxel.COLOR_YELLOW)
+        pyxel.text(10, 120, "A Hold: Lock-on enemies", pyxel.COLOR_CYAN)
+        pyxel.text(10, 130, "A Release: Fire homing", pyxel.COLOR_CYAN)
+        pyxel.text(10, 140, "Q: Return to Title", pyxel.COLOR_YELLOW)
