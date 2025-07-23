@@ -11,6 +11,7 @@ from Common import SCREEN_WIDTH, SCREEN_HEIGHT
 from SpriteManager import sprite_manager
 from LaserType01 import LaserType01
 from HitEffect import HitEffectManager
+from LockOnState import LockOnState
 
 class Bullet:
     def _get_animation_speed(self):
@@ -115,6 +116,11 @@ class Player:
         # ヒットエフェクトシステム
         self.hit_effect_manager = HitEffectManager()
         
+        # ロックオン状態管理システム（Phase 1追加）
+        self.lock_state = LockOnState.IDLE  # 初期状態はIDLE
+        self.was_a_pressed = False  # 前フレームのAキー押下状態
+        self.cooldown_timer = 0  # クールダウンタイマー（フレーム数）
+        
     def update(self, enemy_manager=None):
         # ショットクールダウン更新
         if self.shot_cooldown > 0:
@@ -165,9 +171,8 @@ class Player:
             self.shoot()
             self.shot_cooldown = self.shot_cooldown_duration  # クールダウン開始
         
-        # ロックオン処理（Aキー）
-        if pyxel.btnp(pyxel.KEY_A) and enemy_manager:
-            self._handle_lock_on(enemy_manager)
+        # ロックオン状態管理システム（Phase 1: 基本遷移）
+        self._handle_lock_on_state_transitions(enemy_manager)
         
         # ホーミングレーザー発射処理（Sキー）
         if pyxel.btnp(pyxel.KEY_S) and enemy_manager:
@@ -377,3 +382,26 @@ class Player:
             return int(anim_spd)
         except (ValueError, TypeError):
             return 10  # デフォルト値
+    
+    def _handle_lock_on_state_transitions(self, enemy_manager):
+        """
+        ロックオン状態遷移管理（Phase 1: 基本IDLE↔STANDBY遷移）
+        """
+        # 現在のAキー押下状態を取得
+        a_pressed = pyxel.btn(pyxel.KEY_A)
+        
+        # 状態遷移処理
+        if self.lock_state == LockOnState.IDLE:
+            if a_pressed:
+                # IDLE → STANDBY 遷移
+                self.lock_state = LockOnState.STANDBY
+                print(f"State transition: IDLE → STANDBY")
+        
+        elif self.lock_state == LockOnState.STANDBY:
+            if not a_pressed and self.was_a_pressed:
+                # STANDBY → IDLE 遷移（A離し）
+                self.lock_state = LockOnState.IDLE
+                print(f"State transition: STANDBY → IDLE")
+        
+        # 前フレームのAキー状態を記録
+        self.was_a_pressed = a_pressed

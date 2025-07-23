@@ -1,78 +1,40 @@
 
-システムを回収するプラン（検討中です。
+ロックオンレーザーのインターフェイスを改善するプラン（検討中です。
 
 #まだ実装しませんよ
 
+#現在のインターフェイス
+１）Aキーの入力でロックオンカーソルとコリジョンが発生しているエネミーをロックし、
+２）単数または複数のエネミーをロックした状態でSキーが入力されると、ホーミングレーザーを一斉発射しています
 
-==== Laser System Refactoring Plan ====
+この処理を以下のように更新します
 
-[日本語版]
+#新しいインターフェイス
+１）Aキーが押されていない状態では、ロックオンカーソルとエネミーとのコリジョンチェックを行いません。また、ロックオンカーソルは白色をしています。この状態はロックオンシステムのアイドル状態です。
 
-■ 現状の課題
-<!-- 完了//1. ベクトル演算が複数箇所に散在 -->
-2. Playerクラスでレーザーを直接生成（責務が重い）
-3. レーザーの大量生成・破棄によるパフォーマンス低下
+２）Aキーが押しっぱなしの状態で、ロックオンシステムがスタンバイ状態になります。この状態ではロックオンカーソルは緑色になり、エネミーとロックオンカーソルのコリジョンチェックを行います。エネミーとロックオンカーソルのコリジョンが発生すると、そのエネミーはロックオン対象となります。（def _handle_lock_on(self, enemy_manager):。
 
-■ 改善提案
-<!-- //1. Vector2Dクラスの導入（角度計算・正規化・回転を統一） -->
-2. Factoryパターンでレーザー生成を集中管理
-3. オブジェクトプーリングでGC負荷を軽減(10発くらいしかレーザー打ってないし、長さも短くしたから効果は不明)
+２−１）一度ロックオンが発生すると、次のエネミーをロックオンするまでにクールタイムが発生します。（クールタイムを設けないと、一つのエネミーが一瞬で最大ロックオン数までロックされてしまうため）
+クールタイムは３０フレームに設定します。スタンバイかつ、一回ロックオンが発生したあとに、３０フレームのクールダウンが発生するイメージです。
 
-■ 実装例
-<!-- 完了！ -->
-<!-- ### 1. Vector2D -->
-<!-- class Vector2D:
-    def __init__(self, x: float, y: float):
-        self.x, self.y = x, y
+2-2)エネミーをロックオンすると画面に(n/10)と表示しましょう。１０が最大ロックオン数、ｎが現在ロックオンしている数です。
 
-    def angle(self):
-        return math.atan2(self.y, self.x)
-
-    def magnitude(self):
-        return math.sqrt(self.x**2 + self.y**2)
-
-    def normalize(self):
-        mag = self.magnitude()
-        return Vector2D(self.x / mag, self.y / mag) if mag > 0 else Vector2D(0, 0) -->
-
-### 2. LaserFactory
-class LaserFactory:
-    @staticmethod
-    def create_homing_laser(start_pos, target_pos, enemy_id, config=None):
-        return LaserType01(start_pos.x, start_pos.y, target_pos.x, target_pos.y, enemy_id, config)
-
-### 3. LaserPool
-class LaserPool:
-    def __init__(self, pool_size=50):
-        self._available = []
-        self._active = []
-        self._create_pool(pool_size)
-
-    def acquire_laser(self, start_x, start_y, target_x, target_y, enemy_id):
-        if self._available:
-            laser = self._available.pop()
-            laser.reset(start_x, start_y, target_x, target_y, enemy_id)
-        else:
-            laser = LaserType01(start_x, start_y, target_x, target_y, enemy_id)
-        self._active.append(laser)
-        return laser
-
-    def release_laser(self, laser):
-        self._active.remove(laser)
-        self._available.append(laser)
+３）エネミーが１機以上ロックされた状態で、Aキーが離されると、ロックオンレーザーが一斉に発射されます。この状態はロックオンレーザーの「発射中(Shooting)」状態です。ロックオンカーソルはグレーになり、一切のコリジョンチェックを行いません。すべてのホーミングレーザーがActiveでなくなると、ロックオンシステムはアイドル状態に戻ります。
 
 
-[English Version]
 
-■ Current Issues
-1. Vector math operations scattered across code
-2. Player class directly creates LaserType01 (tight coupling)
-3. Frequent creation/destruction of lasers causes performance issues
+３−１）Aキーが押され、その後Aキーが離されても、ロックオンされているエネミーがいなければ、ロックオンシステムはアイドル状態に戻ります。
 
-■ Suggested Improvements
-1. Introduce Vector2D utility class for angle/normalization/rotation
-2. Implement Factory Pattern for centralized laser creation
-3. Add Object Pooling to reduce GC overhead
+│ >  3. エッジケース処理                                                       │
+│                                                                              │
+│     - A離し時にロック数0の場合                                               │
+│     - 発射中に全レーザーが瞬時に消滅                                         │
+│     - クールダウン中のA離し                                                  │
+│                                                                              │
+│   A離し時にロックゼロであれば、レーザーは一切発射されません   
 
-■ Code Examples
-(See Japanese section for Python code snippets)
+
+
+以上が、あたらしいロックオンレーザーの発射システムのインターフェイスです。
+これまで、レーザーの発射に使用していたSキーは使用しなくなります。
+
