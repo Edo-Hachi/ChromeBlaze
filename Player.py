@@ -121,6 +121,14 @@ class Player:
         self.was_a_pressed = False  # 前フレームのAキー押下状態
         self.cooldown_timer = 0  # クールダウンタイマー（フレーム数）
         
+        # カーソル色管理システム（Phase 2追加）
+        self.cursor_colors = {
+            LockOnState.IDLE: pyxel.COLOR_WHITE,     # アイドル状態: 白色
+            LockOnState.STANDBY: pyxel.COLOR_GREEN,  # スタンバイ状態: 緑色
+            LockOnState.COOLDOWN: pyxel.COLOR_YELLOW, # クールダウン状態: 黄色
+            LockOnState.SHOOTING: pyxel.COLOR_GRAY   # 発射中状態: グレー
+        }
+        
     def update(self, enemy_manager=None):
         # ショットクールダウン更新
         if self.shot_cooldown > 0:
@@ -225,10 +233,17 @@ class Player:
         self.hit_effect_manager.draw()
     
     def draw_lock_cursor(self, is_cursor_on_enemy):
-        """ロックオンカーソルの描画"""
+        """ロックオンカーソルの描画（Phase 2: 状態依存色管理）"""
         cursor_x = self.x
         cursor_y = self.y + self.cursor_offset_y
-        cursor_color = pyxel.COLOR_RED if is_cursor_on_enemy else pyxel.COLOR_GREEN
+        
+        # 状態に応じたカーソル色を取得
+        cursor_color = self.cursor_colors.get(self.lock_state, pyxel.COLOR_WHITE)
+        
+        # エネミー上にいる場合は色を強調（赤色）
+        if is_cursor_on_enemy and self.lock_state == LockOnState.STANDBY:
+            cursor_color = pyxel.COLOR_RED
+        
         pyxel.rectb(cursor_x, cursor_y, self.cursor_size, self.cursor_size, cursor_color)
     
     def shoot(self):
@@ -268,7 +283,11 @@ class Player:
         return self.x, self.y + self.cursor_offset_y
     
     def is_cursor_on_enemy(self, enemy_manager):
-        """カーソルがエネミー上にあるかチェック"""
+        """カーソルがエネミー上にあるかチェック（Phase 2: 状態依存制御）"""
+        # STANDBY状態でのみコリジョンチェックを実行
+        if self.lock_state != LockOnState.STANDBY:
+            return False
+        
         from Common import check_collision
         
         cursor_x, cursor_y = self.get_cursor_position()
@@ -385,23 +404,25 @@ class Player:
     
     def _handle_lock_on_state_transitions(self, enemy_manager):
         """
-        ロックオン状態遷移管理（Phase 1: 基本IDLE↔STANDBY遷移）
+        ロックオン状態遷移管理（Phase 2: 精度向上版）
         """
         # 現在のAキー押下状態を取得
         a_pressed = pyxel.btn(pyxel.KEY_A)
+        a_just_pressed = a_pressed and not self.was_a_pressed    # 押した瞬間
+        a_just_released = not a_pressed and self.was_a_pressed  # 離した瞬間
         
         # 状態遷移処理
         if self.lock_state == LockOnState.IDLE:
-            if a_pressed:
-                # IDLE → STANDBY 遷移
+            if a_just_pressed:
+                # IDLE → STANDBY 遷移（A押下開始）
                 self.lock_state = LockOnState.STANDBY
-                print(f"State transition: IDLE → STANDBY")
+                print(f"State transition: IDLE → STANDBY (A pressed)")
         
         elif self.lock_state == LockOnState.STANDBY:
-            if not a_pressed and self.was_a_pressed:
+            if a_just_released:
                 # STANDBY → IDLE 遷移（A離し）
                 self.lock_state = LockOnState.IDLE
-                print(f"State transition: STANDBY → IDLE")
+                print(f"State transition: STANDBY → IDLE (A released)")
         
         # 前フレームのAキー状態を記録
         self.was_a_pressed = a_pressed
