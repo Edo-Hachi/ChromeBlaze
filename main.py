@@ -6,20 +6,24 @@ from SpriteManager import sprite_manager
 from State_StudioLogo import StudioLogoState
 from State_Title import TitleState
 from State_Game import GamePlayState
+from GameLogger import logger
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class Game:
     def __init__(self):
         logging.info("Initializing Game")
+        logger.info("Game initialization started")
         try:
             self.state = GameState.LOGO
             self.studio_logo_state = StudioLogoState()
             self.title_state = TitleState()
             self.game_state = GamePlayState()
             logging.info("Game initialization completed")
+            logger.info("All game states initialized successfully")
         except Exception as e:
             logging.error(f"Failed to initialize game: {e}")
+            logger.error(f"Game initialization failed: {e}")
             raise
         
     def update(self):
@@ -28,16 +32,19 @@ class Game:
                 new_state = self.studio_logo_state.update()
                 if new_state != self.state:
                     logging.info(f"State transition: {self.state.value} -> {new_state.value}")
+                    logger.state_change(f"Game state: {self.state.value} -> {new_state.value}")
                     self.state = new_state
             elif self.state == GameState.TITLE:
                 new_state = self.title_state.update()
                 if new_state != self.state:
                     logging.info(f"State transition: {self.state.value} -> {new_state.value}")
+                    logger.state_change(f"Game state: {self.state.value} -> {new_state.value}")
                     self.state = new_state
             elif self.state == GameState.GAME:
                 new_state = self.game_state.update()
                 if new_state != self.state:
                     logging.info(f"State transition: {self.state.value} -> {new_state.value}")
+                    logger.state_change(f"Game state: {self.state.value} -> {new_state.value}")
                     self.state = new_state
         except Exception as e:
             logging.error(f"Error in game update: {e}")
@@ -58,9 +65,11 @@ class Game:
 class App:
     def __init__(self):
         logging.info("Starting Chrome Blaze")
+        logger.info("=== ChromeBlaze Application Starting ===")
         try:
             pyxel.init(SCREEN_WIDTH, SCREEN_HEIGHT, title="Chrome Blaze", fps=FPS, display_scale=3)
             logging.info(f"Pyxel initialized: {SCREEN_WIDTH}x{SCREEN_HEIGHT}, FPS={FPS}")
+            logger.info(f"Pyxel window: {SCREEN_WIDTH}x{SCREEN_HEIGHT}, {FPS}FPS, scale=3")
             
             pyxel.load("my_resource.pyxres")
             logging.info("Pyxel resources loaded successfully")
@@ -93,6 +102,7 @@ class App:
         try:
             if pyxel.btnp(pyxel.KEY_ESCAPE):
                 logging.info("User requested exit via ESC key")
+                logger.info("ESC pressed - Application exit requested")
                 pyxel.quit()
             self.game.update()
         except Exception as e:

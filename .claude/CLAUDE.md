@@ -59,3 +59,5 @@ pythonですが、型は宣言してください
     "python.linting.flake8Enabled": true,
     "python.formatting.provider": "black"
 }
+
+「commit.txt」を作成するときはgitに上げるので、UTF8のベタな文字コードで作成してください

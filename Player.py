@@ -12,6 +12,7 @@ from SpriteManager import sprite_manager
 from LaserType01 import LaserType01
 from HitEffect import HitEffectManager
 from LockOnState import LockOnState
+from GameLogger import logger
 
 class Bullet:
     def _get_animation_speed(self):
@@ -279,9 +280,9 @@ class Player:
                              enemy.x, enemy.y, 8, 8):
                 if len(self.lock_enemy_list) < self.max_lock_count:
                     self.lock_enemy_list.append(enemy.enemy_id)
-                    print(f"Locked Enemy ID: {enemy.enemy_id} (Total: {len(self.lock_enemy_list)})")
+                    logger.player_action(f"Legacy: Locked Enemy ID: {enemy.enemy_id} (Total: {len(self.lock_enemy_list)})")
                 else:
-                    print(f"Lock list is full! ({self.max_lock_count} enemies)")
+                    logger.warning(f"Legacy: Lock list is full! ({self.max_lock_count} enemies)")
                 break
     
     def get_cursor_position(self):
@@ -310,7 +311,7 @@ class Player:
         """
         """ロックオンしたエネミーにホーミングレーザーを発射"""
         if not self.lock_enemy_list:
-            print("No locked targets!")
+            logger.warning("Legacy: No locked targets!")
             return
         
         # 非アクティブなレーザーを削除
@@ -326,7 +327,7 @@ class Player:
         for enemy_id in self.lock_enemy_list:
             # レーザー数制限チェック
             if len(self.homing_lasers) + len(new_lasers) >= self.max_lasers:
-                print(f"Max laser limit reached! Fired {fired_count} of {len(self.lock_enemy_list)} locked targets")
+                logger.warning(f"Max laser limit reached! Fired {fired_count} of {len(self.lock_enemy_list)} locked targets")
                 break
             
             # エネミーIDからエネミーオブジェクトを取得
@@ -353,12 +354,12 @@ class Player:
                 new_lasers.append(new_laser)
                 fired_count += 1
                 
-                print(f"DEBUG: Created laser for Enemy ID {enemy_id} at ({target_x:.1f}, {target_y:.1f}) (scatter: {scatter_x:+.1f}, {scatter_y:+.1f})")
+                logger.laser_event(f"Legacy: Created laser for Enemy ID {enemy_id} at ({target_x:.1f}, {target_y:.1f}) (scatter: {scatter_x:+.1f}, {scatter_y:+.1f})")
         
         # 全レーザーを一括でメインリストに追加
         self.homing_lasers.extend(new_lasers)
         
-        print(f"Multi-lock fired! {fired_count} lasers to targets: {self.lock_enemy_list}")
+        logger.laser_event(f"Legacy: Multi-lock fired! {fired_count} lasers to targets: {self.lock_enemy_list}")
         
         # 発射後にロックリストをクリア
         self.lock_enemy_list = []
@@ -384,7 +385,7 @@ class Player:
                         self.hit_effect_manager.add_effect(effect_x, effect_y)
                         
                         enemy_manager.remove_enemy(laser.target_enemy_id)
-                        print(f"Enemy {laser.target_enemy_id} hit by laser!")
+                        logger.laser_event(f"Enemy {laser.target_enemy_id} hit by laser!")
                 else:
                     # ターゲットが非アクティブになった場合は直進
                     laser.update(delta_time, laser.target_position.x, laser.target_position.y)
@@ -420,12 +421,16 @@ class Player:
         a_just_pressed = a_pressed and not self.was_a_pressed    # 押した瞬間
         a_just_released = not a_pressed and self.was_a_pressed  # 離した瞬間
         
+        if a_just_pressed or a_just_released:
+            logger.separator()
+            logger.player_action(f"A input - pressed: {a_just_pressed}, released: {a_just_released}, state: {self.lock_state.value}")
+        
         # 状態遷移処理
         if self.lock_state == LockOnState.IDLE:
             if a_just_pressed:
                 # IDLE → STANDBY 遷移（A押下開始）
                 self.lock_state = LockOnState.STANDBY
-                print(f"State transition: IDLE → STANDBY (A pressed)")
+                logger.state_change("IDLE → STANDBY (A pressed)")
         
         elif self.lock_state == LockOnState.STANDBY:
             # STANDBYでのロックオン処理
@@ -434,15 +439,19 @@ class Player:
             
             if a_just_released:
                 # Phase 5: A離し時の発射システム
+                logger.player_action(f"A released in STANDBY state. Lock list: {self.lock_enemy_list}")
                 if len(self.lock_enemy_list) > 0:
                     # ロック中のエネミーがある場合: STANDBY → SHOOTING 遷移
+                    target_count = len(self.lock_enemy_list)  # 発射前にカウント保存
                     self.lock_state = LockOnState.SHOOTING
+                    logger.section("HOMING LASER FIRE")
+                    logger.laser_event(f"About to fire {target_count} homing lasers")
+                    logger.state_change(f"STANDBY → SHOOTING (A released, {target_count} targets)")
                     self._fire_homing_lasers_on_release(enemy_manager)
-                    print(f"State transition: STANDBY → SHOOTING (A released, {len(self.lock_enemy_list)} targets)")
                 else:
                     # ロック中のエネミーがない場合: STANDBY → IDLE 遷移
                     self.lock_state = LockOnState.IDLE
-                    print(f"State transition: STANDBY → IDLE (A released, no targets)")
+                    logger.state_change("STANDBY → IDLE (A released, no targets)")
         
         elif self.lock_state == LockOnState.COOLDOWN:
             # クールダウンタイマー更新
@@ -450,13 +459,24 @@ class Player:
             if self.cooldown_timer <= 0:
                 # COOLDOWN → STANDBY 遷移（時間経過）
                 self.lock_state = LockOnState.STANDBY
-                print(f"State transition: COOLDOWN → STANDBY (timer expired)")
+                logger.state_change("COOLDOWN → STANDBY (timer expired)")
             
             # クールダウン中でもA離しは有効
             if a_just_released:
-                self.lock_state = LockOnState.IDLE
                 self.cooldown_timer = 0  # タイマーリセット
-                print(f"State transition: COOLDOWN → IDLE (A released)")
+                
+                # ロックがある場合はレーザー発射してからSHOOTING状態へ
+                if len(self.lock_enemy_list) > 0:
+                    target_count = len(self.lock_enemy_list)
+                    self.lock_state = LockOnState.SHOOTING
+                    logger.section("HOMING LASER FIRE")
+                    logger.laser_event(f"About to fire {target_count} homing lasers (from COOLDOWN)")
+                    logger.state_change(f"COOLDOWN → SHOOTING (A released, {target_count} targets)")
+                    self._fire_homing_lasers_on_release(enemy_manager)
+                else:
+                    # ロックがない場合は直接IDLE
+                    self.lock_state = LockOnState.IDLE
+                    logger.state_change("COOLDOWN → IDLE (A released, no targets)")
         
         elif self.lock_state == LockOnState.SHOOTING:
             # Phase 5: SHOOTING状態の処理
@@ -464,14 +484,14 @@ class Player:
             active_lasers = [laser for laser in self.homing_lasers if laser.active]
             if len(active_lasers) == 0:
                 self.lock_state = LockOnState.IDLE
-                print(f"State transition: SHOOTING → IDLE (all lasers finished)")
+                logger.state_change("SHOOTING → IDLE (all lasers finished)")
             
             # Phase 6: エッジケース処理 - SHOOTING中の入力制御
             # SHOOTING中はA押下/離しは無効（既に発射済みのため）
             if a_just_pressed:
-                print(f"DEBUG: A press ignored during SHOOTING state")
+                logger.debug("A press ignored during SHOOTING state")
             if a_just_released:
-                print(f"DEBUG: A release ignored during SHOOTING state")
+                logger.debug("A release ignored during SHOOTING state")
         
         # 前フレームのAキー状態を記録
         self.was_a_pressed = a_pressed
@@ -490,14 +510,14 @@ class Player:
                 if len(self.lock_enemy_list) < self.max_lock_count:
                     # ロック成功
                     self.lock_enemy_list.append(enemy.enemy_id)
-                    print(f"Locked Enemy ID: {enemy.enemy_id} (Total: {len(self.lock_enemy_list)})")
+                    logger.player_action(f"Locked Enemy ID: {enemy.enemy_id} (Total: {len(self.lock_enemy_list)})")
                     
                     # STANDBY → COOLDOWN 遷移
                     self.lock_state = LockOnState.COOLDOWN
                     self.cooldown_timer = self.COOLDOWN_FRAMES
-                    print(f"State transition: STANDBY → COOLDOWN (enemy locked)")
+                    logger.state_change("STANDBY → COOLDOWN (enemy locked)")
                 else:
-                    print(f"Lock list is full! ({self.max_lock_count} enemies)")
+                    logger.warning(f"Lock list is full! ({self.max_lock_count} enemies)")
                 break
     
     def _fire_homing_lasers_on_release(self, enemy_manager):
@@ -505,7 +525,7 @@ class Player:
         Phase 5: A離し時のホーミングレーザー発射（新システム）
         """
         if not self.lock_enemy_list:
-            print("No locked targets for A-release firing!")
+            logger.warning("No locked targets for A-release firing!")
             return
         
         # 非アクティブなレーザーを削除
@@ -521,7 +541,7 @@ class Player:
         for enemy_id in self.lock_enemy_list:
             # レーザー数制限チェック
             if len(self.homing_lasers) + len(new_lasers) >= self.max_lasers:
-                print(f"Max laser limit reached! Fired {fired_count} of {len(self.lock_enemy_list)} locked targets")
+                logger.warning(f"Max laser limit reached! Fired {fired_count} of {len(self.lock_enemy_list)} locked targets")
                 break
             
             # エネミーIDからエネミーオブジェクトを取得
@@ -548,12 +568,12 @@ class Player:
                 new_lasers.append(new_laser)
                 fired_count += 1
                 
-                print(f"DEBUG: A-release laser for Enemy ID {enemy_id} at ({target_x:.1f}, {target_y:.1f}) (scatter: {scatter_x:+.1f}, {scatter_y:+.1f})")
+                logger.laser_event(f"A-release laser for Enemy ID {enemy_id} at ({target_x:.1f}, {target_y:.1f}) (scatter: {scatter_x:+.1f}, {scatter_y:+.1f})")
         
         # 全レーザーを一括でメインリストに追加
         self.homing_lasers.extend(new_lasers)
         
-        print(f"A-release multi-lock fired! {fired_count} lasers to targets: {self.lock_enemy_list}")
+        logger.laser_event(f"A-release multi-lock fired! {fired_count} lasers to targets: {self.lock_enemy_list}")
         
         # 発射後にロックリストをクリア
         self.lock_enemy_list = []
@@ -582,7 +602,7 @@ class Player:
         
         # 問題があればログ出力
         if issues:
-            print(f"CONSISTENCY WARNING: {', '.join(issues)}")
-            print(f"  State: {self.lock_state.value}, Locks: {len(self.lock_enemy_list)}, Timer: {self.cooldown_timer}, Lasers: {active_laser_count}")
+            logger.warning(f"CONSISTENCY WARNING: {', '.join(issues)}")
+            logger.debug(f"  State: {self.lock_state.value}, Locks: {len(self.lock_enemy_list)}, Timer: {self.cooldown_timer}, Lasers: {active_laser_count}")
         
         return len(issues) == 0

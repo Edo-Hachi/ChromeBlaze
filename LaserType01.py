@@ -6,7 +6,6 @@ LaserType01 - Homing Laser System for ChromeBlaze
 
 import pyxel
 import math
-import random
 from Common import SCREEN_WIDTH
 from LaserConfig import LaserConfig, default_laser_config
 from LaserTelemetry import LaserTelemetry
@@ -14,6 +13,10 @@ from Vector2D import Vector2D, angle_difference
 
 class LaserType01:
     """方法1: 線形補間 + 角度制限（最軽量）"""
+    
+    # クラス定数
+    OUT_OF_BOUNDS_THRESHOLD = 30  # 画面外判定の閾値
+    MIN_TRAIL_LENGTH = 2          # 軌跡描画の最小長さ
     
     def __init__(self, start_x, start_y, target_x, target_y, target_enemy_id=None, config: LaserConfig = None):
         # 設定の取得（カスタム設定がない場合はデフォルトを使用）
@@ -23,24 +26,8 @@ class LaserType01:
         # 設定をインスタンス変数として保持
         self.config = config
         
-        # レーザー設定（dataclassから取得）
-        # === 物理演算パラメータ ===
-        self.initial_speed = config.initial_speed      # 発射時の初期速度（ピクセル/秒）
-        self.min_speed = config.min_speed              # 減速時の最低速度（ピクセル/秒）
-        self.speed = self.initial_speed                # 現在の速度（フレーム毎に更新）
-        self.speed_decay = config.speed_decay          # フレーム毎の減速量（ピクセル/秒）
-        
-        # === ホーミング制御パラメータ ===
-        self.turn_speed_slow = config.turn_speed_slow  # 遠距離時の旋回速度（ラジアン/秒）
-        self.turn_speed_fast = config.turn_speed_fast  # 近距離時の旋回速度（ラジアン/秒）
-        self.transition_distance = config.transition_distance  # 旋回速度切り替え距離（ピクセル）
-        
-        # === 表示・軌跡パラメータ ===
-        self.max_trail_length = config.max_trail_length  # 軌跡の最大表示点数
-        
-        # === 判定パラメータ ===
-        self.hit_threshold = config.hit_threshold        # ヒット判定距離（100%命中保証用）
-        self.collision_threshold = config.collision_threshold  # コリジョン判定距離
+        # 現在の速度（設定から初期化、フレーム毎に更新）
+        self.speed = config.initial_speed
         
         # 位置と方向（Vector2D使用）
         self.position = Vector2D(start_x, start_y)
@@ -50,17 +37,8 @@ class LaserType01:
         self.target_enemy_id = target_enemy_id
         self.initial_target_position = Vector2D(target_x, target_y)
         
-        # 初期方向をプレイヤー位置に基づいて設定
-        screen_center_x = SCREEN_WIDTH // 2
-        if start_x > screen_center_x:
-            # 右側にいる場合：右向きで発射
-            self.direction = Vector2D(1.0, 0.0)
-        elif start_x < screen_center_x:
-            # 左側にいる場合：左向きで発射
-            self.direction = Vector2D(-1.0, 0.0)
-        else:
-            # 中央にいる場合：上向きで発射
-            self.direction = Vector2D(0.0, -1.0)
+        # 初期方向設定
+        self.direction = self._initialize_direction(start_x)
         
         # 軌跡
         self.trail = [self.position.to_tuple()]
@@ -71,6 +49,19 @@ class LaserType01:
         # テレメトリーシステム
         self.telemetry = LaserTelemetry()
         self.frame_count = 0
+    
+    def _initialize_direction(self, start_x):
+        """初期方向をプレイヤー位置に基づいて設定"""
+        screen_center_x = SCREEN_WIDTH // 2
+        if start_x > screen_center_x:
+            # 右側にいる場合：右向きで発射
+            return Vector2D(1.0, 0.0)
+        elif start_x < screen_center_x:
+            # 左側にいる場合：左向きで発射
+            return Vector2D(-1.0, 0.0)
+        else:
+            # 中央にいる場合：上向きで発射
+            return Vector2D(0.0, -1.0)
     
     def update(self, delta_time, target_x, target_y):
         """レーザーの更新（分解版）"""
@@ -114,11 +105,11 @@ class LaserType01:
             angle_diff = angle_difference(current_angle, target_angle)
             
             # 距離に基づいて旋回速度を調整
-            current_turn_speed = self.turn_speed_slow
-            if distance < self.transition_distance:
+            current_turn_speed = self.config.turn_speed_slow
+            if distance < self.config.transition_distance:
                 # 近づくほど急旋回に切り替え
-                ratio = 1.0 - (distance / self.transition_distance)
-                current_turn_speed = self.turn_speed_slow + (self.turn_speed_fast - self.turn_speed_slow) * ratio
+                ratio = 1.0 - (distance / self.config.transition_distance)
+                current_turn_speed = self.config.turn_speed_slow + (self.config.turn_speed_fast - self.config.turn_speed_slow) * ratio
             
             # 角度制限を適用
             max_turn = current_turn_speed * delta_time
@@ -133,10 +124,10 @@ class LaserType01:
     
     def _apply_speed_decay(self):
         """速度減速処理"""
-        if self.speed > self.min_speed:
-            self.speed -= self.speed_decay
-            if self.speed < self.min_speed:
-                self.speed = self.min_speed
+        if self.speed > self.config.min_speed:
+            self.speed -= self.config.speed_decay
+            if self.speed < self.config.min_speed:
+                self.speed = self.config.min_speed
     
     def _update_position(self, delta_time):
         """位置更新"""
@@ -145,56 +136,34 @@ class LaserType01:
     
     def _update_debug_and_trail(self, distance, current_turn_speed):
         """デバッグ情報と軌跡の更新"""
-        # テレメトリーデータを記録（Vector2D使用）
-        target_direction = (self.target_position - self.position).normalize() if distance > 0 else Vector2D(0, 0)
-        
-        laser_data = {
-            'laser_pos': (round(self.position.x, 2), round(self.position.y, 2)),
-            'target_pos': (round(self.target_position.x, 2), round(self.target_position.y, 2)),
-            'distance': distance,
-            'target_direction': (round(target_direction.x, 3), round(target_direction.y, 3)),
-            'laser_direction': (round(self.direction.x, 3), round(self.direction.y, 3)),
-            'turn_speed': current_turn_speed,
+        # 簡略化されたテレメトリーデータ（位置・距離・状態のみ）
+        simple_data = {
+            'laser_pos': (round(self.position.x, 1), round(self.position.y, 1)),
+            'distance': round(distance, 1),
             'current_speed': self.speed
         }
-        
-        self.telemetry.record_frame(self.frame_count, laser_data)
-        
-        # デバッグイベントを記録（Telemetryシステム内でDEBUG判定）
-        current_angle = self.direction.angle()
-        turn_mode = "slow" if distance >= self.transition_distance else "fast"
-        
-        self.telemetry.record_debug_event(self.frame_count, "frame_update", {
-            'x': round(self.position.x, 2),
-            'y': round(self.position.y, 2),
-            'angle_rad': round(current_angle, 4),
-            'angle_deg': round(self.direction.angle_degrees(), 2),
-            'distance_to_target': round(distance, 2),
-            'turn_mode': turn_mode,
-            'turn_speed': round(current_turn_speed, 4)
-        })
+        self.telemetry.record_frame(self.frame_count, simple_data)
         
         self.frame_count += 1
         
         # 軌跡の更新
         self.trail.append(self.position.to_tuple())
-        if len(self.trail) > self.max_trail_length:
+        if len(self.trail) > self.config.max_trail_length:
             self.trail.pop(0)
     
     def _check_hit_and_boundaries(self, distance):
         """ヒット判定と境界チェック"""
         # ターゲットに近づいたらヒット（100%命中保証）
-        if distance < self.hit_threshold:
+        if distance < self.config.hit_threshold:
             self.active = False
-            details = f"Update distance hit - Distance: {distance:.2f} < threshold: {self.hit_threshold}"
+            details = f"Update distance hit - Distance: {distance:.2f} < threshold: {self.config.hit_threshold}"
             self.telemetry.export_homing_analysis("Homing.log", self.target_enemy_id, "DISTANCE_HIT", details)
             self.telemetry.export_debug_summary("debug.log", "HIT")
             return True  # ヒットを示すフラグ
         
         # 画面外チェック
-        OUT_THRESHOLD = 30  # 画面外判定の閾値
-        if (self.position.x < -OUT_THRESHOLD or self.position.x > SCREEN_WIDTH + OUT_THRESHOLD or 
-            self.position.y < -OUT_THRESHOLD or self.position.y > SCREEN_WIDTH + OUT_THRESHOLD):
+        if (self.position.x < -self.OUT_OF_BOUNDS_THRESHOLD or self.position.x > SCREEN_WIDTH + self.OUT_OF_BOUNDS_THRESHOLD or 
+            self.position.y < -self.OUT_OF_BOUNDS_THRESHOLD or self.position.y > SCREEN_WIDTH + self.OUT_OF_BOUNDS_THRESHOLD):
             if self.active:  # まだアクティブな場合のみログ出力
                 self.active = False
                 details = f"Final pos: {self.position}"
@@ -205,24 +174,14 @@ class LaserType01:
     
     def draw(self):
         """レーザーの描画"""
-        if not self.active or len(self.trail) < 2:
+        if not self.active or len(self.trail) < self.MIN_TRAIL_LENGTH:
             return
         
         # 軌跡を線で描画
         for i in range(len(self.trail) - 1):
             start_x, start_y = self.trail[i]
             end_x, end_y = self.trail[i + 1]
-            
-            # 透明度効果（古い軌跡ほど薄く）
-            #alpha_ratio = i / len(self.trail)
-            #if alpha_ratio > 0.3:  # 薄すぎる部分はスキップ
-            #pyxel.line(int(start_x), int(start_y), int(end_x), int(end_y), self.config.trail_color)
             pyxel.line(int(start_x), int(start_y), int(end_x), int(end_y), pyxel.COLOR_CYAN)
-        
-        # レーザーヘッド（8x8の矩形）
-        #head_x = int(self.x) - 1
-        #head_y = int(self.y) - 1
-        #pyxel.rect(head_x, head_y, 2, 2, pyxel.COLOR_RED)
     
     def check_collision(self, enemy):
         """エネミーとの距離判定（100%命中保証）"""
@@ -234,7 +193,7 @@ class LaserType01:
         center_distance = self.position.distance_to(enemy_center)
         
         # 距離判定のみ（ホーミングレーザーは100%命中システム）
-        hit_distance_threshold = self.collision_threshold
+        hit_distance_threshold = self.config.collision_threshold
         
         if center_distance <= hit_distance_threshold:
             self.active = False
