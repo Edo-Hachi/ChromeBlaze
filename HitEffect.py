@@ -5,6 +5,7 @@ Hit Effect System for ChromeBlaze
 """
 
 import pyxel
+from Common import DEBUG
 
 class HitEffect:
     """ヒットエフェクトクラス"""
@@ -62,7 +63,7 @@ class HitEffectManager:
         active_effects = [effect for effect in self.effects if effect.active]
         removed_count = len(self.effects) - len(active_effects)
         
-        if removed_count > 0:
+        if removed_count > 0 and DEBUG:
             print(f"HitEffect: Removed {removed_count} effects, {len(active_effects)} remaining")
         
         self.effects = active_effects

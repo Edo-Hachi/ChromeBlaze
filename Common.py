@@ -21,8 +21,6 @@ DEBUG = False
 #   15: pyxel.COLOR_PEACH    # ピーチ
 
 
-
-
 # Game States
 class GameState(Enum):
     LOGO = "logo"

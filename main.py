@@ -47,7 +47,7 @@
 import pyxel          # Pyxelゲームエンジンをインポート（ゲーム画面や音声を管理）
 import logging        # Pythonの標準ログ機能（コンソールにメッセージを出力）
 import sys            # システム関連の機能（プログラム終了など）
-from Common import GameState, SCREEN_WIDTH, SCREEN_HEIGHT, FPS, DISPLAY_SCALE  # ゲームの基本設定
+from Common import GameState, SCREEN_WIDTH, SCREEN_HEIGHT, FPS, DISPLAY_SCALE, DEBUG  # ゲームの基本設定
 from SpriteManager import sprite_manager      # スプライト（キャラクターの画像）を管理
 from State_StudioLogo import StudioLogoState  # スタジオロゴ画面の処理
 from State_Title import TitleState            # タイトル画面の処理  
@@ -55,7 +55,12 @@ from State_Game import GamePlayState          # 実際のゲーム画面の処�
 from GameLogger import logger                 # ChromeBlaze専用のログシステム
 
 # Pythonの標準ログ設定（時刻とメッセージレベルを表示）
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+# DEBUGフラグでログレベルを制御
+if DEBUG:
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+else:
+    # DEBUGがFalseの場合は、ERRORレベル以上のみ表示
+    logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class Game:
     """
@@ -64,7 +69,8 @@ class Game:
     """
     def __init__(self):
         """ゲームの初期化（最初に1回だけ実行される）"""
-        logging.info("Initializing Game")
+        if DEBUG:
+            logging.info("Initializing Game")
         logger.info("Game initialization started")
         try:
             # 最初はロゴ画面から開始
@@ -75,7 +81,8 @@ class Game:
             self.title_state = TitleState()              # タイトル画面
             self.game_state = GamePlayState()            # ゲーム本編画面
             
-            logging.info("Game initialization completed")
+            if DEBUG:
+                logging.info("Game initialization completed")
             logger.info("All game states initialized successfully")
         except Exception as e:
             # もし初期化でエラーが発生したらログに記録してプログラム終了
@@ -95,7 +102,8 @@ class Game:
                 new_state = self.studio_logo_state.update()
                 # もし画面遷移が発生したら（ロゴ→タイトルなど）
                 if new_state != self.state:
-                    logging.info(f"State transition: {self.state.value} -> {new_state.value}")
+                    if DEBUG:
+                        logging.info(f"State transition: {self.state.value} -> {new_state.value}")
                     logger.state_change(f"Game state: {self.state.value} -> {new_state.value}")
                     self.state = new_state  # 新しい画面に切り替え
                     
@@ -104,7 +112,8 @@ class Game:
                 new_state = self.title_state.update()
                 # 画面遷移チェック（タイトル→ゲーム本編など）
                 if new_state != self.state:
-                    logging.info(f"State transition: {self.state.value} -> {new_state.value}")
+                    if DEBUG:
+                        logging.info(f"State transition: {self.state.value} -> {new_state.value}")
                     logger.state_change(f"Game state: {self.state.value} -> {new_state.value}")
                     self.state = new_state
                     
@@ -113,7 +122,8 @@ class Game:
                 new_state = self.game_state.update()
                 # 画面遷移チェック（ゲーム→タイトルなど）
                 if new_state != self.state:
-                    logging.info(f"State transition: {self.state.value} -> {new_state.value}")
+                    if DEBUG:
+                        logging.info(f"State transition: {self.state.value} -> {new_state.value}")
                     logger.state_change(f"Game state: {self.state.value} -> {new_state.value}")
                     self.state = new_state
                     
@@ -145,7 +155,8 @@ class Game:
             # 描画でエラーが発生した場合の緊急処理
             logging.error(f"Error in game draw: {e}")
             # エラーメッセージを画面に表示（プレイヤーに状況を知らせる）
-            pyxel.text(10, 10, f"Draw Error: {str(e)[:30]}", pyxel.COLOR_RED)
+            if DEBUG:
+                pyxel.text(10, 10, f"Draw Error: {str(e)[:30]}", pyxel.COLOR_RED)
 
 class App:
     """
@@ -154,36 +165,43 @@ class App:
     """
     def __init__(self):
         """アプリケーションの初期化（プログラム開始時に1回だけ実行）"""
-        logging.info("Starting Chrome Blaze")
+        if DEBUG:
+            logging.info("Starting Chrome Blaze")
         logger.info("=== ChromeBlaze Application Starting ===")
         try:
             # Pyxelゲームエンジンを初期化
             # 画面サイズ、タイトル、フレームレート、表示倍率を設定
             pyxel.init(SCREEN_WIDTH, SCREEN_HEIGHT, title="Chrome Blaze", fps=FPS, display_scale=DISPLAY_SCALE)
-            logging.info(f"Pyxel initialized: {SCREEN_WIDTH}x{SCREEN_HEIGHT}, FPS={FPS}")
+            if DEBUG:
+                logging.info(f"Pyxel initialized: {SCREEN_WIDTH}x{SCREEN_HEIGHT}, FPS={FPS}")
             logger.info(f"Pyxel window: {SCREEN_WIDTH}x{SCREEN_HEIGHT}, {FPS}FPS, scale={DISPLAY_SCALE}")
             
             # ゲームで使用する画像・音声データを読み込み
             pyxel.load("my_resource.pyxres")
-            logging.info("Pyxel resources loaded successfully")
+            if DEBUG:
+                logging.info("Pyxel resources loaded successfully")
             
             # スプライト管理システムの初期化状況を確認
             try:
                 sprite_count = len(sprite_manager.json_sprites)
                 if sprite_count > 0:
-                    logging.info(f"Sprite manager loaded {sprite_count} sprites from JSON")
+                    if DEBUG:
+                        logging.info(f"Sprite manager loaded {sprite_count} sprites from JSON")
                     # プレイヤーキャラクターのスプライトが正しく読み込まれているかチェック
                     player_sprites = [key for key, sprite in sprite_manager.json_sprites.items() 
                                     if sprite.get("NAME") == "PLAYER"]
-                    logging.info(f"Found {len(player_sprites)} player sprites: {player_sprites}")
+                    if DEBUG:
+                        logging.info(f"Found {len(player_sprites)} player sprites: {player_sprites}")
                 else:
-                    logging.warning("No sprites loaded - sprite rendering may fail")
+                    if DEBUG:
+                        logging.warning("No sprites loaded - sprite rendering may fail")
             except Exception as e:
                 logging.error(f"Sprite manager initialization error: {e}")
             
             # ゲーム本体を作成
             self.game = Game()
-            logging.info("Game instance created, starting main loop")
+            if DEBUG:
+                logging.info("Game instance created, starting main loop")
             
             # Pyxelのメインループを開始（ここから60FPS でupdate/drawが呼ばれ続ける）
             pyxel.run(self.update, self.draw)
@@ -205,7 +223,8 @@ class App:
         try:
             # ESCキーが押されたらゲーム終了
             if pyxel.btnp(pyxel.KEY_ESCAPE):
-                logging.info("User requested exit via ESC key")
+                if DEBUG:
+                    logging.info("User requested exit via ESC key")
                 logger.info("ESC pressed - Application exit requested")
                 pyxel.quit()  # Pyxelを終了してプログラムも終了
                 
@@ -231,7 +250,8 @@ class App:
             logging.error(f"Critical error in draw loop: {e}")
             pyxel.cls(pyxel.COLOR_BLACK)  # 画面をクリア
             # エラーメッセージを画面に表示
-            pyxel.text(10, 10, "CRITICAL ERROR", pyxel.COLOR_RED)
+            if DEBUG:
+                pyxel.text(10, 10, "CRITICAL ERROR", pyxel.COLOR_RED)
 
 def main():
     """
@@ -244,7 +264,8 @@ def main():
         
     except KeyboardInterrupt:
         # Ctrl+C でプログラムが中断された場合
-        logging.info("Game interrupted by user")
+        if DEBUG:
+            logging.info("Game interrupted by user")
         
     except Exception as e:
         # 予期しないエラーが発生した場合

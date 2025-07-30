@@ -1,5 +1,5 @@
 import pyxel
-from Common import GameState, SCREEN_WIDTH, SCREEN_HEIGHT
+from Common import GameState, SCREEN_WIDTH, SCREEN_HEIGHT, DEBUG
 from SpriteManager import sprite_manager
 
 class StudioLogoState:
@@ -30,15 +30,17 @@ class StudioLogoState:
             player_y = 80
             pyxel.blt(player_x, player_y, 0, player_sprite.x, player_sprite.y, 8, 8, pyxel.COLOR_BLACK)
             
-            # スプライト情報表示
-            sprite_info = f"Sprite: {player_sprite.x},{player_sprite.y}"
-            pyxel.text(10, 10, sprite_info, pyxel.COLOR_WHITE)
+            # スプライト情報表示（デバッグ用）
+            if DEBUG:
+                sprite_info = f"Sprite: {player_sprite.x},{player_sprite.y}"
+                pyxel.text(10, 10, sprite_info, pyxel.COLOR_WHITE)
         except Exception as e:
             # エラー時はフォールバック描画
             player_x = (SCREEN_WIDTH - 8) // 2
             player_y = 80
             pyxel.rect(player_x, player_y, 8, 8, pyxel.COLOR_WHITE)
-            pyxel.text(10, 10, f"Sprite Error: {str(e)[:20]}", pyxel.COLOR_RED)
+            if DEBUG:
+                pyxel.text(10, 10, f"Sprite Error: {str(e)[:20]}", pyxel.COLOR_RED)
         
         # Push Space Key (blinking)
         if (self.frame_count // 30) % 2 == 0:

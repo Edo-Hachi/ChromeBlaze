@@ -6,6 +6,7 @@ GameLogger - Unified Logging System for ChromeBlaze
 
 import datetime
 import os
+from Common import DEBUG
 
 class GameLogger:
     """ゲーム全体の統一ログシステム"""
@@ -33,7 +34,8 @@ class GameLogger:
             with open(self._log_file, 'w', encoding='utf-8') as f:
                 f.write("")
         except Exception as e:
-            print(f"Failed to clear log file: {e}")
+            if DEBUG:
+                print(f"Failed to clear log file: {e}")
     
     def _get_timestamp(self):
         """現在時刻のタイムスタンプを取得"""
@@ -44,10 +46,11 @@ class GameLogger:
         timestamp = self._get_timestamp()
         formatted_message = f"[{timestamp}] {category}: {message}"
         
-        # コンソールにも出力
-        print(formatted_message)
+        # コンソールにも出力（DEBUGフラグで制御）
+        if DEBUG:
+            print(formatted_message)
         
-        # ファイルに出力
+        # ファイルに出力（DEBUGフラグに関係なく常に出力）
         try:
             # debug_log/ディレクトリが存在しない場合は作成
             os.makedirs(os.path.dirname(self._log_file), exist_ok=True)
@@ -55,7 +58,8 @@ class GameLogger:
                 f.write(formatted_message + "\n")
                 f.flush()  # 即座にファイルに書き込み
         except Exception as e:
-            print(f"Failed to write to log file: {e}")
+            if DEBUG:
+                print(f"Failed to write to log file: {e}")
     
     def debug(self, message):
         """デバッグレベルのログ"""

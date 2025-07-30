@@ -10,6 +10,7 @@ from collections import namedtuple
 # import Config
 import json
 import os
+from Common import DEBUG
 
 # Sprite Location Definition
 SpIdx = namedtuple("SprIdx", ["x", "y"])
@@ -87,15 +88,19 @@ class SpriteManager:
                 # スプライトデータを取得
                 if "sprites" in sprite_data:
                     self.json_sprites = sprite_data["sprites"]
-                    print(f"[SpriteManager] Loaded {len(self.json_sprites)} sprites from JSON")
+                    if DEBUG:
+                        print(f"[SpriteManager] Loaded {len(self.json_sprites)} sprites from JSON")
                 else:
-                    print("[SpriteManager] Warning: No 'sprites' key found in JSON")
+                    if DEBUG:
+                        print("[SpriteManager] Warning: No 'sprites' key found in JSON")
                     self.json_sprites = {}
             else:
-                print(f"[SpriteManager] Warning: {self.json_file_path} not found, using fallback")
+                if DEBUG:
+                    print(f"[SpriteManager] Warning: {self.json_file_path} not found, using fallback")
                 self.json_sprites = {}
         except (json.JSONDecodeError, FileNotFoundError, KeyError) as e:
-            print(f"[SpriteManager] Error loading sprites.json: {e}")
+            if DEBUG:
+                print(f"[SpriteManager] Error loading sprites.json: {e}")
             self.json_sprites = {}
     
     def get_sprite_by_name_and_field(self, name, field_name, field_value):
@@ -115,7 +120,8 @@ class SpriteManager:
                 return SpIdx(sprite["x"], sprite["y"])
         
         # 見つからない場合はNULLを返す
-        print(f"[SpriteManager] Warning: Sprite '{name}' with {field_name}='{field_value}' not found")
+        if DEBUG:
+            print(f"[SpriteManager] Warning: Sprite '{name}' with {field_name}='{field_value}' not found")
         return SpIdx(0, 0)  # NULL sprite fallback
     
     def get_sprite_by_name_and_tag(self, name, tag=None):
@@ -134,7 +140,8 @@ class SpriteManager:
                     return SpIdx(sprite["x"], sprite["y"])
         
         # 見つからない場合はNULLを返す
-        print(f"[SpriteManager] Warning: Sprite '{name}' with tag '{tag}' not found")
+        if DEBUG:
+            print(f"[SpriteManager] Warning: Sprite '{name}' with tag '{tag}' not found")
         return SpIdx(0, 0)  # NULL sprite fallback
     
     def get_sprite_group(self, name):
@@ -169,7 +176,7 @@ class SpriteManager:
                 if field_value is not None:
                     return field_value
         
-        if default_value is not None:
+        if default_value is not None and DEBUG:
             print(f"[SpriteManager] Warning: Field '{field_name}' not found for sprite '{name}', using default: {default_value}")
         return default_value
 
