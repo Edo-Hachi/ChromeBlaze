@@ -3,8 +3,7 @@
 LaserConfig dataclass版使用例
 """
 
-from LaserConfig import LaserConfig, LaserProfiles, default_laser_config
-from LaserType01 import LaserType01
+from Class_HomingLaser import LaserConfig, LaserProfiles, default_laser_config, LaserType01
 
 def example_usage():
     """dataclass版LaserConfigの使用例"""

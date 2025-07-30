@@ -9,7 +9,7 @@ import math
 import random
 from Common import SCREEN_WIDTH, SCREEN_HEIGHT
 from SpriteManager import sprite_manager
-from LaserType01 import LaserType01
+from Class_HomingLaser import LaserType01
 from HitEffect import HitEffectManager
 from LockOnState import LockOnState
 from GameLogger import logger

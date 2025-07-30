@@ -7,8 +7,7 @@ LaserConfig動作確認テスト
 import sys
 sys.path.append('.')
 
-from LaserConfig import LaserConfig, LaserProfiles
-from LaserType01 import LaserType01
+from Class_HomingLaser import LaserConfig, LaserProfiles, LaserType01
 
 def test_default_config():
     """デフォルト設定のテスト"""
@@ -18,36 +17,36 @@ def test_default_config():
     laser = LaserType01(100, 100, 150, 150, target_enemy_id=1)
     
     # 設定値の確認
-    print(f"Initial Speed: {laser.initial_speed} (expected: {LaserConfig.INITIAL_SPEED})")
-    print(f"Min Speed: {laser.min_speed} (expected: {LaserConfig.MIN_SPEED})")
-    print(f"Hit Threshold: {laser.hit_threshold} (expected: {LaserConfig.HIT_THRESHOLD})")
-    print(f"Turn Speed Fast: {laser.turn_speed_fast} (expected: {LaserConfig.TURN_SPEED_FAST})")
-    print(f"Max Trail Length: {laser.max_trail_length} (expected: {LaserConfig.MAX_TRAIL_LENGTH})")
+    print(f"Initial Speed: {laser.speed} (expected: 500.0)")
+    print(f"Config Initial Speed: {laser.config.initial_speed} (expected: 500.0)")
+    print(f"Config Hit Threshold: {laser.config.hit_threshold} (expected: 10.0)")
+    print(f"Config Turn Speed Fast: {laser.config.turn_speed_fast} (expected: 20.0)")
+    print(f"Config Max Trail Length: {laser.config.max_trail_length} (expected: 10)")
     
     # 検証
-    assert laser.initial_speed == LaserConfig.INITIAL_SPEED
-    assert laser.min_speed == LaserConfig.MIN_SPEED
-    assert laser.hit_threshold == LaserConfig.HIT_THRESHOLD
+    assert laser.speed == 500.0
+    assert laser.config.initial_speed == 500.0
+    assert laser.config.hit_threshold == 10.0
     print("✅ デフォルト設定テスト成功\n")
 
 def test_easy_mode():
     """簡単モードのテスト"""
     print("=== 簡単モード設定テスト ===")
     
-    # 簡単モード適用
-    LaserProfiles.easy_mode()
+    # 簡単モード設定を取得
+    easy_config = LaserProfiles.easy_mode()
     
-    # レーザー作成（新しい設定が適用される）
-    laser = LaserType01(100, 100, 150, 150, target_enemy_id=2)
+    # レーザー作成（簡単モード設定を適用）
+    laser = LaserType01(100, 100, 150, 150, target_enemy_id=2, config=easy_config)
     
-    print(f"Hit Threshold: {laser.hit_threshold} (expected: 15.0)")
-    print(f"Collision Threshold: {laser.collision_threshold} (expected: 20.0)")
-    print(f"Turn Speed Fast: {laser.turn_speed_fast} (expected: 25.0)")
+    print(f"Hit Threshold: {laser.config.hit_threshold} (expected: 15.0)")
+    print(f"Collision Threshold: {laser.config.collision_threshold} (expected: 20.0)")
+    print(f"Turn Speed Fast: {laser.config.turn_speed_fast} (expected: 25.0)")
     
     # 検証
-    assert laser.hit_threshold == 15.0
-    assert laser.collision_threshold == 20.0
-    assert laser.turn_speed_fast == 25.0
+    assert laser.config.hit_threshold == 15.0
+    assert laser.config.collision_threshold == 20.0
+    assert laser.config.turn_speed_fast == 25.0
     print("✅ 簡単モード設定テスト成功\n")
 
 def test_hard_mode():

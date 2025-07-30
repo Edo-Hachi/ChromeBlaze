@@ -6,10 +6,13 @@ LaserType01 - Homing Laser System for ChromeBlaze
 
 import pyxel
 import math
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from Common import SCREEN_WIDTH
-from LaserConfig import LaserConfig, default_laser_config
-from LaserTelemetry import LaserTelemetry
-from Vector2D import Vector2D, angle_difference
+from .LaserConfig import LaserConfig, default_laser_config
+from .LaserTelemetry import LaserTelemetry
+from .Vector2D import Vector2D, angle_difference
 
 class LaserType01:
     """方法1: 線形補間 + 角度制限（最軽量）"""

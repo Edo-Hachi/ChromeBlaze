@@ -11,7 +11,7 @@ class GameLogger:
     """ゲーム全体の統一ログシステム"""
     
     _instance = None
-    _log_file = "debug.log"
+    _log_file = "debug_log/debug.log"
     
     def __new__(cls):
         if cls._instance is None:
@@ -28,6 +28,8 @@ class GameLogger:
     def _clear_log(self):
         """ログファイルをクリア"""
         try:
+            # debug_log/ディレクトリが存在しない場合は作成
+            os.makedirs(os.path.dirname(self._log_file), exist_ok=True)
             with open(self._log_file, 'w', encoding='utf-8') as f:
                 f.write("")
         except Exception as e:
@@ -47,6 +49,8 @@ class GameLogger:
         
         # ファイルに出力
         try:
+            # debug_log/ディレクトリが存在しない場合は作成
+            os.makedirs(os.path.dirname(self._log_file), exist_ok=True)
             with open(self._log_file, 'a', encoding='utf-8') as f:
                 f.write(formatted_message + "\n")
                 f.flush()  # 即座にファイルに書き込み

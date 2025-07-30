@@ -6,6 +6,9 @@ LaserTelemetry - Debug and Telemetry System for ChromeBlaze
 
 import datetime
 from typing import Dict, List, Any, Optional
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 from Common import DEBUG
 
 
@@ -109,8 +112,14 @@ class LaserTelemetry:
         if not self.enabled or not self.frame_data:
             return
         
+        # debug_log/ディレクトリ配下に出力するパスを構築
+        import os
+        debug_dir = "debug_log"
+        os.makedirs(debug_dir, exist_ok=True)
+        filepath = os.path.join(debug_dir, filename)
+        
         try:
-            with open(filename, "a", encoding="utf-8") as f:
+            with open(filepath, "a", encoding="utf-8") as f:
                 timestamp = datetime.datetime.now().strftime('%H:%M:%S.%f')[:-3]
                 
                 f.write(f"\n=== LASER ANALYSIS [{timestamp}] ===\n")
@@ -196,8 +205,14 @@ class LaserTelemetry:
         if not self.enabled or self.debug_log is None:
             return
         
+        # debug_log/ディレクトリ配下に出力するパスを構築
+        import os
+        debug_dir = "debug_log"
+        os.makedirs(debug_dir, exist_ok=True)
+        filepath = os.path.join(debug_dir, filename)
+        
         try:
-            with open(filename, "a", encoding="utf-8") as f:
+            with open(filepath, "a", encoding="utf-8") as f:
                 f.write(f"\n## Laser Hit Event - {datetime.datetime.now().strftime('%H:%M:%S')}\n")
                 f.write(f"- End Reason: {end_reason}\n")
                 f.write(f"- Total Frames: {len(self.debug_log)}\n")
