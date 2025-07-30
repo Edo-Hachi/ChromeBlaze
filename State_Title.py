@@ -22,8 +22,8 @@ class TitleState:
         title_text = "Chrome Blaze"
         title_width = len(title_text) * 4
         title_x = (SCREEN_WIDTH - title_width) // 2
-        pyxel.text(title_x, 80, title_text, 7)
+        pyxel.text(title_x, 80, title_text, pyxel.COLOR_WHITE)
         
         # Menu options
-        pyxel.text(100, 120, "Space: Start Game", 10)
-        pyxel.text(100, 140, "Q: Quit", 8)
+        pyxel.text(100, 120, "Space: Start Game", pyxel.COLOR_YELLOW)
+        pyxel.text(100, 140, "Q: Quit", pyxel.COLOR_RED)

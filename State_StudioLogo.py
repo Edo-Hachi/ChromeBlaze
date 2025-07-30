@@ -21,7 +21,7 @@ class StudioLogoState:
         logo_text = "Nekoya Studio"
         logo_width = len(logo_text) * 4
         logo_x = (SCREEN_WIDTH - logo_width) // 2
-        pyxel.text(logo_x, 100, logo_text, 7)
+        pyxel.text(logo_x, 100, logo_text, pyxel.COLOR_WHITE)
         
         # スプライトテスト: プレイヤー機を画面中央に表示
         try:
@@ -32,13 +32,13 @@ class StudioLogoState:
             
             # スプライト情報表示
             sprite_info = f"Sprite: {player_sprite.x},{player_sprite.y}"
-            pyxel.text(10, 10, sprite_info, 7)
+            pyxel.text(10, 10, sprite_info, pyxel.COLOR_WHITE)
         except Exception as e:
             # エラー時はフォールバック描画
             player_x = (SCREEN_WIDTH - 8) // 2
             player_y = 80
             pyxel.rect(player_x, player_y, 8, 8, pyxel.COLOR_WHITE)
-            pyxel.text(10, 10, f"Sprite Error: {str(e)[:20]}", 8)
+            pyxel.text(10, 10, f"Sprite Error: {str(e)[:20]}", pyxel.COLOR_RED)
         
         # Push Space Key (blinking)
         if (self.frame_count // 30) % 2 == 0:
